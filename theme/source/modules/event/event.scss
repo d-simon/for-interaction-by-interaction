@@ -92,6 +92,9 @@ $eventInfoMaxWidth:				450px !default;
 			&__content {
 				@include mq($from: 'medium') {
 					direction: rtl;
+					& > * {
+						direction: ltr;
+					}
 					text-align: left;
 				}
 			}
