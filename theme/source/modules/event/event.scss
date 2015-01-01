@@ -19,7 +19,7 @@ $eventInfoMaxWidth:				450px !default;
 			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
 		}
 		@include mq($from: 'large') {
-			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+			@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
 		}
 		@include mq($from: 'huge') {
 			@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
@@ -35,10 +35,10 @@ $eventInfoMaxWidth:				450px !default;
 			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
 		}
 		@include mq($from: 'large') {
-			@include gridColumn($columns: 5, $total: 12, $left: 1, $verticalAlign: middle);
+			@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
 		}
 		@include mq($from: 'huge') {
-			@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
+			@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
 		}
 
 		&-content {
@@ -113,7 +113,7 @@ $eventInfoMaxWidth:				450px !default;
 
 		.#{$m} {
 			&__title {
-				@include mq($from: 'large') {
+				@include mq($from: 'huge') {
 					@include fontH1();
 				}
 			}
@@ -144,12 +144,10 @@ $eventInfoMaxWidth:				450px !default;
 					margin-left: auto;
 				}
 				@include mq($from: 'large') {
-					@include gridColumn($columns: 4, $total: 12, $verticalAlign: middle);
-					margin-left: 5%;
+					@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
 				}
 				@include mq($from: 'huge') {
-					@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
-					margin-left: 5%;
+					@include gridColumn($columns: 4, $total: 12, $left: 0.75, $right: 0.25, $verticalAlign: middle);
 				}
 			}
 		}
