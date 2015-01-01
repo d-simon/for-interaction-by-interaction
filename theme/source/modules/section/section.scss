@@ -25,7 +25,7 @@ $sectionContentMaxWidth:		450px !default;
 	&--page {
 		.#{$m} {
 			&__title {
-				@include fontH1();
+				@include fontH3();
 				@include styleFontTitle();
 				text-align: center;
 				text-transform: none;

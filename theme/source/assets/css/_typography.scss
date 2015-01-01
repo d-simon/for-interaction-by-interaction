@@ -43,13 +43,19 @@ pre {
 }
 @mixin fontH1($color: true) {
 	@include styleFontTitle;
-	font-size: $sizeFontLarge;
+	font-size: $sizeFontH1;
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontH2($color: true) {
 	@include styleFontTitle;
-	font-size: $sizeFontMedium;
+	font-size: $sizeFontH2;
+	line-height: $sizeLineHeightTitle;
+	@include _addColor($color);
+}
+@mixin fontH3($color: true) {
+	@include styleFontTitle;
+	font-size: $sizeFontH3;
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }

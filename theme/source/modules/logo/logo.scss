@@ -1,8 +1,10 @@
 $m: "mod_logo";
 
+$logoFontSize: 			$sizeFontH2 !default;
+
 .#{$m} {
-	@include fontH1();
-	font-size: $sizeFontLargePlus;
+	@include fontH2();
+	font-size: $logoFontSize;
 	line-height: 1.3;
 	padding-left: $sizeGutter / 2;
 	@include mq($from: "large") {

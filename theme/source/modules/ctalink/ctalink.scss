@@ -6,7 +6,7 @@ $m: "mod_ctalink";
 	&__anchor {
 		display: inline-block;
 		@include linkStyle();
-		@include fontH2();
+		@include fontH3();
 		padding-bottom: 2px;
 		border-bottom: 3px solid $colorGrayLight;
 	}
