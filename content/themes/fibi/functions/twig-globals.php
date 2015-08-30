@@ -15,7 +15,6 @@ function _theme_add_twig_globals($twig) {
     }
 
     $default_data['globals'] = array_merge($default_data['globals'], array(
-            'is_start' => is_home(),
             'page_title' => get_the_title(),
             'theme_root' => get_template_directory_uri(),
             'home_url' => get_home_url(),
@@ -24,8 +23,7 @@ function _theme_add_twig_globals($twig) {
                 'dev' => false
             ),
             // Use correct templates
-            'gulp' => false,
-            'permalink' => get_permalink()
+            'gulp' => false
     ));
 
     $twig->addGlobal('globals', $default_data['globals']);

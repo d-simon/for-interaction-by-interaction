@@ -3,7 +3,10 @@
 var util = require('gulp-util'),
 	data = {
 		project: 'Schäfer AG',
-		env: util.env
+		globals: {
+			env: util.env,
+			gulp: true
+		}
 	};
 
 module.exports = data;
