@@ -1,0 +1,11 @@
+<div class="mod_skiplinks">
+    <ul>
+        {% for link in links %}
+            <li>
+                <a href="{{ link.href }}" accesskey="{{ link.accesskey }}" title="{{ link.title }}">
+                    {{ link.label }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

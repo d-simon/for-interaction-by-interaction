@@ -1,0 +1,13 @@
+{
+	"name": "fibi",
+	"version": "0.0.1",
+	"dependencies": {
+		"jquery": "1.11.1",
+		"normalize.css": "2.1.3",
+		"handlebars": "3.0.3",
+		"skiplinks": "https://gist.github.com/1900563.git"
+	},
+	"devDependencies": {
+		"qunit": "1.15.0"
+	}
+}

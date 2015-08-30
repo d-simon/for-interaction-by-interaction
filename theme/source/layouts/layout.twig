@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if IE 7]>         <html lang="de" class="no-js{% if globals.modifiers is defined %}{% for modifier in globals.modifiers %} {{ modifier }}{% endfor %}{% endif %} ie7 lte-ie9 lte-ie8 lte-ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="de" class="no-js{% if globals.modifiers is defined %}{% for modifier in globals.modifiers %} {{ modifier }}{% endfor %}{% endif %} ie8 lte-ie9 lte-ie8">         <![endif]-->
+<!--[if IE 9]>         <html lang="de" class="no-js{% if globals.modifiers is defined %}{% for modifier in globals.modifiers %} {{ modifier }}{% endfor %}{% endif %} ie9 lte-ie9">                 <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="de" class="no-js{% if globals.modifiers is defined %}{% for modifier in globals.modifiers %} {{ modifier }}{% endfor %}{% endif %}">                         <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ globals.page_title|striptags }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ globals.meta.desc|striptags }}">
+    <meta property="og:title" content="{{ globals.page_title|striptags }}" />
+    <meta property="og:description" content="{{ globals.meta.desc|striptags }}" />
+    {% if meta_img %}<meta property="og:image" content="{{ meta_img }}" />{% endif %}
+    <meta property="og:url" content="{{ globals.permalink }}">
+
+    <link rel="stylesheet" href="{{ globals.theme_root }}/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
+
+    {% if globals.env.dev %}
+        <script src="{{ globals.theme_root }}/assets/js/dev.js"></script>
+    {% endif %}
+
+    <script src="{{ globals.theme_root }}/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
+
+</head>
+<body>
+    <div class="site_wrapper">
+        {% if skiplinks %}
+            {% include "modules/skiplinks/skiplinks.twig" with skiplinks %}
+        {% endif %}
+
+        {% block header %}
+
+            {# include "modules/logo/logo.twig" #}
+
+        {% endblock %}
+
+        <div class="layout_wrapper" id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <script src="{{ globals.theme_root }}/assets/js/main{% if not globals.env.dev %}.min{% endif %}.js"></script>
+</body>
+</html>

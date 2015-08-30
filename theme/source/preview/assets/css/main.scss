@@ -1,0 +1,274 @@
+@import "../../../assets/css/globals/variables";
+@import "../../../assets/css/globals/functions";
+@import "../../../assets/css/globals/mixins";
+@import "../../../assets/css/globals/mediaqueries";
+
+@import "../../../../node_modules/highlight.js/styles/github";
+
+
+// Styleguide defaults
+// ----------------------------------------------------------------------------------------------------
+
+// Colors
+$sg_colorWhite: #fff;
+$sg_colorLightGray: #ccc;
+$sg_colorGray: #444;
+$sg_colorBlack: #000;
+
+// Transitions
+$sg_defaultTransitionProperty: all;
+$sg_defaultTransitionDuration: 0.2s;
+$sg_defaultTransitionTimingFunction: ease-in-out;
+$sg_defaultTransitionDelay: 0s;
+$sg_defaultTransition: $sg_defaultTransitionProperty $sg_defaultTransitionDuration $sg_defaultTransitionTimingFunction $sg_defaultTransitionDelay;
+
+// Sizes
+$sg_fontSize: 14;
+$sg_fontSizeSubHeadings: 20;
+
+// Styleguide index page
+// ----------------------------------------------------------------------------------------------------
+
+.sg_wrapper {
+    padding: 2em;
+    min-height: 100vh;
+    background-color: rgba($sg_colorLightGray, 0.1);
+}
+
+.sg_main {
+    display: flex;
+    margin: 0 -0.5em;
+    flex-flow: row wrap;
+    font-size: pxToRem($sg_fontSize);
+    justify-content: flex-start;
+
+    h2 {
+        margin: 0;
+    }
+
+    ul,
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        display: inline-block;
+        padding: 0.2em 0;
+        color: $sg_colorGray;
+        text-decoration: none;
+
+        &:hover {
+            color: $sg_colorBlack;
+        }
+    }
+}
+
+.sg_inner_wrapper {
+    box-sizing: border-box;
+    padding: 1em;
+    background-color: rgba($sg_colorLightGray, 0.05);
+
+    // Wrapper around lists on the index page
+    &.var_sg_index {
+        flex-grow: 1;
+        margin: 0 0.5em 1em 0.5em;
+
+        &:nth-child(2) {
+            flex-grow: 4;
+
+            .sg_index_list {
+                columns: 3;
+
+                @include mq($to: "medium") {
+                    columns: 2;
+                }
+            }
+        }
+    }
+}
+
+// Lists on index page
+.sg_index_list {
+    padding: 0;
+}
+
+
+// Styleguide content styles
+// ----------------------------------------------------------------------------------------------------
+.sg_title {
+    font-size: pxToRem($sg_fontSize);
+    font-weight: 400;
+    margin: 0 0 pxToRem($sg_fontSize) 0;
+
+    span {
+        display: inline-block;
+        padding-top: 0.2em;
+        vertical-align: middle;
+    }
+}
+
+.sg_logo {
+    @include replaceText;
+
+    background: url(../media/logo.svg) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin-right: pxToRem(20);
+    overflow: hidden;
+    vertical-align: middle;
+    width: pxToRem(288);
+    height: pxToRem(200);
+    position: relative;
+    top: -2em;
+    left: -2em;
+    margin-bottom: -4em;
+
+    &--module {
+        background: url(../media/logo-module.svg) no-repeat;
+        width: pxToRem(258);
+        height: pxToRem(106);
+    }
+}
+
+%sg_sub_headings {
+	font-size: pxToRem($sg_fontSizeSubHeadings);
+    font-weight: 400;
+    margin-top: 2em;
+}
+.sg_h2 {
+    @extend %sg_sub_headings;
+    border-bottom: 1px solid rgba($sg_colorBlack, 0.2);
+}
+.sg_h3 {
+    @extend %sg_sub_headings;
+}
+.sg_h4 {
+    @extend %sg_sub_headings;
+}
+
+.sg_block {
+    border-top: 1px solid $sg_colorWhite;
+    padding: 0.4em 0 2em;
+}
+
+.sg_block_label {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* Icons */
+.sg_icons_label,
+.sg_icons_icon {
+    display: table-cell;
+    border-top: 1px solid $sg_colorLightGray;
+    border-left: 1px solid $sg_colorLightGray;
+    vertical-align: top;
+    padding: 0.5em;
+}
+
+.sg_icons_icon {
+    width: 20%;
+}
+.sg_icons_icon:last-of-type {
+    border-right: 1px solid $sg_colorLightGray;
+}
+
+.sg_icons {
+    display: table;
+    width: 100%;
+
+    border-bottom: 1px solid $sg_colorLightGray;
+}
+
+.sg_icons_item {
+    display: table-row;
+}
+
+
+// Colors
+// ----------------------------------------------------------------------------------------------------
+.sg_color_list {
+    @include clearfix;
+    @include resetList;
+    font-size: pxToRem($sg_fontSize);
+}
+
+.sg_color_item {
+    margin: 0 3em 2em 0;
+    width: 7em;
+    float: left;
+    text-align: center;
+
+    &:hover {
+
+        .sg_color_preview {
+            transform: scale(1.25);
+        }
+    }
+}
+
+.sg_color_preview {
+    width: 5em;
+    height: 5em;
+    margin: 0 auto;
+    border: 1px solid $sg_colorLightGray;
+    border-radius: 50%;
+
+    transition: $sg_defaultTransition;
+}
+
+.sg_color_name {
+    padding-top: 0.8em;
+    font-weight: bold;
+}
+
+.sg_color_value {
+}
+
+
+// Fonts
+// ----------------------------------------------------------------------------------------------------
+.sg_font_style {
+
+}
+
+.sg_font_size {
+    border-bottom: 1px solid $sg_colorLightGray;
+    padding: 1em 0;
+}
+
+
+// Module preview
+// ----------------------------------------------------------------------------------------------------
+.sg_demo {
+    @include clearfix;
+
+    // position: relative;
+}
+
+
+// Module code preview
+// ----------------------------------------------------------------------------------------------------
+.sg_code {
+    padding: 1em;
+    font-size: pxToRem($sg_fontSize*0.75);
+}
+
+
+// Markdown documentation
+// ----------------------------------------------------------------------------------------------------
+.sg_documentation {
+
+    code {
+        background: #f8f8f8;
+        font-size: 0.9em;
+        padding: 0.1em 0.3em;
+    }
+}
+
+
+// QUnit test results
+// ----------------------------------------------------------------------------------------------------
+.sg_tests {
+
+}

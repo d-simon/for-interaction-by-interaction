@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="390px" height="270px" viewBox="0 0 390 270" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>styleguide-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Screen-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="styleguide-logo" sketch:type="MSArtboardGroup">
+            <path d="M-757.25,-3082.75 L-469.085937,-2210.75 L-661.085937,-1468.75 L354.914063,-1200.75 L97.2421875,-915.257812 L-570.757812,-455.257812 L323.242188,-255.257812 L79.2421875,178.742187 L-408.757812,160.742187 L409.242188,794.742187 L-88.7578125,916.742188 L-35.75,1458.75 L155.242188,1742.71094 L-152.757812,2258.71094 L445.25,2964.75" id="Path-79" stroke="#C10017" stroke-width="60" sketch:type="MSShapeGroup" transform="translate(-156.000000, -59.000000) rotate(39.000000) translate(156.000000, 59.000000) "></path>
+            <text id="For-Interaction-Copy-2" sketch:type="MSTextLayer" font-family="Futwora" font-size="26" font-weight="normal" line-spacing="35" fill="#131514">
+                <tspan x="25" y="48">For</tspan>
+                <tspan x="69.2" y="48"> </tspan>
+                <tspan x="77.52" y="48">Interaction</tspan>
+                <tspan x="218.726" y="48"></tspan>
+                <tspan x="25" y="84">By</tspan>
+                <tspan x="57.734" y="84"> </tspan>
+                <tspan x="66.054" y="84">Interaction</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

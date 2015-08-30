@@ -1,0 +1,33 @@
+<!doctype html>
+<!--[if IE 7]>         <html lang="en" class="no-js ie7 lte-ie9 lte-ie8 lte-ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js ie8 lte-ie9 lte-ie8">         <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js ie9 lte-ie9">                 <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js">                         <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if title %}{{ title }} – {% endif %}{{ globals.page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
+    <link rel="stylesheet" href="/preview/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
+
+    {% if globals.env.dev %}
+        <script src="{{ globals.theme_root }}/assets/js/dev.js"></script>
+    {% endif %}
+    <script src="/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
+</head>
+<body>
+    <div class="sg_wrapper">
+        <a href="/" class="sg_logo">{{ globals.page_title }}</a>
+        <h1 class="sg_title">
+            <span>{% if title %}{{ title }}{% else %}{{ globals.page_title }}{% endif %}</span>
+        </h1>
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="/assets/js/main{% if not globals.env.dev %}.min{% endif %}.js"></script>
+</body>
+</html>

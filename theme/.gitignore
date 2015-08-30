@@ -1,0 +1,9 @@
+node_modules
+build
+source/assets/.tmp
+source/assets/vendor
+.sass-cache
+.cache
+.idea
+atlassian-ide-plugin.xml
+.qunit

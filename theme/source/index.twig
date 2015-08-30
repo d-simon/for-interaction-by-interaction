@@ -1,0 +1,59 @@
+{% extends "preview/layouts/layout.twig" %}
+    {% block content %}
+        <div class="sg_main">
+            {% if pages %}
+                <div class="sg_inner_wrapper var_sg_index">
+                    <h2>Pages</h2>
+
+                    <ul class="sg_index_list">
+                        {% for page in pages %}
+                            {% if not page.meta.hideFromListing %}
+                                <li>
+                                    <a href="{{ page.meta.previewUrl }}">{{ page.meta.title }}</a>
+                                    {% if page.meta.feature %} &mdash; {{ page.meta.feature }}{% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            {% if modules %}
+                <div class="sg_inner_wrapper var_sg_index">
+                    <h2>Modules</h2>
+
+                    <ul class="sg_index_list">
+                        {% for module in modules %}
+                            {% if not page.meta.hideFromListing %}
+                                <li>
+                                    <a href="{{ module.meta.previewUrl }}">{{ module.meta.title }}</a>
+                                    {% if module.meta.feature %} &mdash; {{ module.meta.feature }}{% endif %}
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+			{% if styleguide %}
+				<div class="sg_inner_wrapper var_sg_index">
+					<h2>Styleguide</h2>
+
+					<ul class="sg_index_list">
+						{% for guide in styleguide %}
+							{% if not guide.meta.hideFromListing %}
+								<li>
+									<a href="{{guide.meta.previewUrl}}">
+										{{guide.title}}
+									</a>
+								</li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			{% endif %}
+
+
+        </div>
+    {% endblock %}
+
