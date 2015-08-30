@@ -12,6 +12,21 @@ use RuntimeException;
  */
 abstract class AbstractController
 {
+
+    /**
+     * Get context
+     *
+     * @return array<string,\Timber|string>|null|array
+     */
+    abstract public function getContext();
+
+    /**
+     * Get template
+     *
+     * @return string[]
+     */
+    abstract public function getTemplates();
+
     /**
      *  Render template
      *
