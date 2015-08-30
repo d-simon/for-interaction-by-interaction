@@ -1,0 +1,21 @@
+{
+    "key": "group_55e28a7059ce6",
+    "title": "Details \u2013 Seiteneinstellungen",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1440910087
+}
