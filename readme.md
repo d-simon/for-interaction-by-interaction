@@ -16,3 +16,9 @@ In order keep everything clickable, the canvas will be placed behind everything 
 Now to keep images within anchors clickable we need to add placeholders for each image. This again turns out to be tricky, since we cannot just apply `position: relative` to the parent anchor element since that again would create a stacking context. Thus we need to use dynamically generated inline-styles to position the placeholder absolutely (relative to the document).
 
 *Phew*
+
+## Attribution
+
+- The build is based on [estatico (modified)](https://github.com/unic/estatico) by Unic.
+- Heavily inspired and partly copied from the [zero theme](https://github.com/gwa/zero) and [library](https://github.com/gwa/zero-library) by GWA.
+
