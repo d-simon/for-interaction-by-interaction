@@ -100,7 +100,7 @@ $sg_fontSizeSubHeadings: 20;
 // ----------------------------------------------------------------------------------------------------
 .sg_title {
     font-size: pxToRem($sg_fontSize*1.5);
-    font-weight: 400;
+    font-weight: 700;
     margin: 0 0 pxToRem($sg_fontSize) 0;
 
     span {
@@ -136,7 +136,7 @@ $sg_fontSizeSubHeadings: 20;
 
 %sg_sub_headings {
 	font-size: pxToRem($sg_fontSizeSubHeadings);
-    font-weight: 400;
+    font-weight: 700;
     margin-top: 2em;
 }
 .sg_h2 {
