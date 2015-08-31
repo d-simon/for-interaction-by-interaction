@@ -2,7 +2,41 @@
 
 #For Interaction By Interaction — Meta Site
 
-…
+## Setup
+### Installation
+
+1. Install dependencies using [Composer](https://getcomposer.org)
+
+    ```
+    $ composer install
+    ```
+
+2. Copy `wp/wp-config-sample.php` to `/wp-config.php` and customize database settings for your local environment. Use the root directory, because when composer is updating the /wp directory gets overwritten. Add the following lines at the top:
+
+    ```php
+    define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content');
+    define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/content');
+
+    define('WP_SITEURL', 'http://fibi.dev/wp/');
+    define('WP_HOME', 'http://fibi.dev/');
+
+    ```
+
+3. Log in, activate all plugins and select `Custom Theme` as theme.
+
+4. Copy `sample.htaccess`to `.htaccess`.
+
+### Remote Database
+
+If you using a remote database (e.g. staging DB), make sure to not upload any files to your local development.
+Only ever upload to the staging environment and then download the `content/uploads` folder to have the file locally available.
+
+### Theme development
+
+See [theme/README.md](theme/README.md).
+
+`gulp copy` is used to move the built files to `content/theme/fibimeta` (after running `gulp build`).
+
 
 ## Technical Notes
 
