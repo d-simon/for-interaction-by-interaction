@@ -2,7 +2,7 @@
 
 var util = require('gulp-util'),
 	data = {
-		project: 'Schäfer AG',
+		project: 'For Interaction By Interaction',
 		globals: {
 			env: util.env,
 			gulp: true
