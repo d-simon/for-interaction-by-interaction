@@ -1,5 +1,7 @@
 {
 	"Red": "#C10018",
+	"BlackPure": "#000000",
 	"Gray": "#9B9B9B",
-	"GrayLight": "#D4D4D4"
+	"GrayLight": "#D4D4D4",
+	"White": "#FFFFFF"
 }
