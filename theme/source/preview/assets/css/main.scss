@@ -23,7 +23,7 @@ $sg_defaultTransitionDelay: 0s;
 $sg_defaultTransition: $sg_defaultTransitionProperty $sg_defaultTransitionDuration $sg_defaultTransitionTimingFunction $sg_defaultTransitionDelay;
 
 // Sizes
-$sg_fontSize: 14;
+$sg_fontSize: 16;
 $sg_fontSizeSubHeadings: 20;
 
 // Styleguide index page
@@ -90,13 +90,16 @@ $sg_fontSizeSubHeadings: 20;
 // Lists on index page
 .sg_index_list {
     padding: 0;
+    a {
+    	font-size: pxToRem($sg_fontSize*1.125);
+    }
 }
 
 
 // Styleguide content styles
 // ----------------------------------------------------------------------------------------------------
 .sg_title {
-    font-size: pxToRem($sg_fontSize);
+    font-size: pxToRem($sg_fontSize*1.5);
     font-weight: 400;
     margin: 0 0 pxToRem($sg_fontSize) 0;
 
@@ -116,8 +119,8 @@ $sg_fontSizeSubHeadings: 20;
     margin-right: pxToRem(20);
     overflow: hidden;
     vertical-align: middle;
-    width: pxToRem(288);
-    height: pxToRem(200);
+    width: pxToRem(440);
+    height: pxToRem(330);
     position: relative;
     top: -2em;
     left: -2em;
@@ -127,6 +130,7 @@ $sg_fontSizeSubHeadings: 20;
         background: url(../media/logo-module.svg) no-repeat;
         width: pxToRem(258);
         height: pxToRem(106);
+    	margin-bottom: 0;
     }
 }
 

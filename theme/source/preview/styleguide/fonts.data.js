@@ -8,27 +8,22 @@ var data = _.merge(defaultData, {
 		title: 'Fonts',
 		fonts: [
 			{
-				family: 'Arial',
+				family: 'Futwora',
 				font: [
 					{
 						weight: [400],
 						style: ['normal'],
-						size: [48, 24, 18]
-					},
-					{
-						weight: [700],
-						style: ['normal', 'italic'],
-						size: [72, 56]
+						size: [48, 24, 20]
 					}
 				]
 			},
 			{
-				family: 'Courier',
+				family: 'Karla',
 				font: [
 					{
 						weight: [400, 700],
 						style: ['normal'],
-						size: [96, 72, 48]
+						size: [16]
 					}
 				]
 			}
