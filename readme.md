@@ -15,7 +15,7 @@
 
     ```php
     define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content');
-    define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/content');
+    define('WP_CONTENT_DIR', dirname(__FILE__) . '/content');
 
     define('WP_SITEURL', 'http://fibi.dev/wp/');
     define('WP_HOME', 'http://fibi.dev/');

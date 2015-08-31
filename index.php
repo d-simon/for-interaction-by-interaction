@@ -12,7 +12,7 @@
  * @var bool
  */
 define('WP_USE_THEMES', true);
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/content');
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/content');
 
 /** Loads the WordPress Environment and Template */
 require( dirname( __FILE__ ) . '/wp/wp-blog-header.php' );
