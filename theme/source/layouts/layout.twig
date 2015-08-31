@@ -27,21 +27,19 @@
 	{% endif %}
 </head>
 <body>
-	<div class="site_wrapper">
+	<div class="site-wrapper">
 		{% if skiplinks %}
 			{% include "modules/skiplinks/skiplinks.twig" with skiplinks %}
 		{% endif %}
 
 		{% block header %}
-
 			{# include "modules/logo/logo.twig" #}
-
 		{% endblock %}
 
-		<div class="layout_wrapper" id="main">
+		<main class="main-wrapper" id="main">
 			{% block content %}
 			{% endblock %}
-		</div>
+		</main>
 	</div>
 
 	{% if not globals.gulp %}
