@@ -24,7 +24,7 @@ $sg_defaultTransition: $sg_defaultTransitionProperty $sg_defaultTransitionDurati
 
 // Sizes
 $sg_fontSize: 16;
-$sg_fontSizeSubHeadings: 20;
+$sg_fontSizeSubHeadings: 24;
 
 // Styleguide index page
 // ----------------------------------------------------------------------------------------------------
@@ -255,7 +255,7 @@ $sg_fontSizeSubHeadings: 20;
 // ----------------------------------------------------------------------------------------------------
 .sg_code {
     padding: 1em;
-    font-size: pxToRem($sg_fontSize*0.75);
+    font-size: pxToRem($sg_fontSize*0.9);
 }
 
 
@@ -265,7 +265,7 @@ $sg_fontSizeSubHeadings: 20;
 
     code {
         background: #f8f8f8;
-        font-size: 0.9em;
+    	font-size: pxToRem($sg_fontSize*0.9);
         padding: 0.1em 0.3em;
     }
 }
