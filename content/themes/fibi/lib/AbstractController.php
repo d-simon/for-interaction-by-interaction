@@ -4,7 +4,7 @@ namespace FIBI\Theme;
 
 use Timber;
 use TimberLoader;
-	use LogicException;
+use LogicException;
 use RuntimeException;
 
 /**
