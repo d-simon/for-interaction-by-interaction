@@ -2,15 +2,23 @@
  * Default variables
  */
 
-$sizeFontBase: 12px;
-$fontFamilyBase: Arial, sans-serif;
-$sizeLineHeightBase: 1.5;
+$fontFamilyBase: 'Karla', 'Apercu', 'Benton Sans', sans-serif;
+$fontFamilyTitle: 'Futwora', 'Sofia Pro', 'Futura', sans-serif;
 
-$sizeWidthContent: 960px;
+$sizeFontBase:						16px;
+$sizeFontMedium:					20px;
+$sizeFontLarge:						24px;
+$sizeFontHuge:						48px;
 
-$sizeBreakpointSmall: 661px;
-$sizeBreakpointMedium: 1025px;
-$sizeBreakpointLarge: 1281px;
+$sizeLineHeightBase: 				1.5;
+
+$sizeWidthContent: 					1120px;
+
+$sizeBreakpointTiny: 				320px;
+$sizeBreakpointSmall: 				480px;
+$sizeBreakpointMedium: 				768px;
+$sizeBreakpointMediumPlus: 			960px;
+$sizeBreakpointLarge: 				1280px;
 
 
 /**
