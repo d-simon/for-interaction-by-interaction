@@ -1,0 +1,19 @@
+<section class="mod_section{% if modifiers is defined %}{% for modifier in modifiers %} mod_section--{{ modifier }}{% endfor %}{% endif %}" data-init="section">
+	{% block title %}
+		{% if title %}
+			<h2 class="mod_section__title">{{ title }}</h2>
+		{% endif %}
+		{% if lead %}
+			<p class="mod_section__lead">{{ lead }}</p>
+		{% endif %}
+	{% endblock %}
+	<div class="mod_section__content">
+		{% block content %}
+			{% if globals.gulp %}
+				{{ content }}
+			{% else %}
+				{{ content|wpautop }}
+			{% endif %}
+		{% endblock %}
+	</div>
+</section>
