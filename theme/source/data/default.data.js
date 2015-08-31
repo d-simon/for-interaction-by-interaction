@@ -5,7 +5,10 @@ var util = require('gulp-util'),
 		project: 'For Interaction By Interaction',
 		globals: {
 			env: util.env,
-			gulp: true
+			gulp: true,
+			project: {
+				title: 'For Interaction By Interaction'
+			}
 		}
 	};
 

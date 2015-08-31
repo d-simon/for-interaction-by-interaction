@@ -18,6 +18,9 @@ function _theme_add_twig_globals($twig) {
             'page_title' => get_the_title(),
             'theme_root' => get_template_directory_uri(),
             'home_url' => get_home_url(),
+            'project' => array(
+            	'title' => get_field('project_title', 'option')
+        	),
             // Load unminified (true) or minified (false) assets
             'env' => array(
                 'dev' => false

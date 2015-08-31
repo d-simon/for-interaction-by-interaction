@@ -1,7 +1,29 @@
 {
     "key": "group_55e28a7059ce6",
     "title": "Details \u2013 Seiteneinstellungen",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_55e4da7df20aa",
+            "label": "Project Title",
+            "name": "project_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "For Interaction By Interation",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
     "location": [
         [
             {
@@ -17,5 +39,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1440910087
+    "active": 1,
+    "description": "",
+    "modified": 1441061583
 }
