@@ -11,7 +11,7 @@
     $ composer install
     ```
 
-2. Copy `wp/wp-config-sample.php` to `/wp-config.php` and customize database settings for your local environment. Use the root directory, because when composer is updating the /wp directory gets overwritten. Add the following lines at the top:
+2. Copy `wp/wp-config-sample.php` to `/wp-config.php` and customize database settings for your local environment. Use the root directory, because when composer is updating the /wp directory gets overwritten. Add the following lines at the top and adjust your `WP_SITEURL` and `WP_HOME` if needed:
 
     ```php
     define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content');
@@ -22,7 +22,7 @@
 
     ```
 
-3. Log in, activate all plugins and select `Custom Theme` as theme.
+3. Log in, activate all plugins and select `For Interaction By Interaction` as theme.
 
 4. Copy `sample.htaccess`to `.htaccess`.
 
@@ -35,7 +35,7 @@ Only ever upload to the staging environment and then download the `content/uploa
 
 See [theme/README.md](theme/README.md).
 
-`gulp copy` is used to move the built files to `content/theme/fibimeta` (after running `gulp build`).
+`gulp copy` is used to move the built files to `content/theme/fibi` (after running `gulp build`).
 
 ---
 
