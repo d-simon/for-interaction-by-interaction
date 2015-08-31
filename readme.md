@@ -1,4 +1,8 @@
+![For Interaction By Interaction](https://rawgit.com/d-simon/for-interaction-by-interaction/master/theme/source/preview/assets/media/logo-module.svg "For Interaction By Interaction")
+
 #For Interaction By Interaction — Meta Site
+
+…
 
 ## Technical Notes
 
