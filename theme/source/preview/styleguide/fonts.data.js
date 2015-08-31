@@ -11,7 +11,7 @@ var data = _.merge(defaultData, {
 				family: 'Futwora',
 				font: [
 					{
-						weight: [400],
+						weight: [700],
 						style: ['normal'],
 						size: [48, 24, 20]
 					}
