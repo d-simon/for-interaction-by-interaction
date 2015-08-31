@@ -1,7 +1,5 @@
 {
-	"Red": "#D9222A",
-	"DarkGray": "#404040",
-	"Gray": "#b4b4b4",
-	"LightGray": "#f1f1f1",
-	"White": "#ffffff"
+	"Red": "#C10018",
+	"Gray": "#9B9B9B",
+	"GrayLight": "#D4D4D4"
 }

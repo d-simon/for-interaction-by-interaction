@@ -16,7 +16,7 @@ var taskName = 'html',
             'source/{,demo/}{,layouts/,pages/**/,modules/**/,preview/**/}*.twig',
             'source/{,demo/}{,layouts/,pages/**/,modules/**/,preview/**/}*.data.js',
             'source/{,demo/}modules/**/*.md',
-            'source/assets/css/data/colors.html'
+            'source/assets/css/data/colors.json'
         ]
     };
 
