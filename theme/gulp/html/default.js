@@ -50,7 +50,7 @@ gulp.task(taskName, function(cb) {
 				 * the frontend and backend by implementing the same
 				 * function in Twig.js and Timber.
 				 */
-				name: "getField",
+				name: "getFieldOfPost",
 				func: function (event, field_name) {
 					return (event) ? event[field_name] : null;
 				}

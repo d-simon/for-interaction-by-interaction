@@ -7,7 +7,7 @@
 		<span class="mod_event__subinfo">
 			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date }}</time>
 
-			{% set event_guests = getField(event, 'event_guests') %}
+			{% set event_guests = getFieldOfPost(event, 'event_guests') %}
 				{% if event_guests %}
 					<span class="mod_event__subinfo-separator">/</span>
 					<ul class="mod_event__guests">
@@ -22,7 +22,7 @@
 				{% endif %}
 		</span>
 		<div class="mod_event__description" itemprop="description">
-			{{ event.content }}
+			{{ getFieldOfPost(event, 'event_excerpt') }}
 		</div>
 	</div>
 </article>

@@ -20,7 +20,7 @@ function _theme_add_twig_functions($twig) {
 	 * NOTE: This generates an additional object lookup, which
 	 *		 hits the object cache. Hence, no performance overhead.
 	 */
-    $twig->addFunction('getField', new Twig_SimpleFunction('getField', function ($post, $fieldname) {
+    $twig->addFunction('getFieldOfPost', new Twig_SimpleFunction('getFieldOfPost', function ($post, $fieldname) {
     	return ($post) ? get_field($fieldname, $post->ID) : null;
     }));
 
