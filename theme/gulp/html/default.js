@@ -44,6 +44,12 @@ gulp.task(taskName, function(cb) {
         },
 		twigFunctions = [
 			{
+				/**
+				 * This function is simply a mockup of proxy function for
+				 * get_field which enables us to use the same template in
+				 * the frontend and backend by implementing the same
+				 * function in Twig.js and Timber.
+				 */
 				name: "getField",
 				func: function (event, field_name) {
 					return (event) ? event[field_name] : null;
