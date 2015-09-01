@@ -27,6 +27,58 @@ abstract class AbstractController
      */
     abstract public function getTemplates();
 
+	/**
+     * Get Post
+     *
+     * @param string $postClass
+     *
+     * @return array|boolean|null
+     */
+    public function getPost($postClass = '\TimberPost')
+    {
+        return Timber::get_post(false, $postClass);
+    }
+
+    /**
+     * Get Post on some parameters
+     *
+     * @param string[] $args
+     * @param string   $postClass
+     *
+     * @return array|boolean|null
+     */
+    public function getPostForArgs($args, $postClass = '\TimberPost')
+    {
+        return Timber::get_post($args, $postClass);
+    }
+
+    /**
+     * Get Posts
+     *
+     * @param string  $postClass
+     * @param boolean $collection
+     *
+     * @return array|boolean|null
+     */
+    public function getPosts($postClass = '\TimberPost', $collection = false)
+    {
+        return Timber::get_posts(false, $postClass, $collection);
+    }
+
+    /**
+     * Get Posts on some parameters
+     *
+     * @param string[] $args
+     * @param string   $postClass
+     * @param boolean  $collection
+     *
+     * @return array|boolean|null
+     */
+    public function getPostsForArgs($args, $postClass = '\TimberPost', $collection = false)
+    {
+        return Timber::get_posts($args, $postClass, $collection);
+    }
+
     /**
      *  Render template
      *

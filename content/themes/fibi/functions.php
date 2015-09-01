@@ -28,7 +28,11 @@ if (!class_exists('Timber')) {
 /**
  * Load all files
  */
-foreach (glob('{' . TEMPLATEPATH .'/functions/*.php,' . TEMPLATEPATH . '/lib/*.php}', GLOB_BRACE) as $filename) {
+foreach (glob('{' .
+			TEMPLATEPATH . '/functions/*.php,' .
+			TEMPLATEPATH . '/controllers/*.php,' .
+			TEMPLATEPATH . '/lib/*.php' .
+		'}', GLOB_BRACE) as $filename) {
     require_once($filename);
 }
 

@@ -1,30 +1,10 @@
 <?php
 
-use FIBI\Theme\AbstractController;
+use FIBI\Theme\HomeController;
+use FIBI\Theme\IndexController;
 
-/**
- * Index.
- */
-final class Index extends AbstractController
-{
-	public function getContext()
-	{
-		return [
-			'events' => Timber::get_posts(array(
-				'post_type' 		=> 'event',
-				'posts_per_page' 	=> -1
-			))
-		];
-	}
-
-	public function getTemplates()
-	{
-		if (is_home()) {
-		    return ['pages/home/home.twig'];
-		}
-
-		return ['pages/index/index.twig'];
-	}
+if (is_home()) {
+	(new HomeController())->render();
+} else {
+	(new IndexController())->render();
 }
-
-(new Index())->render();

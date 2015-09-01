@@ -1,7 +1,21 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	<h2>{{ title }}</h2>
-
-	<pre>{{ dump(events) }}</pre>
+	{% embed "modules/section/section.twig" with { title: globals.project.title, content: globals.project.lead, modifiers: ['home-lead'] } %}
+		{% block title %}
+			<h1 class="mod_section__title">{{ title }}</h1>
+		{% endblock %}
+	{% endembed %}
+	{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
+		{% block content %}
+			{{ dump(post) }}
+		{% endblock %}
+	{% endembed %}
+	{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
+		{% block content %}
+			{% for post in posts %}
+				{{ dump(post) }}
+			{% endfor %}
+		{% endblock %}
+	{% endembed %}
 {% endblock %}
