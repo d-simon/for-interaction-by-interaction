@@ -6,17 +6,21 @@
 			<h1 class="mod_section__title">{{ title }}</h1>
 		{% endblock %}
 	{% endembed %}
-	{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
-		{% block content %}
-			{% include "modules/event/event.twig" with { event: post } %}
-		{% endblock %}
-	{% endembed %}
-	{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
-		{% block content %}
-			{# TODO: Wrap this loop in a module #}
-			{% for post in posts %}
+	{% if post_current %}
+		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
+			{% block content %}
 				{% include "modules/event/event.twig" with { event: post } %}
-			{% endfor %}
-		{% endblock %}
-	{% endembed %}
+			{% endblock %}
+		{% endembed %}
+	{% endif %}
+	{% if posts_archive %}
+		{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
+			{% block content %}
+				{# TODO: Wrap this loop in a module #}
+				{% for post in posts %}
+					{% include "modules/event/event.twig" with { event: post } %}
+				{% endfor %}
+			{% endblock %}
+		{% endembed %}
+	{% endif %}
 {% endblock %}
