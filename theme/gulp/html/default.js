@@ -89,9 +89,6 @@ gulp.task(taskName, function(cb) {
 		}))
 		.pipe(plumber())
 		.pipe(twig({
-			data: function(file) {
-				return file.data;
-			},
 			base: './source/',
 			includes: taskConfig.includes,
 			functions: twigFunctions,
