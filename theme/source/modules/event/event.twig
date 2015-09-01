@@ -7,20 +7,19 @@
 		<span class="mod_event__subinfo">
 			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date }}</time>
 
-			{{ dump(getField(event, 'event_guests')) }}
-			{% if event.event_guests %}
-				<span class="mod_event__subinfo-separator">/</span>
-				<ul class="mod_event__guests">
-					{% for guest in event_guests %}
-						<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
-							{{ dump(guest) }}
-							<a href="#" class="mod_event__guest-link" itemprop="url">
-								<span class="mod_event__guest-name" itemprop="name">iart</span>
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-			{% endif %}
+			{% set event_guests = getField(event, 'event_guests') %}
+				{% if event_guests %}
+					<span class="mod_event__subinfo-separator">/</span>
+					<ul class="mod_event__guests">
+						{% for guest in event_guests %}
+							<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
+								<a href="#" class="mod_event__guest-link" itemprop="url">
+									<span class="mod_event__guest-name" itemprop="name">{{ guest.name }}</span>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 		</span>
 		<div class="mod_event__description" itemprop="description">
 			{{ event.content }}
