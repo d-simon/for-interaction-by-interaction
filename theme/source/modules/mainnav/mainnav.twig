@@ -1,0 +1,11 @@
+<nav class="mod_mainnav" data-init="mainnav">
+	<ul class="mod_mainnav__items">
+		{% for item in mainnav.get_items %}
+			<li class="mod_mainnav__item {{ item.classes | join(' ') }}">
+				<a href="{{ item.get_link }}" class="mod_mainnav__item-link">
+					<span class="mod_mainnav__item-title">{{ item.title }}</span>
+				</a>
+			</li>
+        {% endfor %}
+	</ul>
+</nav>

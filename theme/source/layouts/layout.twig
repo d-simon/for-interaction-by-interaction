@@ -34,13 +34,16 @@
 		{% endif %}
 
 		{% block header %}
-			{# include "modules/logo/logo.twig" #}
+			{% include "modules/header/header.twig" %}
 		{% endblock %}
 
 		<main class="main-wrapper" id="main">
 			{% block content %}
 			{% endblock %}
 		</main>
+		{% block footer %}
+			{% include "modules/footer/footer.twig" %}
+		{% endblock %}
 	</div>
 
 	{% if not globals.gulp %}
