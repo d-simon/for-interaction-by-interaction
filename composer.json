@@ -39,9 +39,11 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/wp-super-cache": "*",
     "wpackagist-plugin/timber-library": "*",
-    "wpackagist-theme/twentyfifteen": "*",
+    "wpackagist-plugin/debug-bar": "*",
+    "wpackagist-plugin/debug-bar-timber": "*",
     "wpackagist-plugin/google-sitemap-generator": "*",
     "wpackagist-plugin/force-regenerate-thumbnails": "*",
+    "wpackagist-theme/twentyfifteen": "*",
     "roots/soil": "3.4.0"
   },
   "extra": {
