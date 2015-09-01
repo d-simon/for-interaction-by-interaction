@@ -8,13 +8,14 @@
 	{% endembed %}
 	{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
 		{% block content %}
-			{{ dump(post) }}
+			{% include "modules/event/event.twig" with { event: post } %}
 		{% endblock %}
 	{% endembed %}
 	{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
 		{% block content %}
+			{# TODO: Wrap this loop in a module #}
 			{% for post in posts %}
-				{{ dump(post) }}
+				{% include "modules/event/event.twig" with { event: post } %}
 			{% endfor %}
 		{% endblock %}
 	{% endembed %}
