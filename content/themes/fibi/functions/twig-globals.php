@@ -3,10 +3,22 @@
 if (is_admin()) return;
 
 /**
+ * Setup Timber Context (e.g. Menus)
+ */
+add_filter('timber_context', '_theme_setup_twig_context');
+function _theme_setup_twig_context($data) {
+
+    $data['mainnav'] = new TimberMenu('mainnav');
+
+    return $data;
+}
+
+/**
  * Add some data to global Twig context
  *
  * Directly accessible in every template (e.g. {{ globals.home_url }})
  */
+add_filter('get_twig', '_theme_add_twig_globals');
 function _theme_add_twig_globals($twig) {
 
     $default_data = _theme_get_json_data('data/default.json');
@@ -51,4 +63,4 @@ function _theme_get_json_data($relative_path) {
     return $data;
 }
 
-add_filter('get_twig', '_theme_add_twig_globals');
+
