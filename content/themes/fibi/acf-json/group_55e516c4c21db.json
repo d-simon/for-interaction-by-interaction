@@ -1,0 +1,130 @@
+{
+    "key": "group_55e516c4c21db",
+    "title": "Event",
+    "fields": [
+        {
+            "key": "field_55e516c71e161",
+            "label": "Anreisser",
+            "name": "event_excerpt",
+            "type": "textarea",
+            "instructions": "Anreisser der auf der Startseite gezeigt wird.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55e5189a81b3a",
+            "label": "G\u00e4ste",
+            "name": "event_guests",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "row",
+            "button_label": "+ Gast hinzuf\u00fcgen",
+            "sub_fields": [
+                {
+                    "key": "field_55e518ba81b3b",
+                    "label": "Guest Name",
+                    "name": "event_guest_name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55e518dd81b3c",
+                    "label": "Guest Type",
+                    "name": "event_guest_type",
+                    "type": "select",
+                    "instructions": "Is the guest an organisation or a person?",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "person": "Person",
+                        "organisation": "Organisation"
+                    },
+                    "default_value": {
+                        "person": "person"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_55e5191d81b3d",
+                    "label": "URL",
+                    "name": "event_guest_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1441077725
+}
