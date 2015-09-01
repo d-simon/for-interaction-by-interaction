@@ -13,13 +13,23 @@ var data = _.merge(defaultData, {
 		post_current: {
 			fields: {},
 			title: 'Zu Besuch bei Google',
-			content: ''
+			content: '',
+			event_guests: {
+				'event_guest_name': 'iart',
+				'event_guest_type': 'organisation',
+				'event_guest_url': 'url'
+			}
 		},
 		posts_archive: [
 			{
 				fields: {},
 				title: 'iart zu Gast aus Basel',
-				content: ''
+				content: '',
+				event_guests: {
+					'event_guest_name': 'iart',
+					'event_guest_type': 'organisation',
+					'event_guest_url': 'url'
+				}
 			}
 		]
 	});

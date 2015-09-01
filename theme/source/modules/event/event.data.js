@@ -10,6 +10,13 @@ var data = _.merge(defaultData, {
 			title: 'Event',
 			code: dataHelper.getTemplateCode('event.twig'),
 			documentation: dataHelper.getDocumentation('event.md')
+		},
+		event: {
+			event_guests: {
+				'event_guest_name': 'iart',
+				'event_guest_type': 'organisation',
+				'event_guest_url': 'url'
+			}
 		}
 	});
 

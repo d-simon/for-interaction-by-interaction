@@ -41,7 +41,15 @@ gulp.task(taskName, function(cb) {
             } catch (err) {
                 return (err.code !== 'ENOENT');
             };
-        };
+        },
+		twigFunctions = [
+			{
+				name: "getField",
+				func: function (event, field_name) {
+					return (event) ? event[field_name] : null;
+				}
+			}
+		];
 
 	gulp.src(taskConfig.src, {
 			base: './source'
@@ -78,7 +86,9 @@ gulp.task(taskName, function(cb) {
             data: function(file) {
                 return file.data;
             },
+            base: './source/',
             includes: taskConfig.includes,
+            functions: twigFunctions,
             getIncludeId: function(filePath) {
                 return path.relative('./source', filePath);
             }
