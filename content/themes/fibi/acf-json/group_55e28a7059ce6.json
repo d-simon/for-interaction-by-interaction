@@ -22,6 +22,24 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_55e4e0ffc5de7",
+            "label": "Project Lead",
+            "name": "project_lead",
+            "type": "wysiwyg",
+            "instructions": "Short lead text shown on the start page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
         }
     ],
     "location": [
@@ -41,5 +59,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1441061583
+    "modified": 1441063273
 }
