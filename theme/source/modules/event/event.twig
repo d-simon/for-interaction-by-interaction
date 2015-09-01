@@ -5,7 +5,7 @@
 	<div class="mod_event__info">
 		<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
 		<span class="mod_event__subinfo">
-			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date }}</time>
+			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('F j, Y') }}</time>
 
 			{% set event_guests = getFieldOfPost(event, 'event_guests') %}
 				{% if event_guests %}
@@ -13,8 +13,13 @@
 					<ul class="mod_event__guests">
 						{% for guest in event_guests %}
 							<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
-								<a href="#" class="mod_event__guest-link" itemprop="url">
-									<span class="mod_event__guest-name" itemprop="name">{{ guest.name }}</span>
+								{% if guest.event_guest_url %}
+									<a href="guest.event_guest_url" class="mod_event__guest-link" itemprop="url">
+								{% endif %}
+									<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
+								{% if guest.event_guest_url %}
+									</a>
+								{% endif %}
 								</a>
 							</li>
 						{% endfor %}

@@ -2,7 +2,8 @@
 
 var _ = require('lodash'),
 	requireNew = require('require-new'),
-	defaultData = requireNew('../../data/default.data.js');
+	defaultData = requireNew('../../data/default.data.js'),
+	eventData = requireNew('../../modules/event/event.data.js');
 
 var data = _.merge(defaultData, {
 		meta: {
@@ -10,27 +11,12 @@ var data = _.merge(defaultData, {
 		},
 		title: 'Home',
 		text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-		post_current: {
-			fields: {},
-			title: 'Zu Besuch bei Google',
-			content: '',
-			event_guests: {
-				'event_guest_name': 'iart',
-				'event_guest_type': 'organisation',
-				'event_guest_url': 'url'
-			}
-		},
+		post_current: _.merge({}, eventData.event, {
+			title: 'Besuch bei Google',
+			post_date: '2015-10-06 18:50:37'
+		}),
 		posts_archive: [
-			{
-				fields: {},
-				title: 'iart zu Gast aus Basel',
-				content: '',
-				event_guests: {
-					'event_guest_name': 'iart',
-					'event_guest_type': 'organisation',
-					'event_guest_url': 'url'
-				}
-			}
+			eventData.event
 		]
 	});
 
