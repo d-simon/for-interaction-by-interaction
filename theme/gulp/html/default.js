@@ -29,7 +29,7 @@ gulp.task(taskName, function(cb) {
 		path = require('path'),
 		tap = require('gulp-tap'),
 		rename = require('gulp-rename'),
-		// prettify = require('gulp-prettify'),
+		prettify = require('gulp-prettify'),
 		twig = require('gulp-twig');
 
 	var fileExists = function(path) {
@@ -105,10 +105,11 @@ gulp.task(taskName, function(cb) {
 
 			file.contents = new Buffer(content);
 		}))
-		// .pipe(prettify({
-		// 	indent_with_tabs: true,
-		// 	max_preserve_newlines: 1
-		// }))
+		.pipe(prettify({
+			indent_with_tabs: false,
+			max_preserve_newlines: 1,
+			indent_size: 4
+		}))
 		.pipe(rename({
 			extname: '.html'
 		}))
