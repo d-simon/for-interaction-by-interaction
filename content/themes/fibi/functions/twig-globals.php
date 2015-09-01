@@ -24,7 +24,7 @@ function _theme_add_twig_globals($twig) {
         	),
         	// Load unminified (true) or minified (false) assets
             'env' => array(
-                'dev' => false
+                'dev' => false // consider setting this to WP_DEBUG
             ),
             // Use correct templates
             'gulp' => false
