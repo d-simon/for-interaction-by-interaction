@@ -21,7 +21,7 @@ function _theme_add_twig_functions($twig) {
 	 *		 hits the object cache. Hence, no performance overhead.
 	 */
     $twig->addFunction('getField', new Twig_SimpleFunction('getField', function ($post, $fieldname) {
-    	return get_field($fieldname, $post->ID);
+    	return ($post) ? get_field($fieldname, $post->ID) : null;
     }));
 
     return $twig;
