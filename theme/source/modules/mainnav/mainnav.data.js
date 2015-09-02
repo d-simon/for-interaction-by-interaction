@@ -19,11 +19,11 @@ var data = _.merge(defaultData, {
 				},
 				{
 					title: 'Archiv',
-					get_link: '#'
+					get_link: '/pages/archive/archive.html'
 				},
 				{
 					title: 'Idee',
-					get_link: '#'
+					get_link: '/pages/about/about.html'
 				},
 				{
 					title: '(Spacer)',
@@ -31,11 +31,11 @@ var data = _.merge(defaultData, {
 				},
 				{
 					title: 'Kontakt',
-					get_link: '#'
+					get_link: '/pages/contact/contact.html'
 				},
 				{
 					title: 'Newsletter',
-					get_link: '#'
+					get_link: '/pages/newsletter/newsletter.html'
 				},
 			]
 		}
