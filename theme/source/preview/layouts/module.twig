@@ -18,7 +18,7 @@
     <script src="/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
 </head>
 <body>
-    <div class="sg_wrapper">
+    <div class="sg_wrapper sg_wrapper--module">
         <a href="/" class="sg_logo sg_logo--module">{{ globals.page_title }}</a>
         <h1 class="sg_title">
             <span>{% if meta.title %}{{ meta.title }}{% else %}{{ globals.page_title }}{% endif %}</span>

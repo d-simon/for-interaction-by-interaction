@@ -26,17 +26,27 @@ $sg_defaultTransition: $sg_defaultTransitionProperty $sg_defaultTransitionDurati
 $sg_fontSize: 16;
 $sg_fontSizeSubHeadings: 24;
 
+// Logo
+
+$sg_logoHeight: pxToRem(330);
+$sg_logoHeightModule: pxToRem(106);
+
 // Styleguide index page
 // ----------------------------------------------------------------------------------------------------
 
 body {
 	padding: 0;
+    background-color: rgba($sg_colorLightGray, 0.1);
 }
 
 .sg_wrapper {
     padding: 2em;
     min-height: 100vh;
-    background-color: rgba($sg_colorLightGray, 0.1);
+    max-width: $sizeContentMaxWidth;
+    margin: ($sg_logoHeight - 6rem) auto 0;
+    &--module {
+    	margin: $sg_logoHeightModule auto 0;
+    }
 }
 
 .sg_main {
@@ -125,10 +135,9 @@ body {
     vertical-align: middle;
     width: pxToRem(440);
     height: pxToRem(330);
-    position: relative;
-    top: -2em;
-    left: -2em;
-    margin-bottom: -4em;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     &--module {
         background: url(../media/logo-module.svg) no-repeat;
