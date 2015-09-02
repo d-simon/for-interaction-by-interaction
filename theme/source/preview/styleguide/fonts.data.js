@@ -11,9 +11,19 @@ var data = _.merge(defaultData, {
 				family: 'Futwora',
 				font: [
 					{
+						weight: [400],
+						style: ['normal'],
+						size: [48, 28, 24]
+					}
+				]
+			},
+			{
+				family: 'Futwora',
+				font: [
+					{
 						weight: [700],
 						style: ['normal'],
-						size: [48, 24, 20]
+						size: [24, 20]
 					}
 				]
 			},
@@ -21,7 +31,17 @@ var data = _.merge(defaultData, {
 				family: 'Karla',
 				font: [
 					{
-						weight: [400, 700],
+						weight: [400],
+						style: ['normal'],
+						size: [20, 18, 16]
+					}
+				]
+			},
+			{
+				family: 'Karla',
+				font: [
+					{
+						weight: [700],
 						style: ['normal'],
 						size: [16]
 					}
