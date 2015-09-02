@@ -1,5 +1,13 @@
 $m: "mod_header";
 
 .#{$m} {
+	position: relative;
+	margin-top: 8rem;
+	margin-bottom: 10rem;
 
+	&__mainnav {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 }

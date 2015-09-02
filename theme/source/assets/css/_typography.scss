@@ -34,16 +34,19 @@ pre {
 @mixin fontH1Plus($color: true) {
 	@include styleFontTitle;
 	font-size: $sizeFontHuge;
+	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontH1($color: true) {
 	@include styleFontTitle;
 	font-size: $sizeFontLarge;
+	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontH2($color: true) {
 	@include styleFontTitle;
 	font-size: $sizeFontMedium;
+	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontBase($color: true) {

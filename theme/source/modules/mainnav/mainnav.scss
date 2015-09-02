@@ -1,5 +1,23 @@
 $m: "mod_mainnav";
 
-.#{$m} {
+$mainnavWidth:				450px !default;
 
+.#{$m} {
+	width: $mainnavWidth;
+
+	&__items {
+		@include resetList();
+		@include clearfix;
+	}
+	&__item {
+		float: left;
+		width: 33%;
+
+		&-link {
+			@include linkStyle();
+			font-size: $sizeFontBasePlus;
+			line-height: 2.2;
+		}
+
+	}
 }

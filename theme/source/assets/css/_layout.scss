@@ -13,6 +13,9 @@ body {
 	font-size: 100%;
 	line-height: $sizeLineHeightBase;
 	padding: $sizeGutter / 2;
+	@include mq($from: "large") {
+		padding: $sizeGutter;
+	}
 
 	/* VERIFY / DEV: fixes 100vw horizontal scrollbar issue */
     overflow-x: hidden;
