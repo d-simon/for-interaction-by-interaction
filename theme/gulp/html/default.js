@@ -51,8 +51,16 @@ gulp.task(taskName, function(cb) {
 				 * function in Twig.js and Timber.
 				 */
 				name: "getFieldOfPost",
-				func: function (event, field_name) {
+				func: function(event, field_name) {
 					return (event) ? event[field_name] : null;
+				}
+			}
+		],
+		twigFilters = [
+			{
+				name: "getImageSize",
+				func: function(value) {
+					return value;
 				}
 			}
 		];

@@ -24,5 +24,7 @@ function _theme_add_twig_functions($twig) {
     	return ($post) ? get_field($fieldname, $post->ID) : null;
     }));
 
+    $twig->addFilter('getImageSize', new Twig_SimpleFilter('getImageSize', '_theme_get_image_size'));
+
     return $twig;
 }
