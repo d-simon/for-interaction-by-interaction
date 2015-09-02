@@ -4,4 +4,10 @@ body {
 	font-family: $fontFamilyBase;
 	font-size: 100%;
 	line-height: $sizeLineHeightBase;
+	padding: $sizeGutter;
+}
+
+.site-wrapper {
+	max-width: $sizeContentMaxWidth;
+	margin: 0 auto;
 }

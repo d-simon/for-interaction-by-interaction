@@ -29,6 +29,10 @@ $sg_fontSizeSubHeadings: 24;
 // Styleguide index page
 // ----------------------------------------------------------------------------------------------------
 
+body {
+	padding: 0;
+}
+
 .sg_wrapper {
     padding: 2em;
     min-height: 100vh;
