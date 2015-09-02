@@ -1,6 +1,14 @@
 <article class="mod_event{% if modifiers is defined %}{% for modifier in modifiers %} mod_event--{{ modifier }}{% endfor %}{% endif %}" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
 	<div class="mod_event__content">
 		<figure class="mod_event__figure" itemprop="image">
+			{% if modifiers is not defined %}
+				{#
+				 # This for Twig.js only since the "and" operator implementation
+				 # seems to differ. Both sides are evaluated. Even if the left
+				 # one evaluates to false. See: Short-Circuit Evaluation.
+				 #}
+				{% set modifiers = [] %}
+			{% endif %}
 			{% if modifiers is defined and 'current' in modifiers %}
 				{% set event_image_size = 'event-current' %}
 			{% else %}
