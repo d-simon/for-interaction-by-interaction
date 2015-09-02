@@ -16,6 +16,12 @@ $m: "mod_section";
 				@include fontH1Plus();
 				margin-bottom: 3rem;
 			}
+			&__content {
+				max-width: 640px;
+				text-align: center;
+				margin-right: auto;
+				margin-left: auto;
+			}
 		}
 	}
 }
