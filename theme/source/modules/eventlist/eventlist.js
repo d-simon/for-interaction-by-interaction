@@ -1,5 +1,5 @@
 /*!
- * eventarchive
+ * eventlist
  *
  * @author
  * @copyright
@@ -10,7 +10,7 @@
 ;(function($, undefined) {
 	'use strict';
 
-	var name = 'eventarchive',
+	var name = 'eventlist',
 		events = {
 			// eventname: 'eventname.fibi.' + name
 		},

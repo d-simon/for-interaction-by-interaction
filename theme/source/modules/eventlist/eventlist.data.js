@@ -7,9 +7,9 @@ var _ = require('lodash'),
 
 var data = _.merge(defaultData, {
 		meta: {
-			title: 'Eventarchive',
-			code: dataHelper.getTemplateCode('eventarchive.twig'),
-			documentation: dataHelper.getDocumentation('eventarchive.md')
+			title: 'Eventlist',
+			code: dataHelper.getTemplateCode('eventlist.twig'),
+			documentation: dataHelper.getDocumentation('eventlist.md')
 		}
 	});
 
