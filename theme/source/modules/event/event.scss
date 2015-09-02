@@ -1,5 +1,16 @@
 $m: "mod_event";
 
 .#{$m} {
+	&__content {
+		@include gridContainer();
+	}
+
+	&__figure {
+		@include gridColumn($columns: 7, $total: 12);
+	}
+
+	&__info {
+		@include gridColumn($columns: 5, $total: 12);
+	}
 
 }
