@@ -100,6 +100,7 @@ gulp.task(taskName, function(cb) {
 			base: './source/',
 			includes: taskConfig.includes,
 			functions: twigFunctions,
+			filters: twigFilters,
 			getIncludeId: function(filePath) {
 				return path.relative('./source', filePath);
 			}
