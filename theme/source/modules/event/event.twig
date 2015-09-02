@@ -1,32 +1,34 @@
 <article class="mod_event" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
-	<figure class="mod_event__figure" itemprop="image">
-		<img src="{{ event.image }}" class="mod_event__image" alt="">
-	</figure>
-	<div class="mod_event__info">
-		<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
-		<div class="mod_event__subinfo">
-			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('F j, Y') }}</time>
-			{% set event_guests = getFieldOfPost(event, 'event_guests') %}
-				{% if event_guests %}
-					<span class="mod_event__subinfo-separator">/</span>
-					<ul class="mod_event__guests">
-						{% for guest in event_guests %}
-							<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
-								{% if guest.event_guest_url %}
-									<a href="guest.event_guest_url" class="mod_event__guest-link" itemprop="url">
-								{% endif %}
-									<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
-								{% if guest.event_guest_url %}
+	<div class="mod_event__content">
+		<figure class="mod_event__figure" itemprop="image">
+			<img src="{{ event.image }}" class="mod_event__image" alt="">
+		</figure>
+		<div class="mod_event__info">
+			<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+			<div class="mod_event__subinfo">
+				<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('F j, Y') }}</time>
+				{% set event_guests = getFieldOfPost(event, 'event_guests') %}
+					{% if event_guests %}
+						<span class="mod_event__subinfo-separator">/</span>
+						<ul class="mod_event__guests">
+							{% for guest in event_guests %}
+								<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
+									{% if guest.event_guest_url %}
+										<a href="guest.event_guest_url" class="mod_event__guest-link" itemprop="url">
+									{% endif %}
+										<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
+									{% if guest.event_guest_url %}
+										</a>
+									{% endif %}
 									</a>
-								{% endif %}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-				{% endif %}
-		</div>
-		<div class="mod_event__description" itemprop="description">
-			{{ getFieldOfPost(event, 'event_excerpt') }}
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+			</div>
+			<div class="mod_event__description" itemprop="description">
+				{{ getFieldOfPost(event, 'event_excerpt') }}
+			</div>
 		</div>
 	</div>
 </article>
