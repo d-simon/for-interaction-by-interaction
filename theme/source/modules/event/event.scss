@@ -13,4 +13,44 @@ $m: "mod_event";
 		@include gridColumn($columns: 5, $total: 12);
 	}
 
+	&__title {
+		@include fontH1();
+		margin-bottom: 0.25em;
+	}
+
+	&__subinfo {
+		color: $colorGray;
+
+		&-separator {
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+		}
+	}
+
+	&__guests {
+		display: inline-block;
+		@include resetList();
+	}
+	&__guest {
+		display: inline-block;
+
+		&:not(:last-child) {
+			&:after {
+				content: ',';
+			}
+		}
+
+		&-name {
+
+		}
+
+		&-link {
+			@include linkStyle($colorGray, $colorGray, $colorGray, $colorGray);
+		}
+	}
+
+	&__description {
+		margin-top: 0.75em;
+		margin-bottom: 0.75em;
+	}
 }
