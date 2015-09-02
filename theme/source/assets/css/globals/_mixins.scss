@@ -123,3 +123,22 @@
 		@content;
 	}
 }
+
+
+/**
+ * Link styling
+ */
+
+@mixin linkStyle($link: $colorText, $visit: $colorText, $hover: $colorText, $active: $colorText) {
+	color: $link;
+	text-decoration: none;
+	&:visited {
+		color: $visit;
+	}
+	&:hover {
+		color: $hover;
+	}
+	&:active {
+		color: $active;
+	}
+}
