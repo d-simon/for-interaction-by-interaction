@@ -1,7 +1,7 @@
 <article class="mod_event{% if modifiers is defined %}{% for modifier in modifiers %} mod_event--{{ modifier }}{% endfor %}{% endif %}" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
 	<div class="mod_event__content">
 		<figure class="mod_event__figure" itemprop="image">
-			<img src="{{ event.image }}" class="mod_event__image" alt="{{ event.title }}">
+			<img src="{{ event.thumbnail }}" class="mod_event__image" alt="{{ event.title }}">
 		</figure>
 		<div class="mod_event__info">
 			<div class="mod_event__info-content">

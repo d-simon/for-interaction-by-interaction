@@ -14,7 +14,7 @@ var data = _.merge(defaultData, {
 		post_current: _.merge({}, eventData.event, {
 			title: 'Besuch bei Google',
 			post_date: '2015-10-06 18:50:37',
-			image: '/tmp/media/event-current.jpg'
+			thumbnail: '/tmp/media/event-current.jpg'
 		}),
 		posts_archive: [
 			eventData.event,

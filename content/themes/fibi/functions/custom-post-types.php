@@ -11,7 +11,8 @@ function create_post_type() {
 			'public' => true,
 			'has_archive' => true,
 			'menu_position' => 5,
-			'menu_icon' => 'dashicons-calendar'
+			'menu_icon' => 'dashicons-calendar',
+    		'supports' => array('title', 'editor', 'thumbnail')
 		)
 	);
 }
