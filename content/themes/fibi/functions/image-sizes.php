@@ -9,7 +9,7 @@ global $themeImageSizes;
 $themeImageSizes  = array(
 	'full' => array(
 		'width' => 1120,
-		'height' => 650,
+		'height' => 700,
 		'wp_crop' => array('center', 'center'),
 		'timber_crop' =>  'default'
 	),
