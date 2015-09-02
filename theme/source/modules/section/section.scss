@@ -6,7 +6,9 @@ $m: "mod_section";
 
 	&__title {
 		@include fontBase($color: $colorBlackPure);
+		@include styleFontBaseBold();
 		text-align: center;
+		text-transform: uppercase;
 		margin-bottom: 5rem;
 	}
 
@@ -14,6 +16,7 @@ $m: "mod_section";
 		.#{$m} {
 			&__title {
 				@include fontH1Plus();
+				text-transform: none;
 				margin-bottom: 3rem;
 			}
 			&__content {
