@@ -1,0 +1,9 @@
+{% extends "layouts/layout.twig" %}
+
+{% block content %}
+	{% embed "modules/section/section.twig" %}
+		{% block content %}
+			{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

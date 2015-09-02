@@ -1,0 +1,13 @@
+{% extends "layouts/layout.twig" %}
+
+{% block content %}
+	{% embed "modules/section/section.twig" %}
+		{% block content %}
+			{% if globals.gulp %}
+				{{ content }}
+			{% else %}
+				{{ content|wpautop }}
+			{% endif %}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}
