@@ -11,7 +11,8 @@ var taskName = 'bump',
 	taskConfig = {
 		src: [
 			'./bower.json',
-			'./package.json'
+			'./package.json',
+			'./npm-shrinkwrap.json'
 		],
 		'dest': './'
 	};
