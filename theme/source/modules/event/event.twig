@@ -1,12 +1,11 @@
 <article class="mod_event" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
-	<figure class="mod_event__figure">
+	<figure class="mod_event__figure" itemprop="image">
 		<img src="{{ event.image }}" class="mod_event__image" alt="">
 	</figure>
 	<div class="mod_event__info">
 		<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
-		<span class="mod_event__subinfo">
+		<div class="mod_event__subinfo">
 			<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('F j, Y') }}</time>
-
 			{% set event_guests = getFieldOfPost(event, 'event_guests') %}
 				{% if event_guests %}
 					<span class="mod_event__subinfo-separator">/</span>
@@ -25,7 +24,7 @@
 						{% endfor %}
 					</ul>
 				{% endif %}
-		</span>
+		</div>
 		<div class="mod_event__description" itemprop="description">
 			{{ getFieldOfPost(event, 'event_excerpt') }}
 		</div>
