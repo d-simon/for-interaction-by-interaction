@@ -13,9 +13,12 @@ var data = _.merge(defaultData, {
 		text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
 		post_current: _.merge({}, eventData.event, {
 			title: 'Besuch bei Google',
-			post_date: '2015-10-06 18:50:37'
+			post_date: '2015-10-06 18:50:37',
+			image: '/tmp/media/event-current.jpg'
 		}),
 		posts_archive: [
+			eventData.event,
+			eventData.event,
 			eventData.event
 		]
 	});

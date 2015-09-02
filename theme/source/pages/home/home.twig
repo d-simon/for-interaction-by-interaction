@@ -9,7 +9,7 @@
 	{% if post_current %}
 		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
 			{% block content %}
-				{% include "modules/event/event.twig" with { event: post } %}
+				{% include "modules/event/event.twig" with { event: post,  modifiers: ['current'] } %}
 			{% endblock %}
 		{% endembed %}
 	{% endif %}

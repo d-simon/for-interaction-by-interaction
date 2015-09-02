@@ -1,20 +1,58 @@
 $m: "mod_event";
 
+$eventInfoMaxWidth:				450px !default;
+
 .#{$m} {
+
+	@include mq($from: 'medium') {
+		// This is needed to counter the effects of display: table-cell
+		// set by gridContainer($verticalCenter: true)
+		// TODO: Find a nice way to solve this => Mixin?
+		display: table;
+		width: 100%;
+	}
+
 	&__content {
-		@include gridContainer();
+		@include mq($from: 'medium') {
+			@include gridContainer($verticalCenter: true);
+		}
 	}
 
 	&__figure {
-		@include gridColumn($columns: 7, $total: 12);
+		@include mq($from: 'medium') {
+			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+		}
+		@include mq($from: 'large') {
+			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+		}
+		@include mq($from: 'huge') {
+			@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+		}
+	}
+
+	&__image {
+		width: 100%;
 	}
 
 	&__info {
-		@include gridColumn($columns: 5, $total: 12);
+		@include mq($from: 'medium') {
+			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+		}
+		@include mq($from: 'large') {
+			@include gridColumn($columns: 5, $total: 12, $left: 1, $verticalAlign: middle);
+		}
+		@include mq($from: 'large') {
+			@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
+		}
+
+		&-content {
+			max-width: $eventInfoMaxWidth;
+		}
 	}
 
 	&__title {
 		@include fontH1();
+		margin-top: 0;
 		margin-bottom: 0.25em;
 	}
 
@@ -52,5 +90,58 @@ $m: "mod_event";
 	&__description {
 		margin-top: 0.75em;
 		margin-bottom: 0.75em;
+	}
+	&--switch {
+		.#{$m} {
+			&__content {
+				@include mq($from: 'medium') {
+					direction: rtl;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	&--current {
+		position: relative;
+		width: 100vw;
+		left: -50vw;
+		margin-left: 50%;
+
+		.#{$m} {
+			&__content {
+				width: 100vw;
+				@include mq($from: 'small') {
+					@include gridContainer($verticalCenter: true);
+				}
+			}
+			&__figure {
+				@include mq($from: 'small') {
+					@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+					padding-left: 0; // DEV: fixes space left of the image
+				}
+				@include mq($from: 'medium') {
+					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+					padding-left: 0; // DEV: fixes space left of the image
+				}
+				@include mq($from: 'huge') {
+					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+					padding-left: 0; // DEV: fixes space left of the image
+				}
+			}
+			&__info {
+				@include mq($from: 'small') {
+					@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+				}
+				@include mq($from: 'medium') {
+					@include gridColumn($columns: 5, $total: 12, $verticalAlign: middle);
+					margin-left: auto;
+				}
+				@include mq($from: 'huge') {
+					@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
+					margin-left: 5%;
+				}
+			}
+		}
 	}
 }

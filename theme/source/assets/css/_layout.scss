@@ -12,7 +12,12 @@ body {
 	font-family: $fontFamilyBase;
 	font-size: 100%;
 	line-height: $sizeLineHeightBase;
-	padding: $sizeGutter;
+	padding: $sizeGutter / 2;
+
+	/* VERIFY / DEV: fixes 100vw horizontal scrollbar issue */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .site-wrapper {

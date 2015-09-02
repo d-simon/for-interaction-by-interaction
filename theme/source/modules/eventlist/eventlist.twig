@@ -1,5 +1,6 @@
 <div class="mod_eventlist" data-init="eventlist">
 	{% for event in events %}
-		{% include "modules/event/event.twig" with { event: event } %}
+		{% set event_modifiers = (loop.index % 2 == 0) ? ['switch'] : [] %}
+		{% include "modules/event/event.twig" with { event: event, modifiers: event_modifiers } %}
 	{% endfor %}
 </div>

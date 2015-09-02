@@ -10,7 +10,7 @@ $gridSizeMaxWidth:				none; // $sizeContentMaxWidth !default;
 $gridDefaultColumns: 			4 !default;
 $gridDefaultColumnsTotal: 		12 !default;
 
-@mixin gridContainer($gutter: $gridSizeGutter, $maxWidth: $gridSizeMaxWidth, $sizeFont: $gridSizeFont) {
+@mixin gridContainer($gutter: $gridSizeGutter, $maxWidth: $gridSizeMaxWidth, $sizeFont: $gridSizeFont, $verticalCenter: false) {
 	margin-left: -$gutter / 2;
 	margin-right: -$gutter / 2;
 	max-width: $maxWidth;
@@ -27,12 +27,28 @@ $gridDefaultColumnsTotal: 		12 !default;
 			font-size: $sizeFont;
 		}
 	}
+
+	@if ($verticalCenter == true) {
+		display: table-cell;
+		&:before {
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+	}
 }
 
-@mixin gridColumn($columns: $gridDefaultColumns, $total: $gridDefaultColumnsTotal, $gutter: $gridSizeGutter) {
+@mixin gridColumn($columns: $gridDefaultColumns, $total: $gridDefaultColumnsTotal, $left: false, $right: false, $gutter: $gridSizeGutter, $verticalAlign: top) {
 	display: inline-block;
-	vertical-align: top;
+    vertical-align: $verticalAlign;
 	width: ($columns / $total) * 100% - 0.01%;
 	padding-right: $gutter / 2;
 	padding-left: $gutter / 2;
+	@if ($right != false) {
+		margin-right: ($right / $total) * 100%;
+	}
+	@if ($left != false) {
+		margin-left: ($left / $total) * 100%;
+	}
 }

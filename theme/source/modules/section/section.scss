@@ -5,7 +5,7 @@ $m: "mod_section";
 
 
 	&__title {
-		@include fontBase($color: $colorGray);
+		@include fontBase($color: $colorBlackPure);
 		text-align: center;
 		margin-bottom: 5rem;
 	}
