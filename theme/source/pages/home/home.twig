@@ -16,10 +16,7 @@
 	{% if posts_archive %}
 		{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
 			{% block content %}
-				{# TODO: Wrap this loop in a module #}
-				{% for post in posts %}
-					{% include "modules/event/event.twig" with { event: post } %}
-				{% endfor %}
+				{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
 			{% endblock %}
 		{% endembed %}
 	{% endif %}
