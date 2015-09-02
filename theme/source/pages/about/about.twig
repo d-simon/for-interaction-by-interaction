@@ -1,7 +1,7 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	{% embed "modules/section/section.twig" %}
+	{% embed "modules/section/section.twig" with { modifiers: ['page'] } %}
 		{% block content %}
 			{% if globals.gulp %}
 				{{ content }}

@@ -12,6 +12,18 @@ $m: "mod_section";
 		margin-bottom: 5rem;
 	}
 
+	&--page {
+		.#{$m} {
+			&__title {
+				@include fontH2();
+				@include styleFontTitle();
+				text-align: center;
+				text-transform: none;
+				margin-bottom: 5rem;
+			}
+		}
+	}
+
 	&--home-lead {
 		.#{$m} {
 			&__title {

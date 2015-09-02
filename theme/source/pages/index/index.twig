@@ -1,7 +1,13 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	<h2>{{ title }}</h2>
-
-	<p>{{ content }}</p>
+	{% embed "modules/section/section.twig" with { modifiers: ['page'] } %}
+		{% block content %}
+			{% if globals.gulp %}
+				{{ content }}
+			{% else %}
+				{{ content|wpautop }}
+			{% endif %}
+		{% endblock %}
+	{% endembed %}
 {% endblock %}
