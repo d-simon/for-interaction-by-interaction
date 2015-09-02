@@ -3,3 +3,60 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $fontFamilyTitle;
 	font-weight: normal;
 }
+
+body {
+	text-rendering: optimizeLegibility;
+    // .touch & {
+	// 	text-rendering: optimizeSpeed;
+	// }
+}
+pre {
+	text-rendering: auto;
+}
+
+@mixin styleFontBase() {
+	font-family: $fontFamilyBase;
+	font-weight: normal;
+}
+@mixin styleFontBaseBold() {
+	font-family: $fontFamilyBase;
+	font-weight: bold;
+}
+@mixin styleFontTitle() {
+	font-family: $fontFamilyTitle;
+	font-weight: normal;
+}
+@mixin styleFontTitleBold() {
+	font-family: $fontFamilyTitle;
+	font-weight: bold;
+}
+
+@mixin fontH1Plus($color: true) {
+	@include styleFontTitle;
+	font-size: $sizeFontHuge;
+	@include _addColor($color);
+}
+@mixin fontH1($color: true) {
+	@include styleFontTitle;
+	font-size: $sizeFontLarge;
+	@include _addColor($color);
+}
+@mixin fontH2($color: true) {
+	@include styleFontTitle;
+	font-size: $sizeFontMedium;
+	@include _addColor($color);
+}
+@mixin fontBase($color: true) {
+	@include styleFontBase;
+	font-size: $sizeFontBase;
+	@include _addColor($color);
+}
+
+
+@mixin _addColor($color: false) {
+	@if ($color == true) {
+	color: $colorText;
+  } @else if ($color != false) {
+	color: $color;
+  }
+}
