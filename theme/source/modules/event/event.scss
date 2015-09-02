@@ -41,7 +41,7 @@ $eventInfoMaxWidth:				450px !default;
 		@include mq($from: 'large') {
 			@include gridColumn($columns: 5, $total: 12, $left: 1, $verticalAlign: middle);
 		}
-		@include mq($from: 'large') {
+		@include mq($from: 'huge') {
 			@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
 		}
 
@@ -103,24 +103,25 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&--current {
-		position: relative;
-		width: 100vw;
-		left: -50vw;
-		margin-left: 50%;
+		@include mq($from: 'medium') {
+			position: relative;
+			width: 100vw;
+			left: -50vw;
+			margin-left: 50%;
+		}
 
 		.#{$m} {
 			&__content {
-				width: 100vw;
-				@include mq($from: 'small') {
-					@include gridContainer($verticalCenter: true);
+				@include mq($from: 'medium') {
+					width: 100vw;
 				}
 			}
 			&__figure {
-				@include mq($from: 'small') {
-					@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
+				@include mq($from: 'medium') {
+					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
 					padding-left: 0; // DEV: fixes space left of the image
 				}
-				@include mq($from: 'medium') {
+				@include mq($from: 'large') {
 					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
 					padding-left: 0; // DEV: fixes space left of the image
 				}
@@ -130,12 +131,13 @@ $eventInfoMaxWidth:				450px !default;
 				}
 			}
 			&__info {
-				@include mq($from: 'small') {
-					@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
-				}
 				@include mq($from: 'medium') {
 					@include gridColumn($columns: 5, $total: 12, $verticalAlign: middle);
 					margin-left: auto;
+				}
+				@include mq($from: 'large') {
+					@include gridColumn($columns: 4, $total: 12, $verticalAlign: middle);
+					margin-left: 5%;
 				}
 				@include mq($from: 'huge') {
 					@include gridColumn($columns: 4, $total: 12, $left: 1, $verticalAlign: middle);
