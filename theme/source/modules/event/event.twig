@@ -14,7 +14,7 @@
 							{% for guest in event_guests %}
 								<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
 									{% if guest.event_guest_url %}
-										<a href="guest.event_guest_url" class="mod_event__guest-link" itemprop="url">
+										<a href="{{ guest.event_guest_url}}" target="_blank" class="mod_event__guest-link" itemprop="url">
 									{% endif %}
 										<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
 									{% if guest.event_guest_url %}
@@ -29,6 +29,7 @@
 			<div class="mod_event__description" itemprop="description">
 				{{ getFieldOfPost(event, 'event_excerpt') }}
 			</div>
+			<a href="{{ event.permalink }}" target="_blank" class="mod_event__permalink" itemprop="url"></a>
 		</div>
 	</div>
 </article>
