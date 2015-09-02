@@ -47,7 +47,7 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&__title {
-		@include fontH1();
+		@include fontH2();
 		margin-top: 0;
 		margin-bottom: 0.25em;
 	}
@@ -109,6 +109,11 @@ $eventInfoMaxWidth:				450px !default;
 		}
 
 		.#{$m} {
+			&__title {
+				@include mq($from: 'large') {
+					@include fontH1();
+				}
+			}
 			&__content {
 				@include mq($from: 'medium') {
 					html.cssvwunit & {
