@@ -104,16 +104,20 @@ $eventInfoMaxWidth:				450px !default;
 
 	&--current {
 		@include mq($from: 'medium') {
-			position: relative;
-			width: 100vw;
-			left: -50vw;
-			margin-left: 50%;
+			html.cssvwunit & {
+				position: relative;
+				width: 100vw;
+				left: -50vw;
+				margin-left: 50%;
+			}
 		}
 
 		.#{$m} {
 			&__content {
 				@include mq($from: 'medium') {
-					width: 100vw;
+					html.cssvwunit & {
+						width: 100vw;
+					}
 				}
 			}
 			&__figure {
