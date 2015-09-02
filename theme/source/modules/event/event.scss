@@ -5,16 +5,12 @@ $eventInfoMaxWidth:				450px !default;
 .#{$m} {
 
 	@include mq($from: 'medium') {
-		// This is needed to counter the effects of display: table-cell
-		// set by gridContainer($verticalCenter: true)
-		// TODO: Find a nice way to solve this => Mixin?
-		display: table;
 		width: 100%;
 	}
 
 	&__content {
 		@include mq($from: 'medium') {
-			@include gridContainer($verticalCenter: true);
+			@include gridContainer();
 		}
 	}
 
