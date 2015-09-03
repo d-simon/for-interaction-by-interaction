@@ -9,7 +9,17 @@ var data = _.merge(defaultData, {
 			title: 'Contact'
 		},
 		title: 'Kontakt',
-		text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+		content:
+			'<strong>Verantwortlich 2015/16</strong><br>' +
+			'Robine Jöhr<br>' +
+			'<a href="mailto:robine.joehr@zhdk.ch">robine.joehr@zhdk.ch</a><br>' +
+			'<a href="tel:+41761234567">+41 76 123 45 67</a><br>' +
+			'<br>' +
+			'<strong>Unterstützt durch</strong><br>' +
+			'<a href="http://iad.zhdk.ch/" target="_blank">Vertiefung Interaction Design ZHdK</a><br>' +
+			'<br>' +
+			'<strong>Web Gestaltung &amp; Programmierung</strong><br>' +
+			'<a href="http://davidsimon.ch/" target="_blank">David Simon</a><br>'
 	});
 
 module.exports = data;

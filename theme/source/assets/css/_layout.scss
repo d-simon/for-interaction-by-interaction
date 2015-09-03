@@ -31,3 +31,7 @@ body {
 img {
 	max-width: 100%;
 }
+
+a {
+	@include linkStyle();
+}

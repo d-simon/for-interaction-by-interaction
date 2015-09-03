@@ -1,8 +1,9 @@
 $m: "mod_section";
 
+$sectionContentMaxWidth:		450px !default;
+
 .#{$m} {
 	margin-bottom: 12rem;
-
 
 	&__title {
 		@include fontBase($color: $colorBlackPure);
@@ -10,6 +11,15 @@ $m: "mod_section";
 		text-align: center;
 		text-transform: uppercase;
 		margin-bottom: 5rem;
+	}
+
+	&--content {
+		.#{$m} {
+			&__content {
+				max-width: $sectionContentMaxWidth;
+				margin: 0 auto;
+			}
+		}
 	}
 
 	&--page {
