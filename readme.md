@@ -39,6 +39,23 @@ See [theme/README.md](theme/README.md).
 
 ---
 
+## Content Setup
+
+In case you need to setup a site with this template from scratch here's a rough description of the process:
+
+1. Activate all plugins.
+
+2. Go to the «Details» options page and save it to initialize the default content. (Yes, this is required).
+
+3. Create all necessary pages with the corresponding page templates
+   
+    1. *Note*: For the home page it's a bit … cumbersome. You need to create a page with the corresponding template and set the "Front Page" to this page (Settings -> Reading -> Static Page).
+
+4. (TBD)
+
+
+---
+
 ## Technical Notes
 
 ### CMS + Build
