@@ -5,6 +5,16 @@
 		{% block title %}
 			<h1 class="mod_section__title">{{ title }}</h1>
 		{% endblock %}
+		{% block content %}
+			{% if globals.gulp %}
+				{{ content }}
+			{% else %}
+				{{ content|wpautop }}
+			{% endif %}
+			{% if image_panorama %}
+				{% include "modules/panorama/panorama.twig" with { image: image_panorama, alt: title } %}
+			{% endif %}
+		{% endblock %}
 	{% endembed %}
 	{% if post_current %}
 		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}

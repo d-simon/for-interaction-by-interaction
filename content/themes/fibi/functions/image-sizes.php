@@ -7,6 +7,12 @@
  */
 global $themeImageSizes;
 $themeImageSizes  = array(
+	'panorama' => array(
+		'width' => 1440,
+		'height' => 480,
+		'wp_crop' => array('center', 'center'),
+		'timber_crop' =>  'default'
+	),
 	'full' => array(
 		'width' => 1120,
 		'height' => 700,
@@ -25,7 +31,7 @@ $themeImageSizes  = array(
 		'height' => 441,
 		'wp_crop' => array('center', 'center'),
 		'timber_crop' =>  'default'
-	)
+	),
 );
 
 $themeImageSizes['event-current'] = $themeImageSizes['full'];

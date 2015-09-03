@@ -20,7 +20,8 @@ var data = _.merge(defaultData, {
 			eventData.event,
 			eventData.event,
 			eventData.event
-		]
+		],
+		image_panorama: panoramaData.image
 	});
 
 module.exports = data;

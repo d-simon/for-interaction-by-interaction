@@ -1,0 +1,26 @@
+$m: "mod_panorama";
+
+.#{$m} {
+	&__content {
+		position: relative;
+		width: 100vw;
+		left: -50vw;
+		margin-left: 50%;
+
+		@include mq($to: "small") {
+			overflow-x: hidden;
+			html.touchevents & {
+				overflow-x: scroll;
+			}
+		}
+	}
+	&__image {
+		width: 100%;
+
+		// Below "small" the image is simply focused on the left side
+		@include mq($to: "small") {
+			width: 200%;
+			max-width: none;
+		}
+	}
+}

@@ -35,7 +35,8 @@ final class HomeController extends AbstractController
 
 		return [
 			'post_current' => $post_current,
-			'posts_archive' => $posts_archive
+			'posts_archive' => $posts_archive,
+			'image_panorama' => get_field('home_panorama_image', 'options')
 		];
 	}
 
