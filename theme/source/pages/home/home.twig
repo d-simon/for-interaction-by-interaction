@@ -24,9 +24,10 @@
 		{% endembed %}
 	{% endif %}
 	{% if posts_archive %}
-		{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive } %}
+		{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive, modifiers: ['archive'] } %}
 			{% block content %}
 				{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
+				{% include "modules/ctalink/ctalink.twig" with { link: link_archive, text: 'Zum Archiv' } %}
 			{% endblock %}
 		{% endembed %}
 	{% endif %}

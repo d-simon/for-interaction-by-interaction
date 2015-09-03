@@ -1,0 +1,13 @@
+$m: "mod_ctalink";
+
+.#{$m} {
+	text-align: center;
+
+	&__anchor {
+		display: inline-block;
+		@include linkStyle();
+		@include fontH2();
+		padding-bottom: 2px;
+		border-bottom: 3px solid $colorGrayLight;
+	}
+}

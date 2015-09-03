@@ -22,7 +22,8 @@ var data = _.merge(defaultData, {
 			eventData.event,
 			eventData.event
 		],
-		image_panorama: panoramaData.image
+		image_panorama: panoramaData.image,
+		link_archive: '/pages/archive/archive.html'
 	});
 
 module.exports = data;

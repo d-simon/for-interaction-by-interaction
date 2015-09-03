@@ -15,12 +15,18 @@ $m: "mod_section";
 	&--page {
 		.#{$m} {
 			&__title {
-				@include fontH2();
+				@include fontH1();
 				@include styleFontTitle();
 				text-align: center;
 				text-transform: none;
 				margin-bottom: 5rem;
 			}
+		}
+	}
+
+	&--archive {
+		.mod_eventlist + .mod_ctalink {
+			margin-top: 12rem;
 		}
 	}
 
