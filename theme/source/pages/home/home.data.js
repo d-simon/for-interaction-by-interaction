@@ -3,7 +3,8 @@
 var _ = require('lodash'),
 	requireNew = require('require-new'),
 	defaultData = requireNew('../../data/default.data.js'),
-	eventData = requireNew('../../modules/event/event.data.js');
+	eventData = requireNew('../../modules/event/event.data.js'),
+	panoramaData = requireNew('../../modules/panorama/panorama.data.js');
 
 var data = _.merge(defaultData, {
 		meta: {
