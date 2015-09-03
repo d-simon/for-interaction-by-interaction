@@ -1,4 +1,5 @@
 <?php
+
 use FIBI\Theme\AbstractController;
 
 namespace FIBI\Theme;
@@ -33,10 +34,18 @@ final class HomeController extends AbstractController
 			'post__not_in'		=> ($post_current) ? [$post_current->ID] : []
 		]);
 
+		// Find Archive Page
+		$pages = get_pages([
+			'meta_key' => '_wp_page_template',
+			'meta_value' => 'page-event-archive.php'
+		]);
+		$link_archive = (count($pages) > 0) ? get_permalink($pages[0]->ID) : false;
+
 		return [
 			'post_current' => $post_current,
 			'posts_archive' => $posts_archive,
-			'image_panorama' => get_field('home_panorama_image', 'options')
+			'image_panorama' => get_field('home_panorama_image', 'options'),
+			'link_archive' => $link_archive
 		];
 	}
 

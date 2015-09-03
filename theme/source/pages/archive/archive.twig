@@ -1,7 +1,7 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	{% embed "modules/section/section.twig" with { modifiers: ['page', 'archive'] } %}
+	{% embed "modules/section/section.twig" with { modifiers: ['page', 'archive'], title: 'Archiv' } %}
 		{% block content %}
 			{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
 				{% include "modules/ctalink/ctalink.twig" with { link: link_current, text: 'Aktuell' } %}
