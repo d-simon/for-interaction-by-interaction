@@ -34,7 +34,7 @@ final class HomeController extends AbstractController
 			'post__not_in'		=> ($post_current) ? [$post_current->ID] : []
 		]);
 
-		// Find Archive Page
+		// Find Archive Page and link to it
 		$pages = get_pages([
 			'meta_key' => '_wp_page_template',
 			'meta_value' => 'archive-event.php'
