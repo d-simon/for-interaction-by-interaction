@@ -45,13 +45,15 @@ In case you need to setup a site with this template from scratch here's a rough 
 
 1. Activate all plugins.
 
-2. Go to the «Details» options page and save it to initialize the default content. (Yes, this is required).
+2. Synchronize ACF Fields (Custom Fields -> Synchronize)
 
-3. Create all necessary pages with the corresponding page templates
+3. Go to the «Details» options page and save it to initialize the default content. (Yes, this is required).
+
+4. Create all necessary pages with the corresponding page templates
    
     1. *Note*: For the home page it's a bit … cumbersome. You need to create a page with the corresponding template and set the "Front Page" to this page (Settings -> Reading -> Static Page).
 
-4. (TBD)
+5. (TBD)
 
 
 ---
