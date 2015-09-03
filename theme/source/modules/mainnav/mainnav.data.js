@@ -7,7 +7,7 @@ var _ = require('lodash'),
 
 var data = _.merge(defaultData, {
 		meta: {
-			title: 'Mainnav',
+			title: 'Main-Navigation',
 			code: dataHelper.getTemplateCode('mainnav.twig'),
 			documentation: dataHelper.getDocumentation('mainnav.md')
 		},
