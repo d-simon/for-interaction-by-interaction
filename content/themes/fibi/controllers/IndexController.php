@@ -1,4 +1,5 @@
 <?php
+
 use FIBI\Theme\AbstractController;
 
 namespace FIBI\Theme;
