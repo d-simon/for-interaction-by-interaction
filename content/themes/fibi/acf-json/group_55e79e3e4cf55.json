@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "All settings of the home page can be found in options page <a href=\"admin.php?page=site-settings\"><strong>Details<\/strong><\/a>.",
+            "message": "<strong>This page needs to exist!<\/strong> Make sure to set it as \"Front Page\".\r\nAll settings of the home page can be found in options page <a href=\"admin.php?page=site-settings\"><strong>Details<\/strong><\/a>.",
             "esc_html": 0
         }
     ],
@@ -38,5 +38,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1441244165
+    "modified": 1441247514
 }
