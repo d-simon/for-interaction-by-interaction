@@ -24,7 +24,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-event-archive.php"
+                "value": "archive-event.php"
             }
         ]
     ],
@@ -38,5 +38,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1441245576
+    "modified": 1441247895
 }
