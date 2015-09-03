@@ -8,4 +8,8 @@ $m: "mod_logo";
 	@include mq($from: "large") {
 		padding-left: 0;
 	}
+
+	&__link {
+		@include linkStyle();
+	}
 }
