@@ -64,6 +64,24 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_55e7b616ed33e",
+            "label": "Footer Link",
+            "name": "footer_link",
+            "type": "page_link",
+            "instructions": "By default the link in the footer points to the home_url. Recommended is the \"About\" page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0
         }
     ],
     "location": [
@@ -83,5 +101,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1441240538
+    "modified": 1441248912
 }

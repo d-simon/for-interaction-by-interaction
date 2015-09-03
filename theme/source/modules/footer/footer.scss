@@ -1,5 +1,8 @@
 $m: "mod_footer";
 
 .#{$m} {
-
+	text-align: center;
+	&__homelink {
+		@include linkStyle($colorGrayLight, $colorGrayLight, $colorGrayLight, $colorGrayLight);
+	}
 }
