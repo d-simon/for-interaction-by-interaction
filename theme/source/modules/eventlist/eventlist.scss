@@ -2,6 +2,9 @@ $m: "mod_eventlist";
 
 .#{$m} {
 	.mod_event {
-		margin-bottom: 8rem;
+		margin-top: 4rem;
+		@include mq($from: 'medium') {
+			margin-top: 8rem;
+		}
 	}
 }

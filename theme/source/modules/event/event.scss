@@ -47,9 +47,13 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&__title {
-		@include fontH2();
-		margin-top: 0;
+		@include fontH3();
+		margin-top: 1rem;
 		margin-bottom: 0.75rem;
+		@include mq($from: 'large') {
+			@include fontH2();
+			margin-top: 0;
+		}
 	}
 
 	&__subinfo {
