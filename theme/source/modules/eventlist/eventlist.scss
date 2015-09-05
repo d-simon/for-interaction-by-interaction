@@ -2,9 +2,11 @@ $m: "mod_eventlist";
 
 .#{$m} {
 	.mod_event {
-		margin-top: 4rem;
-		@include mq($from: 'medium') {
-			margin-top: 8rem;
+		&:not(:first-child) {
+			margin-top: 4rem;
+			@include mq($from: 'medium') {
+				margin-top: 8rem;
+			}
 		}
 	}
 }

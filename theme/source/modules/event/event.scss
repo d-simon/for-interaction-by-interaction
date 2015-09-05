@@ -3,21 +3,21 @@ $m: "mod_event";
 $eventInfoMaxWidth:				450px !default;
 
 .#{$m} {
-
-	@include mq($from: 'medium') {
+	max-width: $eventInfoMaxWidth;
+	margin-left: auto;
+	margin-right: auto;
+	@include mq($from: 'large') {
 		width: 100%;
+		max-width: none;
 	}
 
 	&__content {
-		@include mq($from: 'medium') {
+		@include mq($from: 'large') {
 			@include gridContainer();
 		}
 	}
 
 	&__figure {
-		@include mq($from: 'medium') {
-			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
-		}
 		@include mq($from: 'large') {
 			@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
 		}
@@ -31,9 +31,6 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&__info {
-		@include mq($from: 'medium') {
-			@include gridColumn($columns: 6, $total: 12, $verticalAlign: middle);
-		}
 		@include mq($from: 'large') {
 			@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
 		}
@@ -91,6 +88,7 @@ $eventInfoMaxWidth:				450px !default;
 		margin-top: 0.75rem;
 		margin-bottom: 0.75rem;
 	}
+
 	&--switch {
 		.#{$m} {
 			&__content {
@@ -106,6 +104,10 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&--current {
+		max-width: none;
+		margin-left: auto;
+		margin-right: auto;
+
 		@include mq($from: 'medium') {
 			html.cssvwunit & {
 				position: relative;
