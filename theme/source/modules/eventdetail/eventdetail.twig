@@ -1,3 +1,66 @@
-<article class="mod_eventdetail" data-init="eventdetail">
-
+<article class="mod_eventdetail{% if modifiers is defined %}{% for modifier in modifiers %} mod_eventdetail--{{ modifier }}{% endfor %}{% endif %}" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
+	<h2 class="mod_eventdetail__title mod_eventdetail__title--descriptor">Archiv</h2>
+	<h1 class="mod_eventdetail__title mod_eventdetail__title--main" itemprop="name">{{ event.title }}</h1>
+	<time class="mod_eventdetail__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('j. F Y') }}</time>
+	<section class="mod_eventdetail__section mod_eventdetail__section--details">
+		<div class="mod_eventdetail__content">
+			<figure class="mod_eventdetail__figure" itemprop="image">
+				{% if modifiers is not defined %}
+					{#
+					 # This for Twig.js only since the "and" operator implementation
+					 # seems to differ. Both sides are evaluated. Even if the left
+					 # one evaluates to false. See: Short-Circuit Evaluation.
+					 #}
+					{% set modifiers = [] %}
+				{% endif %}
+				{% if modifiers is defined and 'current' in modifiers %}
+					{% set event_image_size = 'event-current' %}
+				{% else %}
+					{% set event_image_size = 'event-archive' %}
+				{% endif %}
+				<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_eventdetail__image" alt="{{ event.title }}">
+			</figure>
+			<div class="mod_eventdetail__info">
+				<dl class="mod_eventdetail__infolist">
+					{% set event_guests = getFieldOfPost(event, 'event_guests') %}
+					{% if event_guests %}
+						<dt>Gast</dt>
+						<dd>
+							{% for guest in event_guests %}
+								<span class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
+									{% if guest.event_guest_url %}
+										<a href="{{ guest.event_guest_url}}" target="_blank" class="mod_event__guest-link" itemprop="url">
+									{% endif %}
+										<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
+									{% if guest.event_guest_url %}
+										</a>
+									{% endif %}
+									</a>
+								</span>
+							{% endfor %}
+						</dd>
+					{% endif %}
+					<dt>Datum, Zeit</dt>
+					<dd>{{ event.post_date|date('j. F Y, H:m') }}</dd>
+					{% set event_location = getFieldOfPost(event, 'event_location') %}
+					{% if event_location %}
+						<dt>Ort</dt>
+						<dd>{{ event_location }}</dd>
+					{% endif %}
+				</dl>
+				<div class="mod_eventdetail__description" itemprop="description">
+					{{ event.content }}
+				</div>
+				{% include "modules/ctalink/ctalink.twig" with { link: event.permalink, title: 'test' }%}
+				{% set link_flyer = getFieldOfPost(event, 'event_link_flyer') %}
+				{% if link_flyer %}
+					<a href="{{ link_flyer }}" target="_blank" class="mod_eventdetail__linkflyer" itemprop="url"></a>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+	<section class="mod_eventdetail__section mod_eventdetail__section--impressions">
+		<h2 class="mod_section__title">Impressionen</h2>
+		Gallery
+	</section>
 </article>

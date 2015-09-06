@@ -1,5 +1,93 @@
 $m: "mod_eventdetail";
 
 .#{$m} {
+	width: 100%;
+	max-width: none;
 
+	&__title {
+		text-align: center;
+		&--descriptor {
+			@extend .mod_section__title;
+			margin: 0;
+			color: $colorGray;
+			text-transform: none;
+			font-weight: normal;
+		}
+		&--main {
+			margin: 0;
+		}
+	}
+
+	&__date {
+		text-align: center;
+		display: block;
+	}
+
+	&__section {
+		@extend .mod_section;
+		margin-bottom: 3rem;
+		@include mq($from: 'medium') {
+			margin-bottom: 6rem;
+		}
+
+		&--details {
+			margin-top: 3rem;
+			@include mq($from: 'medium') {
+				margin-top: 6rem;
+			}
+		}
+	}
+
+	&__content {
+		@include mq($from: 'large') {
+			@include gridContainer();
+		}
+	}
+
+	&__figure {
+		@include mq($from: 'large') {
+			@include gridColumn($columns: 7, $total: 12);
+		}
+		@include mq($from: 'huge') {
+			@include gridColumn($columns: 7, $total: 12);
+		}
+	}
+
+	&__image {
+		width: 100%;
+	}
+
+	&__info {
+		margin-top: 1rem;
+		@include mq($from: 'large') {
+			margin-top: 0;
+			@include gridColumn($columns: 5, $total: 12);
+		}
+		@include mq($from: 'huge') {
+			@include gridColumn($columns: 5, $total: 12);
+		}
+
+		&-content {
+			max-width: $eventInfoMaxWidth;
+		}
+	}
+
+	&__infolist {
+		/* TODO: flexbox that thing */
+		margin-top: 0;
+		margin-bottom: 3rem;
+		dt {
+			@include styleFontBaseBold();
+			height: 0;
+			overflow: visible;
+		}
+		dd {
+			margin-bottom: 1rem;
+			padding-left: 8rem;
+		}
+	}
+
+	&__linkflyer {
+
+	}
 }
