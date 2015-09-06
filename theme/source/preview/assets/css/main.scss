@@ -36,7 +36,7 @@ $sg_logoHeightModule: pxToRem(106);
 
 body {
 	padding: 0;
-    background-color: rgba($sg_colorLightGray, 0.1);
+    background-color: $sg_colorWhite;
 }
 
 .sg_wrapper {
@@ -44,8 +44,13 @@ body {
     min-height: 100vh;
     max-width: $sizeContentMaxWidth;
     margin: ($sg_logoHeight - 6rem) auto 0;
-    &--module {
+    &--module, &--styleguide {
     	margin: $sg_logoHeightModule auto 0;
+    }
+    &--styleguide {
+    	.sg_title {
+    		margin-top: 0;
+    	}
     }
 }
 
@@ -80,18 +85,26 @@ body {
 .sg_inner_wrapper {
     box-sizing: border-box;
     padding: 1em;
-    background-color: rgba($sg_colorLightGray, 0.05);
+    background-color: rgba($sg_colorLightGray, 0.08);
 
     // Wrapper around lists on the index page
     &.var_sg_index {
         flex-grow: 1;
         margin: 0 0.5em 1em 0.5em;
+        &:nth-child(1) {
+            .sg_index_list {
+                columns: 2;
 
+                @include mq($to: "medium") {
+                    columns: 2;
+                }
+            }
+        }
         &:nth-child(2) {
-            flex-grow: 4;
+            flex-grow: 2;
 
             .sg_index_list {
-                columns: 3;
+                columns: 2;
 
                 @include mq($to: "medium") {
                     columns: 2;
@@ -139,7 +152,7 @@ body {
     top: 0;
     left: 0;
 
-    &--module {
+    &--module, &--styleguide {
         background: url(../media/logo-module.svg) no-repeat;
         width: pxToRem(258);
         height: pxToRem(106);
@@ -208,11 +221,13 @@ body {
 .sg_color_list {
     @include clearfix;
     @include resetList;
+    display: inline-block;
+    padding: 1em;
     font-size: pxToRem($sg_fontSize);
 }
 
 .sg_color_item {
-    margin: 0 3em 2em 0;
+    margin: 1em 3em 2em 0;
     width: 7em;
     float: left;
     text-align: center;
@@ -222,6 +237,9 @@ body {
         .sg_color_preview {
             transform: scale(1.25);
         }
+    }
+    &:last-child {
+    	margin-right: 0;
     }
 }
 
