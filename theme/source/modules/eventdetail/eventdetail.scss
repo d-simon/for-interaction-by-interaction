@@ -72,6 +72,10 @@ $m: "mod_eventdetail";
 		}
 	}
 
+	&__description {
+		margin-bottom: 3rem;
+	}
+
 	&__infolist {
 		/* TODO: flexbox that thing */
 		margin-top: 0;

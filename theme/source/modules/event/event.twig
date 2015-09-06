@@ -14,11 +14,15 @@
 			{% else %}
 				{% set event_image_size = 'event-archive' %}
 			{% endif %}
-			<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_event__image" alt="{{ event.title }}">
+			<a href="{{ event.permalink }}">
+				<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_event__image" alt="{{ event.title }}">
+			</a>
 		</figure>
 		<div class="mod_event__info">
 			<div class="mod_event__info-content">
-				<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+				<a href="{{ event.permalink }}">
+					<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+				</a>
 				<div class="mod_event__subinfo">
 					<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('j. F Y') }}</time>
 					{% set event_guests = getFieldOfPost(event, 'event_guests') %}
@@ -43,7 +47,13 @@
 				<div class="mod_event__description" itemprop="description">
 					{{ getFieldOfPost(event, 'event_excerpt') }}
 				</div>
-				<a href="{{ event.permalink }}" target="_blank" class="mod_event__permalink" itemprop="url"></a>
+
+				{% set link_flyer = getFieldOfPost(event, 'event_link_flyer') %}
+				{% if link_flyer and 'current' in modifiers %}
+					{% include "modules/ctalink/ctalink.twig" with { link: link_flyer, text: "Online-Flyer", modifiers: ['eventdetail', 'external'] } %}
+				{% elseif 'current' not in modifiers %}
+					{% include "modules/ctalink/ctalink.twig" with { link: event.permalink, text: "Mehr", modifiers: ['event'] } %}
+				{% endif %}
 			</div>
 		</div>
 	</div>

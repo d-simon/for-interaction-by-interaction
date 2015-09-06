@@ -1,0 +1,11 @@
+<div class="mod_slider" data-init="slider">
+	<div class="mod_slider__content">
+		<div class="mod_slider__slider" data-slider="slider">
+			{% for slide in slides %}
+				<div class="mod_slider__slide" data-slider="slide">
+					<img src="{{ slide.url|getImageSize('gallery')}}" alt="">
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

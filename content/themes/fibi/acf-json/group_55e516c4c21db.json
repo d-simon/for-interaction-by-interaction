@@ -107,6 +107,31 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_55ec9900304b1",
+            "label": "Impressionen",
+            "name": "event_gallery",
+            "type": "gallery",
+            "instructions": "Online after the event date.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "preview_size": "gallery",
+            "library": "all",
+            "min_width": 800,
+            "min_height": 500,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -126,5 +151,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1441077725
+    "modified": 1441569168
 }

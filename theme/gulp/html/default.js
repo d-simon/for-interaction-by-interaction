@@ -52,7 +52,7 @@ gulp.task(taskName, function(cb) {
 				 */
 				name: "getFieldOfPost",
 				func: function(event, field_name) {
-					return (event) ? event[field_name] : null;
+					return (event && event[field_name]) ? event[field_name] : null;
 				}
 			}
 		],

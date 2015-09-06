@@ -21,9 +21,13 @@
 @import "globals/classes";
 @import "globals/grid";
 
+//Vendor
+@import "../vendor/slick-carousel/slick/slick";
+
 // General
 @import "typography";
 @import "layout";
+
 
 // Modules
 @import "section/section";
@@ -36,6 +40,7 @@
 @import "panorama/panorama";
 @import "ctalink/ctalink";
 @import "eventdetail/eventdetail";
+@import "slider/slider";
 //*autoinsertmodule*
 
 @media print {

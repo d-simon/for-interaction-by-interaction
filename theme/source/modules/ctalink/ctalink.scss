@@ -10,4 +10,28 @@ $m: "mod_ctalink";
 		padding-bottom: 2px;
 		border-bottom: 3px solid $colorGrayLight;
 	}
+
+	&--event {
+		text-align: left;
+
+		.#{$m} {
+			&__anchor {
+				font-size: $sizeFontBasePlus;
+				@include styleFontBase();
+				color: $colorGray;
+				border-bottom: 2px solid $colorGrayLight;
+			}
+		}
+	}
+
+	&--eventdetail {
+		text-align: left;
+
+		.#{$m} {
+			&__anchor {
+				font-size: $sizeFontBasePlusPlus;
+				border-bottom: 2px solid $colorGrayLight;
+			}
+		}
+	}
 }

@@ -1,0 +1,7 @@
+### Description
+
+Slider
+
+### Integration
+
+–

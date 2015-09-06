@@ -142,3 +142,51 @@
 		color: $active;
 	}
 }
+
+
+/**
+ * Form resets
+ */
+
+@mixin form-reset-general {
+	display: inline-block;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: auto;
+	vertical-align: middle; // IE6,IE7
+	white-space: normal;
+	line-height: inherit;
+	background: none;
+
+	/* Browsers have different default form fonts */
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+@mixin form-reset-button-specific {
+	background: none;
+	border: 0;
+	outline: none;
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		outline: 0;
+	}
+
+	/* IE8 and FF freak out if this rule is within another selector */
+	@at-root {
+		::-webkit-file-upload-button {
+			padding: 0;
+			border: 0;
+			background: none;
+		}
+	}
+}
+
