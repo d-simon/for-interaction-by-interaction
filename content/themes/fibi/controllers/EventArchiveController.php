@@ -5,7 +5,7 @@ use FIBI\Theme\AbstractController;
 namespace FIBI\Theme;
 
 /**
- * Home.
+ * Event Archive Controller
  */
 final class EventArchiveController extends AbstractController
 {

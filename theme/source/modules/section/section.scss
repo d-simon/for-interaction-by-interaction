@@ -74,4 +74,67 @@ $sectionContentMaxWidth:		450px !default;
 			}
 		}
 	}
+
+	&--about {
+		.#{$m} {
+			&__title {
+				@include mq($from: 'medium') {
+					margin-bottom: 6rem;
+				}
+			}
+			&__title--main {
+				@include fontH1();
+				text-transform: none;
+				margin-bottom: 8rem;
+				display: none;
+				@include mq($from: 'medium') {
+					display: block;
+					@include fontH1Plus();
+				}
+			}
+
+			&__content {
+				max-width: 800px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+
+			&__abouttext {
+				max-width: 600px;
+				text-align: left;
+				margin-right: auto;
+				margin-left: auto;
+				margin-bottom: 2rem;
+				@include mq($from: 'medium') {
+					margin-bottom: 4rem;
+				}
+			}
+
+			&__image {
+				margin-top: 3rem;
+				margin-bottom: 3rem;
+				@include mq($from: 'medium') {
+					margin-top: 6rem;
+					margin-bottom: 8rem;
+				}
+			}
+
+			&__foot {
+				text-align: center;
+			}
+
+			&__footinfo {
+				margin-bottom: 1rem;
+			}
+		}
+
+		.mod_ctalink--about {
+			.mod_ctalink__anchor {
+				@include styleFontBaseBold();
+				font-size: $sizeFontBase;
+				color: rgba($colorBlackPure, 0.8);
+				border-bottom: 2px solid $colorGrayLight;
+			}
+		}
+	}
 }

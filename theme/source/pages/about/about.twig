@@ -1,12 +1,36 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	{% embed "modules/section/section.twig" with { modifiers: ['page'] } %}
+	{% embed "modules/section/section.twig" with { modifiers: ['page', 'about'], title: title, content: post.content  } %}
 		{% block content %}
-			{% if globals.gulp %}
-				{{ content }}
-			{% else %}
-				{{ content|wpautop }}
+			<h3 class="mod_section__title mod_section__title--main">{{ globals.project.title }}</h3>
+
+			<div class="mod_section__abouttext">
+				{% if globals.gulp %}
+					{{ content }}
+				{% else %}
+					{{ content|wpautop }}
+				{% endif %}
+			</div>
+
+			{% if link_contact %}
+				{% include "modules/ctalink/ctalink.twig" with { link: link_contact, text: 'Kontakt', modifiers: ['about', 'aboutcontact'] } %}
+			{% endif %}
+
+			{% set image_mood = getFieldOfPost(post, 'image_mood') %}
+			{% if image_mood %}
+				<img src="{{ image_mood.url|getImageSize('gallery') }}" class="mod_section__image" alt="{{ image_mood.alt }}">
+			{% endif %}
+
+			{% if future_post %}
+				<div class="mod_section__foot">
+					<div class="mod_section__footinfo">Der nächste FIBI-Event findet am <time content="{{ future_post.post_date }}" datetime="{{ future_post.post_date }}">{{ future_post.post_date|date('j. F Y') }}</time> statt.</div>
+					{% if getFieldOfPost(future_post, 'event_link_flyer') %}
+						{% include "modules/ctalink/ctalink.twig" with { link: getFieldOfPost(future_post, 'event_link_flyer'), text: 'Online-Flyer', modifiers: ['about', 'aboutflyer', 'external'] } %}
+					{% else %}
+						{% include "modules/ctalink/ctalink.twig" with { link: globals.home_url, text: 'Aktuell', modifiers: ['about', 'aboutperma'] } %}
+					{% endif %}
+				</div
 			{% endif %}
 		{% endblock %}
 	{% endembed %}

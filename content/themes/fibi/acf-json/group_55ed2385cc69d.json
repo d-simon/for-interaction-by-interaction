@@ -1,0 +1,48 @@
+{
+    "key": "group_55ed2385cc69d",
+    "title": "Page \u2014 About \/ Idee",
+    "fields": [
+        {
+            "key": "field_55ed23919319c",
+            "label": "Mood Bild",
+            "name": "image_mood",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "gallery",
+            "library": "all",
+            "min_width": 800,
+            "min_height": 400,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-about.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1441604590
+}

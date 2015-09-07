@@ -30,6 +30,7 @@ if (!class_exists('Timber')) {
  */
 foreach (glob('{' .
 			TEMPLATEPATH . '/functions/*.php,' .
+			TEMPLATEPATH . '/controllers/AbstractController.php,' .
 			TEMPLATEPATH . '/controllers/*.php,' .
 			TEMPLATEPATH . '/lib/*.php' .
 		'}', GLOB_BRACE) as $filename) {
