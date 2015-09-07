@@ -3,27 +3,6 @@
     "title": "Event",
     "fields": [
         {
-            "key": "field_55e516c71e161",
-            "label": "Anreisser",
-            "name": "event_excerpt",
-            "type": "textarea",
-            "instructions": "Anreisser der auf der Startseite gezeigt wird.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_55e5189a81b3a",
             "label": "G\u00e4ste",
             "name": "event_guests",
@@ -109,6 +88,80 @@
             ]
         },
         {
+            "key": "field_55e516c71e161",
+            "label": "Anreisser",
+            "name": "event_excerpt",
+            "type": "textarea",
+            "instructions": "Anreisser der auf der Startseite gezeigt wird.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55ed16429835e",
+            "label": "Datum, Zeit",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "F\u00fcr Datum und Zeit bitte das Publikationsdatum des Events anpassen. <i>Rechts in der Seitenleiste.<\/i>",
+            "esc_html": 0
+        },
+        {
+            "key": "field_55ed16189835d",
+            "label": "Ort",
+            "name": "event_location",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55ed176451d5f",
+            "label": "Online-Flyer",
+            "name": "event_link_flyer",
+            "type": "url",
+            "instructions": "Link zum Online-Flyer (falls bestehend)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/\u2026"
+        },
+        {
             "key": "field_55ec9900304b1",
             "label": "Impressionen",
             "name": "event_gallery",
@@ -151,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1441569168
+    "modified": 1441601447
 }
