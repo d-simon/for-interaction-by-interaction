@@ -25,15 +25,20 @@ $m: "mod_eventdetail";
 
 	&__section {
 		@extend .mod_section;
-		margin-bottom: 3rem;
+		margin-bottom: 6rem;
 		@include mq($from: 'medium') {
-			margin-bottom: 6rem;
+			margin-bottom: 8rem;
 		}
 
 		&--details {
 			margin-top: 3rem;
 			@include mq($from: 'medium') {
 				margin-top: 6rem;
+			}
+		}
+		&--impressions {
+			.mod_section__title {
+				margin-bottom: 2rem;
 			}
 		}
 	}
@@ -74,6 +79,12 @@ $m: "mod_eventdetail";
 
 	&__description {
 		margin-bottom: 3rem;
+	}
+
+	.mod_ctalink--eventdetail {
+		@include mq($to: "large") {
+			text-align: center;
+		}
 	}
 
 	&__infolist {
