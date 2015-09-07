@@ -118,6 +118,19 @@ $sectionContentMaxWidth:		450px !default;
 					margin-bottom: 8rem;
 				}
 			}
+			&__imagespacer {
+				position: relative;
+				text-align: center;
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 1rem;
+					height: 1px;
+					background: $colorGrayLight;
+				}
+				margin-top: 3rem;
+				margin-bottom: 3rem;
+			}
 
 			&__foot {
 				text-align: center;
