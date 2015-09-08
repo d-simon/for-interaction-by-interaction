@@ -20,3 +20,10 @@
 @function toPx($val) {
 	@return ($val + 0px);
 }
+
+@function zIndex($key) {
+	@if not map-has-key($zIndices, $key) {
+		@warn "No element found for `#{$key}` in $zIndices map. Property omitted."
+	}
+	@return map-get($zIndices, $key);
+}

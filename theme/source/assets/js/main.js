@@ -9,6 +9,7 @@
  * @requires helpers/mediaqueries.js
  *
  * @requires ../../modules/slider/slider.js
+ * @requires ../../modules/line/line.js
  * //*autoinsertmodule*
  *
  * @requires helpers/init.js
