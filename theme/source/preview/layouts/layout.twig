@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
     <link rel="stylesheet" href="/preview/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
 
+    <script src="/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
     {% if globals.env.dev %}
         <script src="{{ globals.theme_root }}/assets/js/dev.js"></script>
     {% endif %}
-    <script src="/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
 </head>
 <body>
     <div class="sg_wrapper">

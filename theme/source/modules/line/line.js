@@ -4,7 +4,8 @@
  * @author
  * @copyright
  *
- * @requires _line.lib.js
+ * // @requires _line.lib.js
+ * @requires _linesvg.lib.js
  */
 
 ;(function($, undefined) {

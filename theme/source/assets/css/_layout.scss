@@ -13,7 +13,6 @@ body {
 	font-size: 100%;
 	line-height: $sizeLineHeightBase;
 	padding: $sizeGutter / 2;
-	position: relative;
 	@include mq($from: "small") {
 		padding: $sizeGutter;
 	}

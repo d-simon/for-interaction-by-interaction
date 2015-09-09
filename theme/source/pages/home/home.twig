@@ -17,7 +17,7 @@
 		{% endblock %}
 	{% endembed %}
 	{% if post_current %}
-		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current } %}
+		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current, modifiers: ['current'] } %}
 			{% block content %}
 				{% include "modules/event/event.twig" with { event: post,  modifiers: ['current'] } %}
 			{% endblock %}
@@ -32,3 +32,59 @@
 		{% endembed %}
 	{% endif %}
 {% endblock %}
+
+{% block linedata %}
+		<script type="text/javascript">
+			fibi = fibi || {}; fibi.data = fibi.data || {};
+			fibi.data.line = {
+				stroke: {
+		            strokeColor: '#C10018',
+		            strokeWidth: 60,
+		            strokeCap: 'square',
+		            strokeJoin: 'miter',
+		            miterLimit: 0
+				},
+				routes: {
+					'main': {
+						route: [{
+							element: 'body',
+							offset: { x: -100, y: -100 },
+						},{
+							element: '.mod_section--home-lead .mod_panorama',
+							offset: { x: -100, y: 100 },
+						},{
+							element: '.mod_section--current .mod_section__title',
+							offset: { x: 0, y: 0 },
+						},{
+							element: '.mod_section--current .mod_section__title',
+							offset: { x: 0, y: 0 },
+						},{
+							element: '.mod_section--current .mod_event__info',
+							offset: { x: -50, y: 150 },
+						},{
+							element: '.mod_section--archive .mod_section__title',
+							offset: { x: 0, y: 0 },
+						},{
+							element: '.mod_section--archive .mod_event:first-child .mod_event__info',
+							offset: { x: -50, y: 150 },
+						},{
+							element: '.mod_section--archive .mod_event:nth-child(2) .mod_event__info',
+							offset: { x: 50, y: 0, anchor: 'top-right' },
+						},{
+							element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+							offset: { x: -50, y: 0 },
+						},{
+							element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+							offset: { x: -200, y: 50 },
+						},{
+							element: '.mod_section--archive .mod_ctalink--archive .mod_ctalink__anchor',
+							offset: { x: 100, y: 0, anchor: 'top-right' },
+						},{
+							element: 'body',
+							offset: { x: -300, y: 100, anchor: 'bottom-right' },
+						}]
+					}
+				}
+			};
+		</script>
+	{% endblock %}
