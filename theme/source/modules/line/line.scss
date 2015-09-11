@@ -12,4 +12,14 @@ $m: "mod_line";
 		width: 100%;
 		height: 100%;
 	}
+
+	html.backgroundblendmode & {
+		mix-blend-mode: darken;
+	}
+}
+
+
+html.backgroundblendmode img {
+	position: relative;
+	z-index: zIndex("imgLineActive");
 }
