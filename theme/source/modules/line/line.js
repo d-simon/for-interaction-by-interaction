@@ -3,8 +3,6 @@
  *
  * @author David Simon (me@davidsimon.ch)
  *
- * // @requires _line.lib.js
- * // @requires _linesvg.lib.js
  */
 
 ;(function($, undefined) {
