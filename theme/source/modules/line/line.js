@@ -84,7 +84,18 @@
 			this._updateRouteSegmentData(route);
 		}, this);
 
-		this.drawSVG();
+		window.requestAnimationFrame(_.bind(this.drawSVG, this));
+
+		$(document).on(fibi.events.resize, _.bind(function() {
+			window.requestAnimationFrame(_.bind(function() {
+				_.each(this.routes, function(route) {
+					this._updateSegments(route);
+					this._updateRouteSegmentData(route);
+				}, this);
+			}, this));
+
+			window.requestAnimationFrame(_.bind(this.drawSVG, this));
+		}, this));
 	};
 
 
@@ -95,34 +106,35 @@
 	 */
 	Module.prototype.drawSVG = function() {
 
-		// TODO: Refactor this
+		/**
+		 *TODO: Refactor this and use a good library for SVG manipulation (such as SnapSVG)
+		 */
+
 		this.$svg.find('polyline').remove();
 
 		var polylines = [],
 			className = 'mod_line__polyline';
 
 		_.each(this.routes, function(route) {
-			var $polyline = $('<polyline/>');
-			$polyline.attr('stroke-color', route.stroke.strokeColor);
+			var $polyline = $(document.createElementNS('http://www.w3.org/2000/svg', 'polyline'));
+			$polyline.attr('points', route.segmentStr);
+			$polyline.attr('stroke', route.stroke.strokeColor);
 			$polyline.attr('stroke-width', route.stroke.strokeWidth);
 			$polyline.attr('fill', route.stroke.fill);
-			$polyline.attr('points', route.points);
 
-			$polyline.addClass(className);
-			$polyline.addClass(className+'--'+route.id);
+			$polyline.attr('class', $polyline.attr('class') + ' ' + className);
+			$polyline.attr('class', $polyline.attr('class') + ' ' + className+'--'+route.id);
 			if (route.mq) {
-				$polyline.addClass(className+'--from-' + ((route.mq && route.mq.from) ? route.mq.from : 'zero'));
-				$polyline.addClass(className+'--to-'   + ((route.mq && route.mq.to)   ? route.mq.to   : 'infinity'));
+				$polyline.attr('class', $polyline.attr('class') + ' ' + className+'--from-' + ((route.mq && route.mq.from) ? route.mq.from : 'zero'));
+				$polyline.attr('class', $polyline.attr('class') + ' ' + className+'--to-'   + ((route.mq && route.mq.to)   ? route.mq.to   : 'infinity'));
 			} else {
-				$polyline.addClass(className+'--all');
+				$polyline.attr('class', $polyline.attr('class') + ' ' + className+'--all');
 			}
 
 			polylines.push($polyline);
 		}, this);
 
 		this.$svg.append(polylines);
-
-
 
 		this.$svg[0].setAttribute('viewBox', '0 0 ' + document.body.scrollWidth + ' ' + document.body.scrollHeight);
 		this.$svg.attr('width', document.body.scrollWidth);
@@ -138,7 +150,6 @@
 		return _.each(route.segments, function(segment) {
 				this._updateSegment(segment);
 			}, this);
-
 	};
 
 	/**
@@ -164,7 +175,14 @@
 	 * @method
 	 * @private
 	 */
-	Module.prototype._updateRouteSegmentData = function() {
+	Module.prototype._updateRouteSegmentData = function(route) {
+		var segmentStr = '';
+		_.each(route.segments, function(segment) {
+			if (segment.element && segment.element.length) {
+				segmentStr += segment.x + ',' + segment.y + ' ';
+			}
+		});
+		route.segmentStr = segmentStr;
 	};
 
 	/**
@@ -184,36 +202,52 @@
 
 		offset = offset || { x: 0, y: 0, anchor: 'top-left' };
 
-		var x, y,
-			$el = $(el),
-			elOffset = $el.offset(),
-			elWidth = $el.width(),
+
+		var x = 0, y = 0,
+			elOffset = 0,
+			elWidth = 0,
+			elHeight = 0,
+			$el = $(el);
+
+		if ($el.length) {
+			elOffset = $el.offset();
+			elWidth = $el.width();
 			elHeight = $el.height();
 
-		switch (offset.anchor) {
-			case 'top-right':
-				x = elOffset.left + elWidth + offset.x;
-				y = elOffset.top + offset.y;
-				break;
-			case 'bottom-left':
-				x = elOffset.left + offset.x;
-				y = elOffset.top + elHeight + offset.y;
-				break;
-			case 'bottom-right':
-				x = elOffset.left + elWidth + offset.x;
-				y = elOffset.top + elHeight + offset.y;
-				break;
-			default:
-				x = elOffset.left + offset.x;
-				y = elOffset.top + offset.y;
-				break;
+			switch (offset.anchor) {
+				case 'top-right':
+					x = elOffset.left + elWidth + offset.x;
+					y = elOffset.top + offset.y;
+					break;
+				case 'top-middle':
+					x = elOffset.left + elWidth / 2 + offset.x;
+					y = elOffset.top + offset.y;
+					break;
+				case 'bottom-middle':
+					x = elOffset.left + elWidth / 2 + offset.x;
+					y = elOffset.top + elHeight + offset.y;
+					break;
+				case 'bottom-left':
+					x = elOffset.left + offset.x;
+					y = elOffset.top + elHeight + offset.y;
+					break;
+				case 'bottom-right':
+					x = elOffset.left + elWidth + offset.x;
+					y = elOffset.top + elHeight + offset.y;
+					break;
+				default:
+					x = elOffset.left + offset.x;
+					y = elOffset.top + offset.y;
+					break;
+			}
+
 		}
 
 		return {
 			x: x,
-			y: y * this.options.parallaxOffset,
+			y: (y) ? y * this.options.parallaxOffset : y,
+			element: $el,
 			_el: el,
-			_$el: $el,
 			_width: elWidth,
 			_height: elHeight,
 			_offset: elOffset

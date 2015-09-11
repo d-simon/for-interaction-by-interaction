@@ -22,18 +22,16 @@ $m: "mod_line";
 	right: 0;
 	bottom: 0;
 	z-index: zIndex("line");
+	// transform: translate3d(0,0,0);
 
 	&__canvas {
 		width: 100%;
 		height: 100%;
 	}
-
-	html.backgroundblendmode & {
-		mix-blend-mode: darken;
-	}
-
 	&__svg {
-
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	&__polyline {
@@ -41,7 +39,8 @@ $m: "mod_line";
 
 		/*
 		 * When to display what.
-		 * The order is important!
+		 * (The order is important)
+		 * NOTE: Verbosity...
 		 */
 		@each $name, $size in $mqBreakpoints {
 			&--to-#{$name} {
@@ -67,6 +66,14 @@ $m: "mod_line";
 				}
 			}
 		}
+
+		&--all {
+			display: block;
+		}
+	}
+
+	html.backgroundblendmode & {
+		mix-blend-mode: darken;
 	}
 }
 

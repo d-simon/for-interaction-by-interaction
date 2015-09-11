@@ -7,9 +7,9 @@
 
 ;(function($, paper, window, undefined) {
 
-	var options = fibi.data.line || {},
+	var options = fibi.data.lineOptions || {},
 		parallaxOffset = 1,
-		route = options.routes.main.route,
+		route = options.routes[0].segments,
 		$svg,
 		$polyline,
 		segments = [],
