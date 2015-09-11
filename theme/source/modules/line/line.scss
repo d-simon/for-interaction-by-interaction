@@ -1,0 +1,87 @@
+$m: "mod_line";
+
+@function reverse($list, $recursive: false) {
+	$result: ();
+
+	@for $i from length($list)*-1 through -1 {
+		@if type-of(nth($list, abs($i))) == list and $recursive {
+			$result: append($result, reverse(nth($list, abs($i)), $recursive));
+		}
+		@else {
+			$result: append($result, nth($list, abs($i)));
+		}
+	}
+
+	@return $result;
+}
+
+.#{$m} {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: zIndex("line");
+
+	&__canvas {
+		width: 100%;
+		height: 100%;
+	}
+	&__svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__polyline {
+		display: none;
+
+		/*
+		 * When to display what.
+		 * (The order is important)
+		 * NOTE: Verbosity...
+		 */
+		@each $name, $size in $mqBreakpoints {
+			&--to-#{$name} {
+				@include mq($to: $name) {
+					display: block;
+				}
+			}
+		}
+		@each $name, $size in reverse($mqBreakpoints) {
+			&--from-#{$name} {
+				@include mq($from: $name) {
+					display: block;
+				}
+				@include mq($to: $name) {
+					display: none;
+				}
+			}
+		}
+		@each $name, $size in $mqBreakpoints {
+			&--to-#{$name} {
+				@include mq($from: $name) {
+					display: none;
+				}
+			}
+		}
+
+		&--all {
+			display: block;
+		}
+	}
+
+	html.backgroundblendmode & {
+		mix-blend-mode: darken;
+	}
+}
+
+/***
+ * GLOBAL
+ ***
+ * TODO: Move this into layout ~
+ */
+html.backgroundblendmode img {
+	position: relative;
+	z-index: zIndex("imgLineActive");
+}

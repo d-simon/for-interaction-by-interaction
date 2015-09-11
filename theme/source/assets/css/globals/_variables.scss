@@ -37,3 +37,13 @@ $sizeBreakpointHuge: 				1280px;
 
 $colorText: $colorBlackPure;
 $colorBg: $colorWhite;
+
+
+/**
+ * z-indices / z-index
+ */
+
+$zIndices: (
+	line: -1,
+	imgLineActive: -2
+);

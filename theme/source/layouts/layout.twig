@@ -17,11 +17,11 @@
 
 	<link rel="stylesheet" href="{{ globals.theme_root }}/assets/css/main{% if not globals.env.dev %}.min{% endif %}.css">
 
+	<script src="{{ globals.theme_root }}/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
+
 	{% if globals.env.dev %}
 		<script src="{{ globals.theme_root }}/assets/js/dev.js"></script>
 	{% endif %}
-
-	<script src="{{ globals.theme_root }}/assets/js/head{% if not globals.env.dev %}.min{% endif %}.js"></script>
 
 	{% if not globals.gulp %}
 		{{ function('wp_head') }}
@@ -45,6 +45,29 @@
 			{% include "modules/footer/footer.twig" %}
 		{% endblock %}
 	</div>
+
+	{% block linedata %}
+		<script type="text/javascript">
+			fibi = fibi || {}; fibi.data = fibi.data || {};
+			fibi.data.lineOptions = {
+				routes: [{
+					id: 'main',
+					segments: [
+						{
+							element: 'body',
+							offset: { x: -100, y: -100 },
+						},{
+							element: 'body',
+							offset: { x: 100, y: 100, anchor: 'bottom-right' },
+						}
+					]
+				}]
+			};
+		</script>
+	{% endblock %}
+	{% block line %}
+		{% include "modules/line/line.twig" %}
+	{% endblock %}
 
 	{% if not globals.gulp %}
 		{{ function('wp_footer') }}

@@ -1,0 +1,136 @@
+<script type="text/javascript">
+	fibi = fibi || {}; fibi.data = fibi.data || {};
+	fibi.data.lineOptions = {
+		routes: [{
+			id: 'main',
+			mq: {
+				from: 'large'
+			},
+			segments: [
+				{
+					element: 'body',
+					offset: { x: -20, y: -100 },
+				},{
+					element: 'body',
+					offset: { x: 60, y: 80 },
+				},{
+					element: '.mod_logo',
+					offset: { x: -120, y: 200 },
+				},{
+					element: '.mod_section--home-lead .mod_panorama',
+					offset: { x: 0, y: 200 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: 0, y: 0 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: 0, y: 0 },
+				},{
+					element: '.mod_section--current .mod_event__info',
+					offset: { x: -60, y: 28 },
+				},{
+					element: '.mod_section--archive .mod_section__title',
+					offset: { x: 0, y: 0 },
+				},{
+					element: '.mod_section--archive .mod_event:first-child .mod_event__info',
+					offset: { x: -50, y: 28 },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(2) .mod_event__info',
+					offset: { x: 50, y: 16, anchor: 'top-right' },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+					offset: { x: -50, y: 0 },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+					offset: { x: -200, y: 50 },
+				},{
+					element: '.mod_section--archive .mod_ctalink--archive .mod_ctalink__anchor',
+					offset: { x: 100, y: 0, anchor: 'top-right' },
+				},{
+					element: 'body',
+					offset: { x: -300, y: 100, anchor: 'bottom-right' },
+				}
+			]
+		},{
+			id: 'mainMobile',
+			mq: {
+				from: 'medium',
+				to: 'large'
+			},
+			segments: [
+				{
+					element: 'body',
+					offset: { x: -50, y: -50 },
+				},{
+					element: '.mod_logo',
+					offset: { x: -20, y: 200 },
+				},{
+					element: '.mod_section--home-lead .mod_panorama__content',
+					offset: { x: -160, y: 50 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: -20, y: -80 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: -120, y: 400 },
+				}
+			]
+		},{
+			id: 'mainMobileMedium',
+			mq: {
+				to: 'medium'
+			},
+			segments: [
+				{
+					element: 'body',
+					offset: { x: -50, y: -50 },
+				},{
+					element: '.mod_logo',
+					offset: { x: -40, y: 100 },
+				},{
+					element: '.mod_section--home-lead .mod_panorama__content',
+					offset: { x: -40, y: 0 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: 20, y: -40 },
+				},{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: -120, y: 400 },
+				}
+			]
+		},{
+			id: 'mainMobileContinued',
+			mq: {
+				to: 'large'
+			},
+			segments: [
+				{
+					element: '.mod_section--current .mod_section__title',
+					offset: { x: 120, y: -10, anchor: 'bottom-right' },
+				},{
+					element: '.mod_section--current .mod_event__info',
+					offset: { x: -20, y: 0, anchor: 'top-right' },
+				},{
+					element: '.mod_section--current .mod_event__info',
+					offset: { x: 120, y: 120, anchor: 'bottom-right' },
+				},{
+					element: '.mod_section--archive .mod_event:first-child',
+					offset: { x: -50, y: 0, anchor: 'bottom-right' },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(2)',
+					offset: { x: -200, y: 120 },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+					offset: { x: -40, y: 0 },
+				},{
+					element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+					offset: { x: -160, y: 120 },
+				},{
+
+					element: 'body',
+					offset: { x: -300, y: 100, anchor: 'bottom-right' },
+				}
+			]
+		}]
+	};
+</script>

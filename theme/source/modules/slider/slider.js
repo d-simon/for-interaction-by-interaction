@@ -57,7 +57,6 @@
 	Module.prototype.init = function() {
 		log('initialized');
 
-
 		this.$slider = this.$element.find(this.options.domSelectors.slider);
 		this.sliderOptions = {
   			adaptiveHeight: true,
