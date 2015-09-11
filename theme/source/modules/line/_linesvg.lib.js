@@ -9,15 +9,30 @@
 
 	var options = fibi.data.line || {},
 		parallaxOffset = 1,
-		route = options.routes.main.route;
+		route = options.routes.main.route,
+		$svg,
+		$polyline,
+		segments = [],
+		segmentStr = '';
 
 	$(function() {
-		var $svg = $('[data-line="svg"]'),
-			$polyline = $svg.find('polyline'),
-			segments = [],
-			segmentStr = '';
 
-			for (var i = 0; i < route.length; i++) {
+		$svg = $('[data-line="svg"]');
+		$polyline = $svg.find('polyline');
+
+		setSVG();
+	});
+
+	$(window).resize(function() {
+		requestAnimationFrame(setSVG);
+	});
+
+	function setSVG() {
+
+		segments = [];
+		segmentStr = '';
+
+		for (var i = 0; i < route.length; i++) {
 			var point, el = $(route[i].element)[0];
 			if (el) {
 				point = getPointFromElement(el, route[i].offset);
@@ -29,15 +44,10 @@
 
 		$polyline.attr('points', segmentStr);
 
-		// setInterval(function () {
-		// 	requestAnimationFrame(animateSVG);
-		// }, 16);
-
-		// function animateSVG() {
-
-		// 	$polyline.attr('points', '-60,-60 1300, ' + (500 +$(window).scrollTop()));
-		// }
-	});
+		$svg[0].setAttribute('viewBox', '0 0 ' + document.body.scrollWidth + ' ' + document.body.scrollHeight);
+		$svg.attr('width', document.body.scrollWidth);
+		$svg.attr('height', document.body.scrollHeight);
+	}
 
 	function getPointFromElement(el, offset) {
 
