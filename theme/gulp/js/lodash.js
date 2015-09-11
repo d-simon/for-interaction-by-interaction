@@ -21,7 +21,7 @@ gulp.task(taskName, function(cb) {
 		file = require('gulp-file'),
 		util = require('util');
 
-	var modules = ['debounce', 'uniqueId', 'assign', 'fill', 'bind', 'min', 'max'],
+	var modules = ['debounce', 'uniqueId', 'assign', 'fill', 'bind', 'min', 'max', 'merge', 'each', 'clone', 'cloneDeep'],
 		args = [
 			'include=' + modules.join(','),
 			'-d'

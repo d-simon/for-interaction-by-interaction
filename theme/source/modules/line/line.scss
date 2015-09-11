@@ -1,5 +1,20 @@
 $m: "mod_line";
 
+@function reverse($list, $recursive: false) {
+	$result: ();
+
+	@for $i from length($list)*-1 through -1 {
+		@if type-of(nth($list, abs($i))) == list and $recursive {
+			$result: append($result, reverse(nth($list, abs($i)), $recursive));
+		}
+		@else {
+			$result: append($result, nth($list, abs($i)));
+		}
+	}
+
+	@return $result;
+}
+
 .#{$m} {
 	position: absolute;
 	top: 0;
@@ -16,9 +31,50 @@ $m: "mod_line";
 	html.backgroundblendmode & {
 		mix-blend-mode: darken;
 	}
+
+	&__svg {
+
+	}
+
+	&__polyline {
+		display: none;
+
+		/*
+		 * When to display what.
+		 * The order is important!
+		 */
+		@each $name, $size in $mqBreakpoints {
+			&--to-#{$name} {
+				@include mq($to: $name) {
+					display: block;
+				}
+			}
+		}
+		@each $name, $size in reverse($mqBreakpoints) {
+			&--from-#{$name} {
+				@include mq($from: $name) {
+					display: block;
+				}
+				@include mq($to: $name) {
+					display: none;
+				}
+			}
+		}
+		@each $name, $size in $mqBreakpoints {
+			&--to-#{$name} {
+				@include mq($from: $name) {
+					display: none;
+				}
+			}
+		}
+	}
 }
 
-
+/***
+ * GLOBAL
+ ***
+ * TODO: Move this into layout ~
+ */
 html.backgroundblendmode img {
 	position: relative;
 	z-index: zIndex("imgLineActive");

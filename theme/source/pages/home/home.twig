@@ -36,17 +36,14 @@
 {% block linedata %}
 		<script type="text/javascript">
 			fibi = fibi || {}; fibi.data = fibi.data || {};
-			fibi.data.line = {
-				stroke: {
-		            strokeColor: '#C10018',
-		            strokeWidth: 60,
-		            strokeCap: 'square',
-		            strokeJoin: 'miter',
-		            miterLimit: 0
-				},
-				routes: {
-					'main': {
-						route: [{
+			fibi.data.lineOptions = {
+				routes: [{
+					id: 'main',
+					mq: {
+						from: 'large'
+					},
+					segments: [
+						{
 							element: 'body',
 							offset: { x: -100, y: -100 },
 						},{
@@ -82,9 +79,24 @@
 						},{
 							element: 'body',
 							offset: { x: -300, y: 100, anchor: 'bottom-right' },
-						}]
-					}
-				}
+						}
+					]
+				}, {
+					id: 'mainMobile',
+					mq: {
+						from: 'medium',
+						to: 'large'
+					},
+					segments: [
+						{
+							element: 'body',
+							offset: { x: -100, y: -100 },
+						},{
+							element: 'body',
+							offset: { x: -300, y: 100, anchor: 'bottom-right' },
+						}
+					]
+				}]
 			};
 		</script>
 	{% endblock %}
