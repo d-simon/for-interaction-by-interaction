@@ -3,7 +3,6 @@
  * @requires ../.tmp/lodash.js
  * // @requires ../vendor/handlebars/handlebars.js
  * // @requires ../.tmp/templates.js
- * @requires ../vendor/paper/dist/paper-full.js
 
  * @requires helpers/module.js
  * @requires helpers/events.js
