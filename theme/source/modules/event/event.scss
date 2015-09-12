@@ -110,10 +110,7 @@ $eventInfoMaxWidth:				450px !default;
 
 		@include mq($from: 'medium') {
 			html.cssvwunit & {
-				position: relative;
-				width: 100vw;
-				left: -50vw;
-				margin-left: 50%;
+				@include fullViewportWidth();
 			}
 		}
 

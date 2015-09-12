@@ -14,12 +14,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 
 .#{$m} {
-	position: relative;
-
-	left: 50%;
-	width: 100vw;
-	margin-left: -50vw;
-	content: 'viewport-units-buggyfill; width: 100vw; margin-left: -50vw;';
+	@include fullViewportWidth();
 
 	margin-top: 1rem;
 	margin-bottom: 1rem;

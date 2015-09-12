@@ -110,7 +110,14 @@ $sectionContentMaxWidth:		450px !default;
 				}
 			}
 
+			&__imagewrapper {
+				@include fullViewportWidth();
+			}
 			&__image {
+				max-width: 100%;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
 				margin-top: 3rem;
 				margin-bottom: 3rem;
 				@include mq($from: 'medium') {

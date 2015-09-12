@@ -2,10 +2,7 @@ $m: "mod_panorama";
 
 .#{$m} {
 	&__content {
-		position: relative;
-		width: 100vw;
-		left: -50vw;
-		margin-left: 50%;
+		@include fullViewportWidth();
 
 		@include mq($to: "small") {
 			overflow-x: hidden;

@@ -19,7 +19,9 @@
 
 			{% set image_mood = getFieldOfPost(post, 'image_mood') %}
 			{% if image_mood %}
-				<img src="{{ image_mood.url|getImageSize('gallery') }}" class="mod_section__image" alt="{{ image_mood.alt }}">
+				<div class="mod_section__imagewrapper">
+					<img src="{{ image_mood.url|getImageSize('full') }}" class="mod_section__image" alt="{{ image_mood.alt }}">
+				</div>
 			{% else %}
 				<div class="mod_section__imagespacer"></div>
 			{% endif %}
