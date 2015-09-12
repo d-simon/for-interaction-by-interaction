@@ -116,13 +116,16 @@
 				mq: {
 					to: 'medium'
 				},
+				stroke: {
+					strokeWidth: 30
+				},
 				segments: [
 					{
 						element: 'body',
 						offset: { x: -50, y: -50 },
 					},{
 						element: '.mod_logo',
-						offset: { x: -40, y: 100 },
+						offset: { x: 0, y: 100 },
 					},{
 						element: '.mod_section--home-lead .mod_panorama__content',
 						offset: { x: -40, y: 0 },
@@ -135,8 +138,44 @@
 					}
 				]
 			},{
+				id: 'mainMobileContinuedSmall',
+				stroke: {
+					strokeWidth: 30
+				},
+				mq: {
+					to: 'medium'
+				},
+				segments: [
+					{
+						element: '.mod_section--current .mod_section__title',
+						offset: { x: 120, y: -10, anchor: 'bottom-right' },
+					},{
+						element: '.mod_section--current .mod_event__info',
+						offset: { x: -20, y: 0, anchor: 'top-right' },
+					},{
+						element: '.mod_section--current .mod_event__info',
+						offset: { x: 120, y: 120, anchor: 'bottom-right' },
+					},{
+						element: '.mod_section--archive .mod_event:first-child',
+						offset: { x: -50, y: 0, anchor: 'bottom-right' },
+					},{
+						element: '.mod_section--archive .mod_event:nth-child(2)',
+						offset: { x: -200, y: 120 },
+					},{
+						element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+						offset: { x: 0, y: -60 },
+					},{
+						element: '.mod_section--archive .mod_event:nth-child(3) .mod_event__info',
+						offset: { x: -160, y: 120 },
+					},{
+						element: 'body',
+						offset: { x: -300, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			},{
 				id: 'mainMobileContinued',
 				mq: {
+					from: 'medium',
 					to: 'large'
 				},
 				segments: [

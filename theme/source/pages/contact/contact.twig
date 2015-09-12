@@ -17,20 +17,67 @@
 		fibi = fibi || {}; fibi.data = fibi.data || {};
 		fibi.data.lineOptions = {
 			routes: [{
-				id: 'main',
+				id: 'mainHug',
+				mq: {
+					from: 'huge'
+				},
 				segments: [
 					{
 						element: 'body',
 						offset: { x: -100, y: -100 },
 					},{
 						element: '.mod_section__title',
-						offset: { x: 0, y: 0, anchor: 'bottom-middle' },
+						offset: { x: 120, y: -60, anchor: 'bottom-middle' },
 					},{
 						element: 'body',
 						offset: { x: -300, y: -100, anchor: 'bottom-right' },
 					},{
 						element: 'body',
 						offset: { x: 200, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			},{
+				id: 'main',
+				mq: {
+					from: 'medium',
+					to: 'huge'
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: -100, y: -100 },
+					},{
+						element: '.mod_section__title',
+						offset: { x: 120, y: -60, anchor: 'bottom-middle' },
+					},{
+						element: 'body',
+						offset: { x: -100, y: -200, anchor: 'bottom-right' },
+					},{
+						element: 'body',
+						offset: { x: 200, y: -100, anchor: 'bottom-right' },
+					}
+				]
+			},{
+				id: 'mainMobile',
+				mq: {
+					to: 'medium'
+				},
+				stroke: {
+					strokeWidth: 30
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: -100, y: -100 },
+					},{
+						element: '.mod_section__title',
+						offset: { x: 0, y: -60, anchor: 'bottom-middle' },
+					},{
+						element: 'body',
+						offset: { x: 20, y: -360, anchor: 'bottom-right' },
+					},{
+						element: 'body',
+						offset: { x: 200, y: -100, anchor: 'bottom-right' },
 					}
 				]
 			}]

@@ -46,6 +46,9 @@
 		fibi.data.lineOptions = {
 			routes: [{
 				id: 'main',
+				mq: {
+					from: 'medium'
+				},
 				segments: [
 					{
 						element: 'body',
@@ -68,6 +71,38 @@
 					},{
 						element: '.mod_footer__homelink',
 						offset: { x: -60, y: -50, anchor: 'top-left' }
+					},{
+						element: 'body',
+						offset: { x: -120, y: 100, anchor: 'bottom-middle' }
+					}
+				]
+			},{
+				id: 'mobile',
+				mq: {
+					to: 'medium'
+				},
+				stroke: {
+					strokeWidth: 30
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 20, y: -60 }
+					},{
+						element: '.mod_section__title',
+						offset: { x: -80, y: 0, anchor: 'top-right' }
+					},{
+						element: '.mod_section__title',
+						offset: { x: 60, y: 190, anchor: 'top-right' }
+					},{
+						element: '.mod_section__image',
+						offset: { x: -40, y: 0, anchor: 'top-right' }
+					},{
+						element: '.mod_section__image',
+						offset: { x: 60, y: -200, anchor: 'bottom-right' }
+					},{
+						element: '.mod_section__image',
+						offset: { x: -20, y: 20, anchor: 'bottom-left' }
 					},{
 						element: 'body',
 						offset: { x: -120, y: 100, anchor: 'bottom-middle' }

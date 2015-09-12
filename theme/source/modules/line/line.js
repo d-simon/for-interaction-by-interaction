@@ -165,7 +165,7 @@
 	 * @private
 	 */
 	Module.prototype._updateRouteOptions = function(route) {
-		return _.merge(route, { stroke: this.options.stroke }, route);
+		return _.merge(route, { stroke: _.extend({}, this.options.stroke, route.stroke) });
 	};
 
 	/**

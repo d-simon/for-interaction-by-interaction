@@ -15,6 +15,9 @@
 		fibi.data.lineOptions = {
 			routes: [{
 				id: 'main',
+				mq: {
+					from: 'large'
+				},
 				segments: [
 					{
 						element: 'body',
@@ -61,6 +64,113 @@
 					{
 						element: 'body',
 						offset: { x: -200, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			},{
+				id: 'mobileMedium',
+				mq: {
+					from: 'small',
+					to: 'large'
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 100, y: -100 },
+					},{
+						element: '.mod_section__title',
+						offset: { x: 0, y: -60, anchor: 'top-middle' },
+					},{
+						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
+						offset: { x: -60, y: -290 },
+					},{
+						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
+						offset: { x: -50, y: -90 },
+					},
+					{% for post in posts %}
+						{% if loop.index > 1 %}
+							{% if loop.index % 2 == 0 %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: -200, y: -200, anchor: 'top-left' },
+							},
+								{% if loop.index % 4 == 0 %}
+								{
+									element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+									offset: { x: 60, y: -240, anchor: 'top-left' },
+								},
+								{% endif %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: -40, y: -20, anchor: 'top-left' },
+							},
+							{% else %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: -200, y: -290, anchor: 'top-left' },
+							},
+								{% if loop.index % 3 == 0 %}
+								{
+									element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+									offset: { x: -160, y: -200, anchor: 'top-left' },
+								},
+								{% endif %}
+								{% if loop.index % 3 == 2 %}
+								{
+									element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+									offset: { x: -60, y: -200, anchor: 'top-left' },
+								},
+								{% endif %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: -40, y: -120, },
+							},
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+
+					{
+						element: 'body',
+						offset: { x: -200, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			},{
+				id: 'mobileSmall',
+				mq: {
+					to: 'small'
+				},
+				stroke: {
+					strokeWidth: 30
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 100, y: -100 },
+					},{
+						element: '.mod_section__title',
+						offset: { x: -32, y: -60, anchor: 'top-middle' },
+					},{
+						element: 'body',
+						offset: { x: -50, y: 400 },
+					}
+				]
+			},{
+				id: 'mobileSmallBottom',
+				mq: {
+					to: 'small'
+				},
+				stroke: {
+					strokeWidth: 30
+				},
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 100, y: -100, anchor: 'bottom-right' }
+					},{
+						element: '.mod_ctalink--page',
+						offset: { x: -32, y: -60, anchor: 'top-middle' }
+					},{
+						element: 'body',
+						offset: { x: -300, y: 400, anchor: 'bottom-left' }
 					}
 				]
 			}]
