@@ -22,6 +22,7 @@ $m: "mod_line";
 	right: 0;
 	bottom: 0;
 	z-index: zIndex("line");
+	overflow: hidden;
 
 	&__canvas {
 		width: 100%;
