@@ -8,3 +8,64 @@
 		{% endblock %}
 	{% endembed %}
 {% endblock %}
+
+{% block linedata %}
+	<script type="text/javascript">
+		fibi = fibi || {}; fibi.data = fibi.data || {};
+		fibi.data.lineOptions = {
+			routes: [{
+				id: 'main',
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 100, y: -100 },
+					},{
+						element: '.mod_logo__link',
+						offset: { x: 100, y: -50, anchor: 'top-right' },
+					},{
+						element: '.mod_section__title',
+						offset: { x: -120, y: 0, anchor: 'top-right' },
+					},{
+						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
+						offset: { x: -50, y: -90 },
+					},
+
+					{% for post in posts %}
+						{% if loop.index > 1 %}
+							{% if loop.index % 2 == 0 %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: 50, y: 20, anchor: 'top-right' },
+							},
+							{% else %}
+							{
+								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
+								offset: { x: -50, y: 0, },
+							},
+							{% endif %}
+						{% endif %}
+					{% endfor %}
+
+					{% if posts.length % 2 == 0 %}
+						{
+							element: 'body',
+							offset: { x: -300, y: -100, anchor: 'bottom-right' },
+						},
+					{% else %}
+						{
+							element: 'body',
+							offset: { x: -100, y: -140, anchor: 'bottom-middle' },
+						},
+					{% endif %}
+
+					{
+						element: 'body',
+						offset: { x: -200, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			}]
+		};
+	</script>
+	<script>
+	</script>
+{% endblock %}

@@ -41,39 +41,39 @@
 {% endblock %}
 
 {% block linedata %}
-<script type="text/javascript">
-	fibi = fibi || {}; fibi.data = fibi.data || {};
-	fibi.data.lineOptions = {
-		routes: [{
-			id: 'main',
-			segments: [
-				{
-					element: 'body',
-					offset: { x: 20, y: -60 }
-				},{
-					element: '.mod_section__title--main',
-					offset: { x: -80, y: -120, anchor: 'top-right' }
-				},{
-					element: '.mod_section__abouttext',
-					offset: { x: -120, y: 0 }
-				},{
-					element: '.mod_section__image',
-					offset: { x: 60, y: -120 }
-				},{
-					element: '.mod_section__image',
-					offset: { x: -120, y: 120, anchor: 'top-right' }
-				},{
-					element: '.mod_section__image',
-					offset: { x: 0, y: 120, anchor: 'bottom-left' }
-				},{
-					element: '.mod_footer__homelink',
-					offset: { x: -60, y: -50, anchor: 'top-left' }
-				},{
-					element: 'body',
-					offset: { x: -120, y: 100, anchor: 'bottom-middle' }
-				}
-			]
-		}]
-	};
-</script>
+	<script type="text/javascript">
+		fibi = fibi || {}; fibi.data = fibi.data || {};
+		fibi.data.lineOptions = {
+			routes: [{
+				id: 'main',
+				segments: [
+					{
+						element: 'body',
+						offset: { x: 20, y: -60 }
+					},{
+						element: '.mod_section__title--main',
+						offset: { x: -80, y: -120, anchor: 'top-right' }
+					},{
+						element: '.mod_section__abouttext',
+						offset: { x: -120, y: 0 }
+					},{
+						element: '.mod_section__image',
+						offset: { x: 60, y: -120 }
+					},{
+						element: '.mod_section__image',
+						offset: { x: -120, y: 120, anchor: 'top-right' }
+					},{
+						element: '.mod_section__image',
+						offset: { x: 0, y: 120, anchor: 'bottom-left' }
+					},{
+						element: '.mod_footer__homelink',
+						offset: { x: -60, y: -50, anchor: 'top-left' }
+					},{
+						element: 'body',
+						offset: { x: -120, y: 100, anchor: 'bottom-middle' }
+					}
+				]
+			}]
+		};
+	</script>
 {% endblock %}

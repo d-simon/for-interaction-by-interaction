@@ -11,3 +11,29 @@
 		{% endblock %}
 	{% endembed %}
 {% endblock %}
+
+{% block linedata %}
+	<script type="text/javascript">
+		fibi = fibi || {}; fibi.data = fibi.data || {};
+		fibi.data.lineOptions = {
+			routes: [{
+				id: 'main',
+				segments: [
+					{
+						element: 'body',
+						offset: { x: -100, y: -100 },
+					},{
+						element: '.mod_section__title',
+						offset: { x: 0, y: 0, anchor: 'bottom-middle' },
+					},{
+						element: 'body',
+						offset: { x: -300, y: -100, anchor: 'bottom-right' },
+					},{
+						element: 'body',
+						offset: { x: 200, y: 100, anchor: 'bottom-right' },
+					}
+				]
+			}]
+		};
+	</script>
+{% endblock %}

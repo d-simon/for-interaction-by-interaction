@@ -13,6 +13,9 @@ var data = _.merge(defaultData, {
 		posts: [
 			eventData.event,
 			eventData.event,
+			eventData.event,
+			eventData.event,
+			eventData.event,
 			eventData.event
 		],
 		link_current: '/pages/home/home.html'
