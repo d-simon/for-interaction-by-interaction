@@ -10,7 +10,9 @@ var data = _.merge(defaultData, {
 			title: 'CTA-Link',
 			code: dataHelper.getTemplateCode('ctalink.twig'),
 			documentation: dataHelper.getDocumentation('ctalink.md')
-		}
+		},
+		link: '#',
+		text: 'Online-Flyer'
 	});
 
 module.exports = data;
