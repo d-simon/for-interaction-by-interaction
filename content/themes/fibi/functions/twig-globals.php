@@ -8,9 +8,9 @@ if (is_admin()) return;
 add_filter('timber_context', '_theme_setup_twig_context');
 function _theme_setup_twig_context($data) {
 
-    $data['mainnav'] = new TimberMenu('mainnav');
+	$data['mainnav'] = new TimberMenu('mainnav');
 
-    return $data;
+	return $data;
 }
 
 /**
@@ -21,31 +21,32 @@ function _theme_setup_twig_context($data) {
 add_filter('get_twig', '_theme_add_twig_globals');
 function _theme_add_twig_globals($twig) {
 
-    $default_data = _theme_get_json_data('data/default.json');
-    if (isset($default_data['globals']) == false) {
-        $default_data['globals'] = array();
-    }
+	$default_data = _theme_get_json_data('data/default.json');
+	if (isset($default_data['globals']) == false) {
+		$default_data['globals'] = array();
+	}
 
-    $default_data['globals'] = array_merge($default_data['globals'], array(
-            'page_title' => get_the_title(),
-            'theme_root' => get_template_directory_uri(),
-            'home_url' => get_home_url(),
-            'footer_url' => get_field('footer_link', 'option'),
-            'project' => array(
-            	'title' => get_field('project_title', 'option'),
-            	'lead' => get_field('project_lead', 'option')
-        	),
-        	// Load unminified (true) or minified (false) assets
-            'env' => array(
-                'dev' => false // consider setting this to WP_DEBUG
-            ),
-            // Use correct templates
-            'gulp' => false
-    ));
+	$default_data['globals'] = array_merge($default_data['globals'], array(
+			'page_title' => get_the_title(),
+			'theme_root' => get_template_directory_uri(),
+			'home_url' => get_home_url(),
+			'footer_url' => get_field('footer_link', 'option'),
+			'project' => array(
+				'title' => get_field('project_title', 'option'),
+				'lead' => get_field('project_lead', 'option')
+			),
+			'google_analytics_id' => get_field('google_analytics_id', 'option'),
+			// Load unminified (true) or minified (false) assets
+			'env' => array(
+				'dev' => false // consider setting this to WP_DEBUG
+			),
+			// Use correct templates
+			'gulp' => false
+	));
 
-    $twig->addGlobal('globals', $default_data['globals']);
+	$twig->addGlobal('globals', $default_data['globals']);
 
-    return $twig;
+	return $twig;
 }
 
 /**
@@ -55,13 +56,13 @@ function _theme_add_twig_globals($twig) {
  */
 
 function _theme_get_json_data($relative_path) {
-    $data = array();
+	$data = array();
 
-    if ($file = file_get_contents(TEMPLATEPATH . '/data/' . $relative_path)) {
-        $data = json_decode($file, true);
-    }
+	if ($file = file_get_contents(TEMPLATEPATH . '/data/' . $relative_path)) {
+		$data = json_decode($file, true);
+	}
 
-    return $data;
+	return $data;
 }
 
 
