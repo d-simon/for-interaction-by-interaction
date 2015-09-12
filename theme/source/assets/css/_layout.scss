@@ -6,7 +6,20 @@ html {
 	box-sizing: inherit;
 }
 
+
+html {
+	height: 100%;
+}
+
 body {
+	min-height: 100%;
+	position: relative;
+
+	/* VERIFY / DEV: fixes 100vw horizontal scrollbar issue */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+
 	background: $colorBg;
 	color: $colorText;
 	font-family: $fontFamilyBase;
@@ -16,13 +29,6 @@ body {
 	@include mq($from: "small") {
 		padding: $sizeGutter;
 	}
-
-	position: relative;
-
-	/* VERIFY / DEV: fixes 100vw horizontal scrollbar issue */
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100%;
 }
 
 .site-wrapper {
