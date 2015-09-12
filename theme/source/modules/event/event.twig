@@ -1,54 +1,71 @@
+{% if modifiers is not defined %}
+	{#
+	 # This for Twig.js only since the "and" operator implementation
+	 # seems to differ. Both sides are evaluated. Even if the left
+	 # one evaluates to false. See: Short-Circuit Evaluation.
+	 #}
+	{% set modifiers = [] %}
+{% endif %}
+{% if 'current' in modifiers %}
+	{% set event_image_size = 'event-current' %}
+{% else %}
+	{% set event_image_size = 'event-archive' %}
+{% endif %}
+{% set event_guests = getFieldOfPost(event, 'event_guests') %}
+{% set link_flyer = getFieldOfPost(event, 'event_link_flyer') %}
 <article class="mod_event{% if modifiers is defined %}{% for modifier in modifiers %} mod_event--{{ modifier }}{% endfor %}{% endif %}" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
 	<div class="mod_event__content">
 		<figure class="mod_event__figure" itemprop="image">
-			{% if modifiers is not defined %}
-				{#
-				 # This for Twig.js only since the "and" operator implementation
-				 # seems to differ. Both sides are evaluated. Even if the left
-				 # one evaluates to false. See: Short-Circuit Evaluation.
-				 #}
-				{% set modifiers = [] %}
-			{% endif %}
-			{% if modifiers is defined and 'current' in modifiers %}
-				{% set event_image_size = 'event-current' %}
+			{% if link_flyer and 'current' in modifiers %}
+				<a href="{{ link_flyer }}">
+					<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_event__image" alt="{{ event.title }}">
+				</a>
+			{% elseif 'current' not in modifiers %}
+				<a href="{{ event.permalink }}">
+					<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_event__image" alt="{{ event.title }}">
+				</a>
 			{% else %}
-				{% set event_image_size = 'event-archive' %}
-			{% endif %}
-			<a href="{{ event.permalink }}">
 				<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_event__image" alt="{{ event.title }}">
-			</a>
+			{% endif %}
 		</figure>
 		<div class="mod_event__info">
 			<div class="mod_event__info-content">
-				<a href="{{ event.permalink }}">
+				{% if link_flyer and 'current' in modifiers %}
+					<a href="{{ link_flyer }}">
+						<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+					</a>
+				{% elseif 'current' not in modifiers %}
+					<a href="{{ event.permalink }}">
+						<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+					</a>
+				{% else %}
 					<h2 class="mod_event__title" itemprop="name">{{ event.title }}</h2>
+				{% endif %}
 				</a>
 				<div class="mod_event__subinfo">
 					<time class="mod_event__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('j. F Y') }}</time>
-					{% set event_guests = getFieldOfPost(event, 'event_guests') %}
-						{% if event_guests %}
-							<span class="mod_event__subinfo-separator">/</span>
-							<ul class="mod_event__guests">
-								{% for guest in event_guests %}
-									<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
-										{% if guest.event_guest_url %}
-											<a href="{{ guest.event_guest_url}}" target="_blank" class="mod_event__guest-link" itemprop="url">
-										{% endif %}
-											<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
-										{% if guest.event_guest_url %}
-											</a>
-										{% endif %}
+					{% if event_guests %}
+						<span class="mod_event__subinfo-separator">/</span>
+						<ul class="mod_event__guests">
+							{% for guest in event_guests %}
+								<li class="mod_event__guest" itemscope itemprop="performer" itemtype="http://schema.org/Person">
+									{% if guest.event_guest_url %}
+										<a href="{{ guest.event_guest_url}}" target="_blank" class="mod_event__guest-link" itemprop="url">
+									{% endif %}
+										<span class="mod_event__guest-name" itemprop="name">{{ guest.event_guest_name }}</span>
+									{% if guest.event_guest_url %}
 										</a>
-									</li>
-								{% endfor %}
-							</ul>
-						{% endif %}
+									{% endif %}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
 				</div>
 				<div class="mod_event__description" itemprop="description">
 					{{ getFieldOfPost(event, 'event_excerpt') }}
 				</div>
 
-				{% set link_flyer = getFieldOfPost(event, 'event_link_flyer') %}
 				{% if link_flyer and 'current' in modifiers %}
 					{% include "modules/ctalink/ctalink.twig" with { link: link_flyer, text: "Online-Flyer", modifiers: ['eventdetail', 'external'] } %}
 				{% elseif 'current' not in modifiers %}
