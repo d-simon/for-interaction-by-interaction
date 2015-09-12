@@ -18,20 +18,20 @@ var data = _.merge(defaultData, {
 					get_link: '/pages/home/home.html'
 				},
 				{
-					title: 'Archiv',
-					get_link: '/pages/archive/archive.html'
-				},
-				{
 					title: 'Idee',
 					get_link: '/pages/about/about.html'
 				},
 				{
-					title: '(Spacer)',
-					get_link: '#'
-				},
-				{
 					title: 'Kontakt',
 					get_link: '/pages/contact/contact.html'
+				},
+				{
+					title: 'Archiv',
+					get_link: '/pages/archive/archive.html'
+				},
+				{
+					title: '(Spacer)',
+					get_link: '#'
 				},
 				{
 					title: 'Newsletter',
