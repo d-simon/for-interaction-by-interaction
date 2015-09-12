@@ -5,6 +5,9 @@
  *
  * @requires ../../assets/vendor/imagesloaded/imagesloaded.pkgd.js
  *
+ * @requires ../../assets/vendor/paper/dist/paper-full.js
+ * @requires ../../assets/vendor/tweenjs/src/Tween.js
+ * @requires _linecanvas.js
  */
 
 ;(function($, undefined) {
@@ -84,7 +87,7 @@
 			this._updateRouteSegmentData(route);
 		}, this);
 
-		window.requestAnimationFrame(_.bind(this.drawSVG, this));
+		// window.requestAnimationFrame(_.bind(this.drawSVG, this));
 
 		$(document).on(fibi.events.resize, _.bind(this.updateAndRedraw, this));
 		$('body').imagesLoaded(_.bind(this.updateAndRedraw, this));
