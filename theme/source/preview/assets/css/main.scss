@@ -36,6 +36,8 @@ $sg_logoHeightModule: pxToRem(106);
 
 body {
 	padding: 0;
+	padding-top: 1px;
+	margin-top: -1px;
     background-color: $sg_colorWhite;
 }
 
