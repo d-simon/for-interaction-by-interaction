@@ -1,15 +1,11 @@
 $m: "mod_logo";
 
-$logoFontSizeSmall:		$sizeFontH3 !default;
-$logoFontSize:			$sizeFontH2 !default;
+$logoFontSize:			$sizeFontBase !default;
 
 .#{$m} {
-	@include fontH2();
-	font-size: $logoFontSizeSmall;
-	line-height: 1.3;
-	@include mq($from: "small") {
-		font-size: $logoFontSize;
-	}
+	@include fontBasePlus();
+	line-height: 1.5;
+	font-size: $logoFontSize;
 
 	&__link {
 		@include linkStyle();

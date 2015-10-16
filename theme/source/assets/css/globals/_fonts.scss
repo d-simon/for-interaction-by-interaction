@@ -3,6 +3,20 @@
  */
 
 @font-face {
+  font-family: 'FFMarkWeb';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/ffmark/MarkWeb.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FFMarkWeb';
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/ffmark/MarkWeb-Bold.woff') format('woff');
+}
+
+@font-face {
     font-family: 'Karla';
     src: url('../fonts/karla/karla-regular-webfont.eot');
     src: url('../fonts/karla/karla-regular-webfont.eot?#iefix') format('embedded-opentype'),

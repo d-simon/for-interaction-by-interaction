@@ -4,16 +4,14 @@
  * Default variables
  */
 
-$fontFamilyBase: 'Karla', 'Apercu', 'Benton Sans', sans-serif;
-$fontFamilyTitle: 'Futwora', 'Sofia Pro', 'Futura', sans-serif;
+$fontFamilyBase: 'FFMarkWeb', sans-serif;
+$fontFamilyTitle: $fontFamilyBase;
 
 $sizeFontBase:						16px;
-$sizeFontBasePlus:					18px;
-$sizeFontBasePlusPlus:				20px;
-$sizeFontH3:						24px;
-$sizeFontH2:						28px;
-$sizeFontH1:						36px;
-$sizeFontHuge:						48px;
+$sizeFontBasePlus:					20px;
+$sizeFontH2:						36px;
+$sizeFontH1:						48px;
+$sizeFontHuge:						72px;
 
 
 $sizeLineHeightBase:				1.5;

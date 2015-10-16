@@ -6,9 +6,10 @@ $m: "mod_ctalink";
 	&__anchor {
 		display: inline-block;
 		@include linkStyle();
-		@include fontH3();
-		padding-bottom: 2px;
-		border-bottom: 3px solid $colorGrayLight;
+		@include fontBase();
+		@include styleFontBaseBold();
+		padding-bottom: 0px;
+		border-bottom: 2px solid $colorGrayLight;
 	}
 
 	&--event {
@@ -16,9 +17,7 @@ $m: "mod_ctalink";
 
 		.#{$m} {
 			&__anchor {
-				font-size: $sizeFontBasePlus;
-				@include styleFontBase();
-				color: $colorGray;
+				// color: $colorGray;
 				border-bottom: 2px solid $colorGrayLight;
 			}
 		}
@@ -29,7 +28,6 @@ $m: "mod_ctalink";
 
 		.#{$m} {
 			&__anchor {
-				font-size: $sizeFontBasePlusPlus;
 				border-bottom: 2px solid $colorGrayLight;
 			}
 		}

@@ -31,7 +31,8 @@ $sectionContentMaxWidth:		450px !default;
 	&--page {
 		.#{$m} {
 			&__title {
-				@include fontH3();
+				display: none;
+				@include fontBasePlus();
 				@include styleFontTitle();
 				text-align: center;
 				text-transform: none;
@@ -51,20 +52,20 @@ $sectionContentMaxWidth:		450px !default;
 	&--home-lead {
 		.#{$m} {
 			&__title {
-				@include fontH1();
+				@include fontH2();
 				text-transform: none;
-				margin-bottom: 3rem;
-				display: none;
+				text-align: left;
+				margin-bottom: 2rem;
 				@include mq($from: 'medium') {
 					display: block;
 					@include fontH1Plus();
 				}
 			}
 			&__content {
-				max-width: 640px;
-				text-align: center;
-				margin-right: auto;
-				margin-left: auto;
+				&--lead {
+					display: inline-block;
+					max-width: 500px;
+				}
 			}
 		}
 		.mod_panorama {
@@ -89,7 +90,7 @@ $sectionContentMaxWidth:		450px !default;
 				display: none;
 				@include mq($from: 'medium') {
 					display: block;
-					@include fontH1Plus();
+				// 	@include fontH1Plus();
 				}
 			}
 

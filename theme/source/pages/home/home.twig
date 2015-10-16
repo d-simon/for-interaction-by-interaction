@@ -6,11 +6,13 @@
 			<h1 class="mod_section__title">{{ title }}</h1>
 		{% endblock %}
 		{% block content %}
-			{% if globals.gulp %}
-				{{ content }}
-			{% else %}
-				{{ content|wpautop }}
-			{% endif %}
+			<div class="mod_section__content--lead">
+				{% if globals.gulp %}
+					{{ content }}
+				{% else %}
+					{{ content|wpautop }}
+				{% endif %}
+			</div>
 			{% if image_panorama %}
 				{% include "modules/panorama/panorama.twig" with { image: image_panorama, alt: title } %}
 			{% endif %}
@@ -47,18 +49,12 @@
 						element: 'body',
 						offset: { x: -20, y: -100 },
 					},{
-						element: 'body',
-						offset: { x: 60, y: 80 },
+						element: '.mod_section--home-lead .mod_section__content--lead',
+						offset: { x: 200, y: 40, anchor: 'top-right' },
 					},{
-						element: '.mod_logo',
-						offset: { x: -120, y: 200 },
-					},{
-						element: '.mod_section--home-lead .mod_panorama',
-						offset: { x: 0, y: 200 },
-					},{
-						element: '.mod_section--current .mod_section__title',
-						offset: { x: 0, y: 0 },
-					},{
+					// 	element: '.mod_section--home-lead .mod_panorama',
+					// 	offset: { x: 0, y: 200 },
+					// },{
 						element: '.mod_section--current .mod_section__title',
 						offset: { x: 0, y: 0 },
 					},{
@@ -66,7 +62,7 @@
 						offset: { x: -60, y: 28 },
 					},{
 						element: '.mod_section--archive .mod_section__title',
-						offset: { x: 0, y: 0 },
+						offset: { x: 50, y: 0 },
 					},{
 						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
 						offset: { x: -50, y: 28 },

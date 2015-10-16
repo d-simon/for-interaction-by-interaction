@@ -1,9 +1,5 @@
 /* DEV */
-h1, h2, h3 {
-	font-family: $fontFamilyTitle;
-	font-weight: normal;
-}
-h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: $fontFamilyBase;
 	font-weight: bold;
 }
@@ -13,6 +9,22 @@ body {
     html.touchevents & {
 		text-rendering: optimizeSpeed;
 	}
+
+	font-family: $fontFamilyBase;
+	font-size: 100%;
+	line-height: $sizeLineHeightBase;
+
+	/* setup OpenType features */
+	font-feature-settings: "dlig" 1, /*"frac" 1,*/ "kern" 1, "pnum" 1, "onum" 1;
+	text-transform: none;
+
+	/* vendor prefixes */
+	-webkit-font-feature-settings: "dlig" 1, /*"frac" 1,*/ "kern" 1, "pnum" 1, "onum" 1;
+	-moz-font-feature-settings: "dlig" 1, /*"frac" 1,*/ "kern" 1, "pnum" 1, "onum" 1;
+	-moz-font-feature-settings: "dlig=1, frac=1, kern=1, pnum=1, onum=1";
+	-ms-font-feature-settings: "dlig" 1, /*"frac" 1,*/ "kern" 1, "pnum" 1, "onum" 1;
+	-o-font-feature-settings: "dlig" 1, /*"frac" 1,*/ "kern" 1, "pnum" 1, "onum" 1;
+
 }
 pre {
 	text-rendering: auto;
@@ -28,7 +40,7 @@ pre {
 }
 @mixin styleFontTitle() {
 	font-family: $fontFamilyTitle;
-	font-weight: normal;
+	font-weight: bold;
 }
 @mixin styleFontTitleBold() {
 	font-family: $fontFamilyTitle;
@@ -36,32 +48,31 @@ pre {
 }
 
 @mixin fontH1Plus($color: true) {
-	@include styleFontTitle;
+	@include styleFontTitleBold();
 	font-size: $sizeFontHuge;
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontH1($color: true) {
-	@include styleFontTitle;
+	@include styleFontTitleBold();
 	font-size: $sizeFontH1;
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontH2($color: true) {
-	@include styleFontTitle;
+	@include styleFontTitleBold();
 	font-size: $sizeFontH2;
-	line-height: $sizeLineHeightTitle;
-	@include _addColor($color);
-}
-@mixin fontH3($color: true) {
-	@include styleFontTitle;
-	font-size: $sizeFontH3;
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
 @mixin fontBase($color: true) {
 	@include styleFontBase;
 	font-size: $sizeFontBase;
+	@include _addColor($color);
+}
+@mixin fontBasePlus($color: true) {
+	@include styleFontBase;
+	font-size: $sizeFontBasePlus;
 	@include _addColor($color);
 }
 

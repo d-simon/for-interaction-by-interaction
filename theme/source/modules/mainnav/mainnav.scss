@@ -12,11 +12,11 @@ $mainnavWidth:				450px !default;
 	&__item {
 		float: left;
 		width: 33%;
-		min-height: 2.2 * $sizeFontBasePlus;
+		min-height: 2.2 * $sizeFontBase;
 
 		&-link {
 			@include linkStyle();
-			font-size: $sizeFontBasePlus;
+			font-size: $sizeFontBase;
 			line-height: 2.2;
 		}
 

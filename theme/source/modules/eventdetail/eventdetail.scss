@@ -14,6 +14,7 @@ $m: "mod_eventdetail";
 			font-weight: normal;
 		}
 		&--main {
+			@include fontH1();
 			margin: 0;
 		}
 	}

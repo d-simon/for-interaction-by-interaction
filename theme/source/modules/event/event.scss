@@ -44,9 +44,9 @@ $eventInfoMaxWidth:				450px !default;
 	}
 
 	&__title {
-		@include fontH3();
+		@include fontH2();
 		margin-top: 1rem;
-		margin-bottom: 0.75rem;
+		margin-bottom: 0.5rem;
 		@include mq($from: 'large') {
 			@include fontH2();
 			margin-top: 0;
@@ -86,7 +86,7 @@ $eventInfoMaxWidth:				450px !default;
 
 	&__description {
 		margin-top: 0.75rem;
-		margin-bottom: 2rem;
+		margin-bottom: 0.75rem;
 	}
 
 	&--switch {
@@ -117,7 +117,7 @@ $eventInfoMaxWidth:				450px !default;
 		.#{$m} {
 			&__title {
 				@include mq($from: 'huge') {
-					@include fontH1();
+					@include fontH2();
 				}
 			}
 			&__content {

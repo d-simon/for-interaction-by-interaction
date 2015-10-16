@@ -22,9 +22,6 @@ body {
 
 	background: $colorBg;
 	color: $colorText;
-	font-family: $fontFamilyBase;
-	font-size: 100%;
-	line-height: $sizeLineHeightBase;
 	padding: $sizeGutter / 2;
 	@include mq($from: "small") {
 		padding: $sizeGutter;
