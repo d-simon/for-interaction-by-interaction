@@ -53,7 +53,7 @@ $sectionContentMaxWidth:		450px !default;
 	&--home-lead {
 		.#{$m} {
 			&__title {
-				@include fontH2();
+				@include fontH1();
 				text-transform: none;
 				text-align: left;
 				margin-bottom: 2rem;
@@ -147,15 +147,6 @@ $sectionContentMaxWidth:		450px !default;
 
 			&__footinfo {
 				margin-bottom: 1rem;
-			}
-		}
-
-		.mod_ctalink--about {
-			.mod_ctalink__anchor {
-				@include styleFontBaseBold();
-				font-size: $sizeFontBase;
-				color: rgba($colorBlackPure, 0.8);
-				border-bottom: 2px solid $colorGrayLight;
 			}
 		}
 	}
