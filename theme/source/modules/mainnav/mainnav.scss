@@ -20,6 +20,12 @@ $mainnavWidth:				450px !default;
 			line-height: 2.2;
 		}
 
+		&.active {
+			.#{$m}__item-link {
+				@include styleFontBaseBold();
+			}
+		}
+
 		&--spacer {
 			.#{$m}__item-link {
 				display: none;

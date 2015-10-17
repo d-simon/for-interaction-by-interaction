@@ -103,59 +103,59 @@ $eventInfoMaxWidth:				450px !default;
 		}
 	}
 
-	&--current {
-		max-width: none;
-		margin-left: auto;
-		margin-right: auto;
+	// &--current {
+	// 	max-width: none;
+	// 	margin-left: auto;
+	// 	margin-right: auto;
 
-		@include mq($from: 'medium') {
-			html.cssvwunit & {
-				@include fullViewportWidth();
-			}
-		}
+	// 	@include mq($from: 'medium') {
+	// 		html.cssvwunit & {
+	// 			@include fullViewportWidth();
+	// 		}
+	// 	}
 
-		.#{$m} {
-			&__title {
-				@include mq($from: 'huge') {
-					@include fontH2();
-				}
-			}
-			&__content {
-				@include mq($from: 'medium') {
+	// 	.#{$m} {
+	// 		&__title {
+	// 			@include mq($from: 'huge') {
+	// 				@include fontH2();
+	// 			}
+	// 		}
+	// 		&__content {
+	// 			@include mq($from: 'medium') {
 
-					@include gridContainer();
+	// 				@include gridContainer();
 
-					html.cssvwunit & {
-						width: 100vw;
-					}
-				}
-			}
-			&__figure {
-				@include mq($from: 'medium') {
-					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
-					padding-left: 0; // DEV: fixes space left of the image
-				}
-				@include mq($from: 'large') {
-					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
-					padding-left: 0; // DEV: fixes space left of the image
-				}
-				@include mq($from: 'huge') {
-					@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
-					padding-left: 0; // DEV: fixes space left of the image
-				}
-			}
-			&__info {
-				@include mq($from: 'medium') {
-					@include gridColumn($columns: 5, $total: 12, $verticalAlign: middle);
-					margin-left: auto;
-				}
-				@include mq($from: 'large') {
-					@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
-				}
-				@include mq($from: 'huge') {
-					@include gridColumn($columns: 4, $total: 12, $left: 0.75, $right: 0.25, $verticalAlign: middle);
-				}
-			}
-		}
-	}
+	// 				html.cssvwunit & {
+	// 					width: 100vw;
+	// 				}
+	// 			}
+	// 		}
+	// 		&__figure {
+	// 			@include mq($from: 'medium') {
+	// 				@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+	// 				padding-left: 0; // DEV: fixes space left of the image
+	// 			}
+	// 			@include mq($from: 'large') {
+	// 				@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+	// 				padding-left: 0; // DEV: fixes space left of the image
+	// 			}
+	// 			@include mq($from: 'huge') {
+	// 				@include gridColumn($columns: 7, $total: 12, $verticalAlign: middle);
+	// 				padding-left: 0; // DEV: fixes space left of the image
+	// 			}
+	// 		}
+	// 		&__info {
+	// 			@include mq($from: 'medium') {
+	// 				@include gridColumn($columns: 5, $total: 12, $verticalAlign: middle);
+	// 				margin-left: auto;
+	// 			}
+	// 			@include mq($from: 'large') {
+	// 				@include gridColumn($columns: 4, $total: 12, $left: 0.5, $right: 0.5, $verticalAlign: middle);
+	// 			}
+	// 			@include mq($from: 'huge') {
+	// 				@include gridColumn($columns: 4, $total: 12, $left: 0.75, $right: 0.25, $verticalAlign: middle);
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

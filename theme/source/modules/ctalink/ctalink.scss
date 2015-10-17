@@ -5,31 +5,16 @@ $m: "mod_ctalink";
 
 	&__anchor {
 		display: inline-block;
-		@include linkStyle();
-		@include fontBase();
+		@include fontBaseTiny();
 		@include styleFontBaseBold();
-		padding-bottom: 0px;
-		border-bottom: 2px solid $colorGrayLight;
+		padding: 8px 20px 7px;
+		border: 2px solid $colorBlackPure;
+		text-transform: uppercase;
+		letter-spacing: 2px;
 	}
 
-	&--event {
-		text-align: left;
-
-		.#{$m} {
-			&__anchor {
-				// color: $colorGray;
-				border-bottom: 2px solid $colorGrayLight;
-			}
-		}
-	}
-
+	&--event,
 	&--eventdetail {
 		text-align: left;
-
-		.#{$m} {
-			&__anchor {
-				border-bottom: 2px solid $colorGrayLight;
-			}
-		}
 	}
 }

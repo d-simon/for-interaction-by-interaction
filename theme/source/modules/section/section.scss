@@ -9,10 +9,11 @@ $sectionContentMaxWidth:		450px !default;
 	}
 
 	&__title {
-		@include fontBase($color: $colorBlackPure);
+		@include fontBaseSmall($color: $colorBlackPure);
 		@include styleFontBaseBold();
 		text-align: center;
 		text-transform: uppercase;
+		letter-spacing: 2px;
 		margin-bottom: 2rem;
 		@include mq($from: "medium") {
 			margin-bottom: 5rem;

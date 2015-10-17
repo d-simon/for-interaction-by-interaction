@@ -65,6 +65,16 @@ pre {
 	line-height: $sizeLineHeightTitle;
 	@include _addColor($color);
 }
+@mixin fontBaseTiny($color: true) {
+	@include styleFontBase;
+	font-size: $sizeFontBaseTiny;
+	@include _addColor($color);
+}
+@mixin fontBaseSmall($color: true) {
+	@include styleFontBase;
+	font-size: $sizeFontBaseSmall;
+	@include _addColor($color);
+}
 @mixin fontBase($color: true) {
 	@include styleFontBase;
 	font-size: $sizeFontBase;
