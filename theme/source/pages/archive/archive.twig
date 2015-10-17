@@ -27,7 +27,7 @@
 						offset: { x: 100, y: -50, anchor: 'top-right' },
 					},{
 						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
-						offset: { x: -50, y: -90 },
+						offset: { x: -50, y: 50 },
 					},
 
 					{% for post in posts %}
@@ -46,18 +46,10 @@
 						{% endif %}
 					{% endfor %}
 
-					{% if posts.length % 2 == 0 %}
 						{
 							element: 'body',
-							offset: { x: -300, y: -100, anchor: 'bottom-right' },
+							offset: { x: -100, y: -180, anchor: 'bottom-middle' },
 						},
-					{% else %}
-						{
-							element: 'body',
-							offset: { x: -100, y: -140, anchor: 'bottom-middle' },
-						},
-					{% endif %}
-
 					{
 						element: 'body',
 						offset: { x: -200, y: 100, anchor: 'bottom-right' },
@@ -78,9 +70,6 @@
 						offset: { x: 0, y: -60, anchor: 'top-middle' },
 					},{
 						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
-						offset: { x: -60, y: -290 },
-					},{
-						element: '.mod_section--archive .mod_event:first-child .mod_event__info',
 						offset: { x: -50, y: -90 },
 					},
 					{% for post in posts %}
@@ -93,12 +82,12 @@
 								{% if loop.index % 4 == 0 %}
 								{
 									element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
-									offset: { x: 60, y: -240, anchor: 'top-left' },
+									offset: { x: 60, y: -20, anchor: 'top-left' },
 								},
 								{% endif %}
 							{
 								element: '.mod_section--archive .mod_event:nth-child({{loop.index}}) .mod_event__info',
-								offset: { x: -40, y: -20, anchor: 'top-left' },
+								offset: { x: -40, y: 0, anchor: 'top-left' },
 							},
 							{% else %}
 							{
@@ -126,8 +115,16 @@
 					{% endfor %}
 
 					{
+						element: '.mod_ctalink--page',
+						offset: { x: -200, y: -100, anchor: 'top-left' },
+					},
+					{
+						element: '.mod_ctalink--page',
+						offset: { x: -200, y: 100, anchor: 'top-middle' },
+					},
+					{
 						element: 'body',
-						offset: { x: -200, y: 100, anchor: 'bottom-right' },
+						offset: { x: -200, y: 200, anchor: 'bottom-right' },
 					}
 				]
 			},{
