@@ -79,7 +79,7 @@ $m: "mod_eventdetail";
 	}
 
 	&__description {
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 	}
 
 	.mod_ctalink--eventdetail {
@@ -91,14 +91,14 @@ $m: "mod_eventdetail";
 	&__infolist {
 		/* TODO: flexbox that thing */
 		margin-top: 0;
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		dt {
 			@include styleFontBaseBold();
 			height: 0;
 			overflow: visible;
 		}
 		dd {
-			margin-bottom: 1rem;
+			margin-bottom: 0.5rem;
 			padding-left: 8rem;
 		}
 	}
