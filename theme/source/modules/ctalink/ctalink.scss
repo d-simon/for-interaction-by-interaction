@@ -1,16 +1,26 @@
 $m: "mod_ctalink";
 
+@mixin cta-button {
+	display: inline-block;
+	@include fontBaseTiny();
+	@include styleFontBaseBold();
+    line-height: $sizeLineHeightBase;
+	padding: 9px 20px 7px;
+	border: 2px solid $colorBlackPure;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	transition: background 0.4s ease-in-out;
+	&:hover {
+		background: rgba($colorGrayLight, 0.6);
+	}
+}
+
 .#{$m} {
 	text-align: center;
 
 	&__anchor {
-		display: inline-block;
-		@include fontBaseTiny();
-		@include styleFontBaseBold();
-		padding: 9px 20px 7px;
-		border: 2px solid $colorBlackPure;
-		text-transform: uppercase;
-		letter-spacing: 2px;
+		@include cta-button;
 	}
 
 	&--event,
