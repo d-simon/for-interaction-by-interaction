@@ -1,0 +1,9 @@
+<div class="mod_newsletter{% if modifiers is defined %}{% for modifier in modifiers %} mod_newsletter--{{ modifier }}{% endfor %}{% endif %}" data-init="newsletter">
+	<p class="mod_newsletter__lead">
+		{{ newsletter_lead }}
+	</p>
+	<input type="email" class="mod_newsletter__input" placeholder="E-Mail Adresse">
+	<div class="mod_newsletter__submit-wrap">
+		<button class="mod_newsletter__submit" type="submit">Anmelden</button>
+	</div>
+</div>

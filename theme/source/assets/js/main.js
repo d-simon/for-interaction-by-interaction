@@ -10,6 +10,7 @@
  *
  * @requires ../../modules/slider/slider.js
  * @requires ../../modules/line/line.js
+ * @requires ../../modules/newsletter/newsletter.js
  * //*autoinsertmodule*
  *
  * @requires helpers/init.js

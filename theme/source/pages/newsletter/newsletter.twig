@@ -1,13 +1,9 @@
 {% extends "layouts/layout.twig" %}
 
 {% block content %}
-	{% embed "modules/section/section.twig" with { modifiers: ['page'] } %}
+	{% embed "modules/section/section.twig" with { modifiers: ['page', 'newsletter'] } %}
 		{% block content %}
-			{% if globals.gulp %}
-				{{ content }}
-			{% else %}
-				{{ content|wpautop }}
-			{% endif %}
+			{% include "modules/newsletter/newsletter.twig" %}
 		{% endblock %}
 	{% endembed %}
 {% endblock %}
