@@ -3,6 +3,8 @@
  *
  * @author David Simon (me@davidsimon.ch)
  *
+ * @requires ../../assets/vendor/imagesloaded/imagesloaded.pkgd.js
+ *
  */
 
 ;(function($, undefined) {
@@ -84,18 +86,25 @@
 
 		window.requestAnimationFrame(_.bind(this.drawSVG, this));
 
-		$(document).on(fibi.events.resize, _.bind(function() {
-			window.requestAnimationFrame(_.bind(function() {
-				_.each(this.routes, function(route) {
-					this._updateSegments(route);
-					this._updateRouteSegmentData(route);
-				}, this);
-			}, this));
-
-			window.requestAnimationFrame(_.bind(this.drawSVG, this));
-		}, this));
+		$(document).on(fibi.events.resize, _.bind(this.updateAndRedraw, this));
+		$('body').imagesLoaded(_.bind(this.updateAndRedraw, this));
 	};
 
+	/**
+	 * Update and Redraw
+	 * @method
+	 * @private
+	 */
+	Module.prototype.updateAndRedraw = function () {
+		window.requestAnimationFrame(_.bind(function() {
+			_.each(this.routes, function(route) {
+				this._updateSegments(route);
+				this._updateRouteSegmentData(route);
+			}, this);
+		}, this));
+
+		window.requestAnimationFrame(_.bind(this.drawSVG, this));
+	};
 
 	/**
 	 * Draw SVG
