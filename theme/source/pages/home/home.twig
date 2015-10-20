@@ -22,10 +22,16 @@
 		{% embed "modules/section/section.twig" with { title: 'Aktuell', posts: posts_current, modifiers: ['current'] } %}
 			{% block content %}
 				{% include "modules/eventlist/eventlist.twig" with { events: posts,  modifiers: ['current'] } %}
-				{% include "modules/ctalink/ctalink.twig" with { link: link_about, text: 'Was ist Fibi?' } %}
 			{% endblock %}
 		{% endembed %}
 	{% endif %}
+
+	{% embed "modules/section/section.twig" with { title: 'Newsletter', modifiers: ['newsletter'] } %}
+		{% block content %}
+			{% include "modules/newsletter/newsletter.twig" %}
+		{% endblock %}
+	{% endembed %}
+
 {% endblock %}
 
 {% block linedata %}
@@ -145,7 +151,7 @@
 						offset: { x: -160, y: 120 },
 					},{
 						element: 'body',
-						offset: { x: -300, y: 100, anchor: 'bottom-right' },
+						offset: { x: -200, y: 100, anchor: 'bottom-right' },
 					}
 				]
 			},{
@@ -178,7 +184,7 @@
 						offset: { x: -160, y: 120 },
 					},{
 						element: 'body',
-						offset: { x: -300, y: 100, anchor: 'bottom-right' },
+						offset: { x: -200, y: 100, anchor: 'bottom-right' },
 					}
 				]
 			}]
