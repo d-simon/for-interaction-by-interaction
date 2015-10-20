@@ -32,7 +32,7 @@ final class HomeController extends AbstractController
 		// Find About Page and link to it
 		$pages = get_pages([
 			'meta_key' => '_wp_page_template',
-			'meta_value' => 'archive-about.php'
+			'meta_value' => 'page-about.php'
 		]);
 		$link_about = (count($pages) > 0) ? get_permalink($pages[0]->ID) : false;
 

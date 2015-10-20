@@ -32,7 +32,7 @@
 					{% if getFieldOfPost(future_post, 'event_link_flyer') %}
 						{% include "modules/ctalink/ctalink.twig" with { link: getFieldOfPost(future_post, 'event_link_flyer'), text: 'Online-Flyer', modifiers: ['about', 'aboutflyer', 'external'] } %}
 					{% else %}
-						{% include "modules/ctalink/ctalink.twig" with { link: globals.home_url, text: 'Aktuell', modifiers: ['about', 'aboutperma'] } %}
+						{% include "modules/ctalink/ctalink.twig" with { link: link_current, text: 'Aktuell', modifiers: ['about', 'aboutperma'] } %}
 					{% endif %}
 				</div>
 			{% endif %}
