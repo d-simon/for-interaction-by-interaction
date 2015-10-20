@@ -7,7 +7,8 @@
     "handlebars": "3.0.3",
     "skiplinks": "https://gist.github.com/1900563.git",
     "slick-carousel": "1.5.8",
-    "bows": "1.4.8"
+    "bows": "1.4.8",
+    "imagesloaded": "3.1.8"
   },
   "devDependencies": {
     "qunit": "1.15.0"
