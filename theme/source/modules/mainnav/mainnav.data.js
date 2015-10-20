@@ -15,7 +15,7 @@ var data = _.merge(defaultData, {
 			get_items: [
 				{
 					title: 'Aktuell',
-					get_link: '/pages/home/home.html'
+					get_link: '/pages/current/current.html'
 				},
 				{
 					title: 'Idee',

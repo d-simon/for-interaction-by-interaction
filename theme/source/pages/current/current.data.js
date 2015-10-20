@@ -19,7 +19,8 @@ var data = _.merge(defaultData, {
 				event_link_flyer: 'http://fibi.zhdk.ch'
 			}),
 			_.merge({}, eventData.event, {})
-		]
+		],
+		link_about: '/pages/about/about.html'
 	});
 
 module.exports = data;
