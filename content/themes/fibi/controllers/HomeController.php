@@ -13,7 +13,7 @@ final class HomeController extends AbstractController
 	{
 
 		// Get published events (minus $post_current)
-		$post_current = $this->getPostForArgs([
+		$posts_current = $this->getPostsForArgs([
 			'post_type' 		=> 'event',
 			'post_status'		=> ['future'],
 			'orderby'			=> 'date',
@@ -21,18 +21,20 @@ final class HomeController extends AbstractController
 		]);
 
 		// Otherwise get newest post
-		if (!$post_current) {
-			$post_current = $this->getPostForArgs([
-				'post_type' 		=> 'event'
-			]);
+		if (!$posts_current) {
+			$posts_current = [
+				$this->getPostForArgs([
+					'post_type' => 'event'
+				])
+			];
 		}
 
-		// Get published events (minus $post_current)
-		$posts_archive = $this->getPostsForArgs([
-			'post_type' 		=> 'event',
-			'posts_per_page' 	=> 3,
-			'post__not_in'		=> ($post_current) ? [$post_current->ID] : []
+		// Find About Page and link to it
+		$pages = get_pages([
+			'meta_key' => '_wp_page_template',
+			'meta_value' => 'archive-about.php'
 		]);
+		$link_about = (count($pages) > 0) ? get_permalink($pages[0]->ID) : false;
 
 		// Find Archive Page and link to it
 		$pages = get_pages([
@@ -42,10 +44,10 @@ final class HomeController extends AbstractController
 		$link_archive = (count($pages) > 0) ? get_permalink($pages[0]->ID) : false;
 
 		return [
-			'post_current' => $post_current,
-			'posts_archive' => $posts_archive,
+			'posts_current' => $posts_current,
 			'image_panorama' => get_field('home_panorama_image', 'options'),
-			'link_archive' => $link_archive
+			'link_archive' => $link_archive,
+			'link_about' => $link_about
 		];
 	}
 

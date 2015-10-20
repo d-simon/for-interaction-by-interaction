@@ -1,6 +1,7 @@
-<div class="mod_eventlist" data-init="eventlist">
+<div class="mod_eventlist{% if modifiers is defined %}{% for modifier in modifiers %} mod_eventlist--{{ modifier }}{% endfor %}{% endif %}" data-init="eventlist">
 	{% for event in events %}
 		{% set event_modifiers = (loop.index % 2 == 0) ? ['switch'] : [] %}
+		{% if 'current' in modifiers %}{% set event_modifiers = event_modifiers|merge(['current']) %}{% endif %}
 		{% include "modules/event/event.twig" with { event: event, modifiers: event_modifiers } %}
 	{% endfor %}
 </div>

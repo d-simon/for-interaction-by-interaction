@@ -18,18 +18,11 @@
 			{% endif %}
 		{% endblock %}
 	{% endembed %}
-	{% if post_current %}
-		{% embed "modules/section/section.twig" with { title: 'Aktuell', post: post_current, modifiers: ['current'] } %}
+	{% if posts_current %}
+		{% embed "modules/section/section.twig" with { title: 'Aktuell', posts: posts_current, modifiers: ['current'] } %}
 			{% block content %}
-				{% include "modules/event/event.twig" with { event: post,  modifiers: ['current'] } %}
-			{% endblock %}
-		{% endembed %}
-	{% endif %}
-	{% if posts_archive %}
-		{% embed "modules/section/section.twig" with { title: 'Archiv', posts: posts_archive, modifiers: ['archive'] } %}
-			{% block content %}
-				{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
-				{% include "modules/ctalink/ctalink.twig" with { link: link_archive, text: 'Zum Archiv' } %}
+				{% include "modules/eventlist/eventlist.twig" with { events: posts,  modifiers: ['current'] } %}
+				{% include "modules/ctalink/ctalink.twig" with { link: link_about, text: 'Was ist Fibi?' } %}
 			{% endblock %}
 		{% endembed %}
 	{% endif %}
