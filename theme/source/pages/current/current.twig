@@ -1,0 +1,10 @@
+{% extends "layouts/layout.twig" %}
+
+{% block content %}
+	{% embed "modules/section/section.twig" with { modifiers: ['page', 'current'], title: 'Aktuell' } %}
+		{% block content %}
+			{% include "modules/eventlist/eventlist.twig" with { events: posts } %}
+				{% include "modules/ctalink/ctalink.twig" with { link: link_about, text: 'Was ist FIBI?', modifiers: ['page', 'idea'] } %}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

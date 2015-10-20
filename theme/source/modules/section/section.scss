@@ -41,6 +41,7 @@ $sectionContentMaxWidth:		450px !default;
 		}
 	}
 
+	&--current,
 	&--archive {
 		.mod_eventlist + .mod_ctalink {
 			margin-top: 6rem;

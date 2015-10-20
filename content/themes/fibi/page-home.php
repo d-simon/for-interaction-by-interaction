@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Home / Aktuell
+ * Template Name: Home
  */
 
 use FIBI\Theme\HomeController;
