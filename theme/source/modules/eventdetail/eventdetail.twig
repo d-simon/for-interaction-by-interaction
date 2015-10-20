@@ -41,7 +41,7 @@
 						</dd>
 					{% endif %}
 					<dt>Datum, Zeit</dt>
-					<dd>{{ event.post_date|date('j. F Y, H:m') }}</dd>
+					<dd>{{ event.post_date|date('j. F Y, H:i') }}</dd>
 					{% set event_location = getFieldOfPost(event, 'event_location') %}
 					{% if event_location %}
 						<dt>Ort</dt>
