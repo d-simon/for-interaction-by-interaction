@@ -7,12 +7,28 @@ $m: "mod_newsletter";
 	&__lead {
 		margin-bottom: 3rem;
 	}
+	&__input-wrap {
+		display: block;
+		width: 100%;
+		// background: $colorBlackPure
+		border-bottom: 2px solid $colorBlackPure;
+		margin-bottom: 1rem;
+	}
 	&__input {
 		@include form-reset-general;
-		margin-bottom: 1rem;
+		margin-bottom: 0;
 		width: 100%;
 		line-height: 2rem;
-		border-bottom: 2px solid $colorBlackPure;
+
+		transition: 0.5s all ease-in-out;
+		padding: 1px 10px;
+		border: 2px solid transparent;
+		border-bottom: 0px;
+		&:focus {
+			border: 2px solid $colorBlackPure;
+			border-bottom: 0px;
+			outline:0;
+		}
 	}
 	&__submit-wrap {
 		text-align: right;

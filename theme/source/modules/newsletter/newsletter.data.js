@@ -10,8 +10,7 @@ var data = _.merge(defaultData, {
 			title: 'Newsletter',
 			code: dataHelper.getTemplateCode('newsletter.twig'),
 			documentation: dataHelper.getDocumentation('newsletter.md')
-		},
-		newsletter_lead: "Wir informieren jeweils drei- bis viermal jährlich über kommende FIBI Veranstaltungen. No Spam, Promise."
+		}
 	});
 
 module.exports = data;

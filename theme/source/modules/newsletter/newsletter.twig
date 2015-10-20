@@ -1,9 +1,16 @@
 <div class="mod_newsletter{% if modifiers is defined %}{% for modifier in modifiers %} mod_newsletter--{{ modifier }}{% endfor %}{% endif %}" data-init="newsletter">
-	<p class="mod_newsletter__lead">
-		{{ newsletter_lead }}
-	</p>
-	<input type="email" class="mod_newsletter__input" placeholder="E-Mail Adresse">
-	<div class="mod_newsletter__submit-wrap">
-		<button class="mod_newsletter__submit" type="submit">Anmelden</button>
-	</div>
+	<form action="http://zhdk.us11.list-manage.com/subscribe/post" method="POST">
+	    <input type="hidden" name="u" value="1fdc54964677787b664978ab5">
+	    <input type="hidden" name="id" value="cd9f9428a6">
+		<p class="mod_newsletter__lead">
+			Wir informieren jeweils drei- bis viermal jährlich über kommende FIBI Veranstaltungen. No Spam, Promise.
+		</p>
+		<div class="mod_newsletter__input-wrap">
+			<input type="email" class="mod_newsletter__input" placeholder="E-Mail Adresse" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" value="">
+		</div>
+		<div class="mod_newsletter__submit-wrap">
+			<button class="mod_newsletter__submit" type="submit">Anmelden</button>
+		</div>
 </div>
+
+
