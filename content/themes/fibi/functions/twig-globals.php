@@ -27,7 +27,7 @@ function _theme_add_twig_globals($twig) {
 	}
 
 	$default_data['globals'] = array_merge($default_data['globals'], array(
-			'page_title' => get_the_title(),
+			'page_title' => get_the_title() . ' - ' . get_field('project_title', 'option'),
 			'theme_root' => get_template_directory_uri(),
 			'home_url' => get_home_url(),
 			'footer_url' => get_field('footer_link', 'option'),

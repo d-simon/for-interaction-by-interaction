@@ -9,9 +9,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{{ globals.page_title|striptags }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ globals.meta.desc|striptags }}">
+	<meta name="description" content="{{ globals.project.lead|striptags }}">
 	<meta property="og:title" content="{{ globals.page_title|striptags }}" />
-	<meta property="og:description" content="{{ globals.meta.desc|striptags }}" />
 	{% if meta_img %}<meta property="og:image" content="{{ meta_img }}" />{% endif %}
 	<meta property="og:url" content="{{ globals.permalink }}">
 
