@@ -17,7 +17,7 @@ final class CurrentController extends AbstractController
 			'post_type' 		=> 'event',
 			'post_status'		=> ['future'],
 			'orderby'			=> 'date',
-			'oder'				=> 'ASC'
+			'oder'				=> 'DESC'
 		]);
 
 		// Otherwise get newest post
