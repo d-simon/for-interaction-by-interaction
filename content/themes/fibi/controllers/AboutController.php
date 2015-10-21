@@ -12,12 +12,17 @@ final class AboutController extends AbstractController
 	public function getContext()
 	{
 
-		$future_post = $this->getPostForArgs([
+		$future_posts = $this->getPostsForArgs([
 			'post_type' 		=> 'event',
 			'post_status'		=> ['future'],
 			'orderby'			=> 'date',
 			'oder'				=> 'DESC'
 		]);
+
+		$future_posts = array_reverse($future_posts);
+
+		$future_post = count($future_posts) > 0 ? $future_posts[0] : false;
+
 
         return [
         	'title' => get_the_title(),

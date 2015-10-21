@@ -20,6 +20,8 @@ final class HomeController extends AbstractController
 			'oder'				=> 'DESC'
 		]);
 
+		$posts_current = array_reverse($posts_current);
+
 		// Otherwise get newest post
 		if (!$posts_current) {
 			$posts_current = [

@@ -20,6 +20,8 @@ final class CurrentController extends AbstractController
 			'oder'				=> 'DESC'
 		]);
 
+		$posts = array_reverse($posts);
+
 		// Otherwise get newest post
 		if (!$posts) {
 			$posts = [
