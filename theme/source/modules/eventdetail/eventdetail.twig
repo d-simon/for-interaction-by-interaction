@@ -1,23 +1,19 @@
+{% if modifiers is not defined %}
+	{#
+	 # This for Twig.js only since the "and" operator implementation
+	 # seems to differ. Both sides are evaluated. Even if the left
+	 # one evaluates to false. See: Short-Circuit Evaluation.
+	 #}
+	{% set modifiers = [] %}
+{% endif %}
 <article class="mod_eventdetail{% if modifiers is defined %}{% for modifier in modifiers %} mod_eventdetail--{{ modifier }}{% endfor %}{% endif %}" data-init="event" itemprop="event" itemscope itemtype="http://schema.org/EducationEvent">
 	<h1 class="mod_eventdetail__title mod_eventdetail__title--main" itemprop="name">{{ event.title }}</h1>
-	<h2 class="mod_eventdetail__title mod_eventdetail__title--descriptor">Archiv
+	<h2 class="mod_eventdetail__title mod_eventdetail__title--descriptor">{% if is_current == true %}Aktuell{% else %}Archiv{% endif %}
 	 / <time class="mod_eventdetail__date" itemprop="startDate" content="{{ event.post_date }}" datetime="{{ event.post_date }}">{{ event.post_date|date('j. F Y') }}</time></h2>
 	<section class="mod_eventdetail__section mod_eventdetail__section--details">
 		<div class="mod_eventdetail__content">
 			<figure class="mod_eventdetail__figure" itemprop="image">
-				{% if modifiers is not defined %}
-					{#
-					 # This for Twig.js only since the "and" operator implementation
-					 # seems to differ. Both sides are evaluated. Even if the left
-					 # one evaluates to false. See: Short-Circuit Evaluation.
-					 #}
-					{% set modifiers = [] %}
-				{% endif %}
-				{% if modifiers is defined and 'current' in modifiers %}
-					{% set event_image_size = 'event-current' %}
-				{% else %}
-					{% set event_image_size = 'event-archive' %}
-				{% endif %}
+				{% set event_image_size = 'event-archive' %}
 				<img src="{{ event.thumbnail|getImageSize(event_image_size) }}" class="mod_eventdetail__image" alt="{{ event.title }}">
 			</figure>
 			<div class="mod_eventdetail__info">
