@@ -29,11 +29,7 @@
 			{% if future_post %}
 				<div class="mod_section__foot">
 					<div class="mod_section__footinfo">Der nächste FIBI-Event findet am <time content="{{ future_post.post_date }}" datetime="{{ future_post.post_date }}">{{ future_post.post_date|date('j. F Y') }}</time> statt.</div>
-					{% if getFieldOfPost(future_post, 'event_link_flyer') %}
-						{% include "modules/ctalink/ctalink.twig" with { link: getFieldOfPost(future_post, 'event_link_flyer'), text: 'Online-Flyer', modifiers: ['about', 'aboutflyer', 'external'] } %}
-					{% else %}
-						{% include "modules/ctalink/ctalink.twig" with { link: link_current, text: 'Aktuell', modifiers: ['about', 'aboutperma'] } %}
-					{% endif %}
+					{% include "modules/ctalink/ctalink.twig" with { link: link_current, text: future_post.title, modifiers: ['about', 'aboutperma'] } %}
 				</div>
 			{% endif %}
 		{% endblock %}

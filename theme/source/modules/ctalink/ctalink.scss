@@ -27,4 +27,14 @@ $m: "mod_ctalink";
 	&--eventdetail {
 		text-align: left;
 	}
+
+	&--external {
+		.#{$m}__anchor {
+			&::after {
+				margin-left: 5px;
+				content: '→';
+			}
+			padding-right: 18px; // visually adjust spacing
+		}
+	}
 }
