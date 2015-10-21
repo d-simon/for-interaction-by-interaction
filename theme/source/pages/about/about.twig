@@ -29,7 +29,7 @@
 			{% if future_post %}
 				<div class="mod_section__foot">
 					<div class="mod_section__footinfo">Der nächste FIBI-Event findet am <time content="{{ future_post.post_date }}" datetime="{{ future_post.post_date }}">{{ future_post.post_date|date('j. F Y') }}</time> statt.</div>
-					{% include "modules/ctalink/ctalink.twig" with { link: link_current, text: future_post.title, modifiers: ['about', 'aboutperma'] } %}
+					{% include "modules/ctalink/ctalink.twig" with { link: future_post.permalink, text: future_post.title, modifiers: ['about', 'aboutperma'] } %}
 				</div>
 			{% endif %}
 		{% endblock %}
