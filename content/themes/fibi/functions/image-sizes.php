@@ -40,21 +40,21 @@ $themeImageSizes['event-current'] = $themeImageSizes['full'];
 /**
  * Resize Image with TimberImageHelper to predefined sizes
  * TODO: Move this into a class
+ * TODO: Set quality
  */
-function _theme_get_image_size($url, $size) {
+function _theme_get_image_size($image, $size) {
 
 	global $themeImageSizes;
-	$return_image = $url;
+	$return_image = $image;
 
 	if ($themeImageSizes[$size]) {
 		$w = $themeImageSizes[$size]['width'];
 		$h = $themeImageSizes[$size]['height'];
 		$crop = $themeImageSizes[$size]['timber_crop'];
-
 		if (isset($themeImageSizes[$size]['timber_letterbox'])) {
-			$return_image = TimberImageHelper::letterbox($url, $w, $h);
+			$return_image = TimberImageHelper::letterbox($image, $w, $h);
 		} else {
-			$return_image = TimberImageHelper::resize($url, $w, $h, $crop);
+			$return_image = TimberImageHelper::resize($image, $w, $h, $crop);
 		}
 	}
 
