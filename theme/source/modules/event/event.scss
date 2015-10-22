@@ -71,7 +71,7 @@ $eventInfoMaxWidth:				450px !default;
 
 		&:not(:last-child) {
 			&:after {
-				content: ',';
+				content: ', ';
 			}
 		}
 
