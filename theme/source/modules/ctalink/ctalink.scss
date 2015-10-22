@@ -25,7 +25,9 @@ $m: "mod_ctalink";
 
 	&--event,
 	&--eventdetail {
-		text-align: left;
+		@include mq($from: "large") {
+			text-align: left;
+		}
 	}
 
 	&--external {
