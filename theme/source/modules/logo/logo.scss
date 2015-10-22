@@ -3,6 +3,7 @@ $m: "mod_logo";
 $logoFontSize:			$sizeFontBase !default;
 
 .#{$m} {
+	display: inline-block;
 	@include fontBasePlus();
 	line-height: 1.5;
 	font-size: $logoFontSize;

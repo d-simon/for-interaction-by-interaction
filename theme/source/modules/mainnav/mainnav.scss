@@ -5,8 +5,9 @@ $mainnavWidth:	450px !default;
 .#{$m} {
 	max-width: 100px;
 
-	@include mq($from: small) {
-		max-width: $mainnavWidth;
+	@include mq($from: medium) {
+		width: $mainnavWidth;
+		max-width: none;
 	}
 
 
@@ -19,7 +20,7 @@ $mainnavWidth:	450px !default;
 		float: left;
 		margin-bottom: 4px;
 		width: 100%;
-		@include mq($from: small) {
+		@include mq($from: medium) {
 			width: 33%;
 			&-link {
 				text-align: right;
@@ -38,7 +39,7 @@ $mainnavWidth:	450px !default;
 		}
 
 		&--spacer {
-			@include mq($to: small) {
+			@include mq($to: medium) {
 				display: none;
 			}
 			.#{$m}__item-link {
