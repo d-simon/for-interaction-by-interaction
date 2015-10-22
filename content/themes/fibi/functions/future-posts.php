@@ -41,5 +41,5 @@ function show_future_posts($posts){
 }
 
 function _theme_filter_futureposts($post) {
-	return $post->post_status == 'future';
+	return $post->post_status == 'publish' || $post->post_status == 'future';
 }
