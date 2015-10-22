@@ -1,23 +1,34 @@
 $m: "mod_mainnav";
 
-$mainnavWidth:				450px !default;
+$mainnavWidth:	450px !default;
 
 .#{$m} {
-	width: $mainnavWidth;
+	max-width: 100px;
+
+	@include mq($from: small) {
+		max-width: $mainnavWidth;
+	}
+
 
 	&__items {
 		@include resetList();
 		@include clearfix;
 	}
+
 	&__item {
 		float: left;
-		width: 33%;
-		min-height: 2.2 * $sizeFontBase;
+		margin-bottom: 4px;
+		width: 100%;
+		@include mq($from: small) {
+			width: 33%;
+			&-link {
+				text-align: right;
+			}
+		}
 
 		&-link {
 			@include linkStyle();
 			font-size: $sizeFontBase;
-			line-height: 2.2;
 		}
 
 		&.active {
@@ -27,6 +38,9 @@ $mainnavWidth:				450px !default;
 		}
 
 		&--spacer {
+			@include mq($to: small) {
+				display: none;
+			}
 			.#{$m}__item-link {
 				display: none;
 			}

@@ -3,7 +3,7 @@ $m: "mod_header";
 .#{$m} {
 	position: relative;
 	margin-top: 0;
-	margin-bottom: 6rem;
+	margin-bottom: 8rem;
 	@include mq($from: "small") {
 		margin-top: 1rem;
 	}
@@ -14,16 +14,13 @@ $m: "mod_header";
 
 	&__mainnav {
 		position: absolute;
-		right: 0;
-		top: 0;
+		top: $sizeGutter / 2;
+		right: $sizeGutter / 2;
 	}
+
 
 	&__logo {
 		padding-top: $sizeGutter / 2;
 		padding-left: $sizeGutter / 2;
-		@include mq($from: "small") {
-			padding-top: 0;
-			padding-left: 0;
-		}
 	}
 }

@@ -10,4 +10,25 @@ $logoFontSize:			$sizeFontBase !default;
 	&__link {
 		@include linkStyle();
 	}
+	&__fragment {
+		display: inline-block;
+		padding-right: 0.4em;
+
+
+		&--dash {
+			display: block;
+			margin-top: -10px;
+			margin-bottom: -10px;
+			width: 100%;
+		}
+
+		@include mq($from: "medium") {
+			width: 100%;
+
+			&--dash {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
 }
