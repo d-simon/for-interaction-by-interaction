@@ -18,9 +18,17 @@ final class EventArchiveController extends AbstractController
 			'posts_per_page' 	=> -1
 		]);
 
+		// Find "Current" Page and link to it
+		$pages = get_pages([
+			'meta_key' => '_wp_page_template',
+			'meta_value' => 'page-current.php'
+		]);
+		$link_current = (count($pages) > 0) ? get_permalink($pages[0]->ID) : home_url();
+
+
 		return [
 			'posts' => $posts_archive,
-			'link_current' => home_url()
+			'link_current' => $link_current
 		];
 	}
 
