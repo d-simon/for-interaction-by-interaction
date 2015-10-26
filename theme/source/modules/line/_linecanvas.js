@@ -86,38 +86,38 @@ var path,
 		// 	.start();
 
 
-		_.each(path.segments, function(segment, index) {
-			// log(segment.point);
-				// log($(window).width() / 2 * (1 - progress));
-				var t = new TWEEN.Tween({ progress: 0 })
-					.to({ progress: 1 }, 1000+ ((index < 6) ? index*500 : 6 * 400+index*50))
-		            .easing( TWEEN.Easing.Cubic.InOut )
-		            .onUpdate(function() {
-						var progress = this.progress;
-						// log(progress);
+		// _.each(path.segments, function(segment, index) {
+		// 	// log(segment.point);
+		// 		// log($(window).width() / 2 * (1 - progress));
+		// 		var t = new TWEEN.Tween({ progress: 0 })
+		// 			.to({ progress: 1 }, 1000+ ((index < 6) ? index*500 : 6 * 400+index*50))
+		//             .easing( TWEEN.Easing.Cubic.InOut )
+		//             .onUpdate(function() {
+		// 				var progress = this.progress;
+		// 				// log(progress);
 
-						segment.point.y = targetSegments[index].y + 100 * (index) * (1-progress);
+		// 				segment.point.y = targetSegments[index].y + 100 * (index) * (1-progress);
 
-						scrollOffset = $(window).scrollTop();
-						moveLine();
-					})
-					.onComplete(function() {
-						segment.point.y = targetSegments[index].y;
-						moveLine();
-					})
-					.start();
-					// segment.point.y = ($(window).height()*i * (1 - progress)) + targetSegments[index].y * progress;
-					// EaseInOut
-		}, this);
-
-
+		// 				scrollOffset = $(window).scrollTop();
+		// 				moveLine();
+		// 			})
+		// 			.onComplete(function() {
+		// 				segment.point.y = targetSegments[index].y;
+		// 				moveLine();
+		// 			})
+		// 			.start();
+		// 			// segment.point.y = ($(window).height()*i * (1 - progress)) + targetSegments[index].y * progress;
+		// 			// EaseInOut
+		// }, this);
 
 
-		function animate(time) {
-	        requestAnimationFrame( animate ); // js/RequestAnimationFrame.js needs to be included too.
-	        TWEEN.update(time);
-	    }
-	    animate();
+
+
+		// function animate(time) {
+	 //        requestAnimationFrame( animate ); // js/RequestAnimationFrame.js needs to be included too.
+	 //        TWEEN.update(time);
+	 //    }
+	 //    animate();
 
 	};
 
@@ -135,6 +135,13 @@ var path,
 		}
 	});
 
+	$('body').imagesLoaded(_.bind(function () {
+		if (path) {
+			requestAnimationFrame(updatePoints);
+			requestAnimationFrame(moveLine);
+		}
+	}, this));
+
 	function updatePoints() {
 		for (var i = 0; i < route.length; i++) {
 			var point, el = $(route[i].element)[0];
@@ -150,7 +157,6 @@ var path,
 				path.segments[i].point = point;
 			}
 		}
-		paper.execute();
 	}
 
 
