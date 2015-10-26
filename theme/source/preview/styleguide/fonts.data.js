@@ -8,40 +8,15 @@ var data = _.merge(defaultData, {
 		title: 'Fonts',
 		fonts: [
 			{
-				family: 'Futwora',
-				font: [
-					{
-						weight: [400],
-						style: ['normal'],
-						size: [48, 28, 24]
-					}
-				]
-			},
-			{
-				family: 'Futwora',
+				family: 'FFMarkWeb',
 				font: [
 					{
 						weight: [700],
 						style: ['normal'],
-						size: [24, 20]
-					}
-				]
-			},
-			{
-				family: 'Karla',
-				font: [
+						size: [72, 48, 36, 20, 16]
+					},
 					{
 						weight: [400],
-						style: ['normal'],
-						size: [20, 18, 16]
-					}
-				]
-			},
-			{
-				family: 'Karla',
-				font: [
-					{
-						weight: [700],
 						style: ['normal'],
 						size: [16]
 					}
