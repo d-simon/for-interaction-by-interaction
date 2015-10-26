@@ -43,6 +43,7 @@
     "wpackagist-plugin/debug-bar-timber": "*",
     "wpackagist-plugin/google-sitemap-generator": "*",
     "wpackagist-plugin/force-regenerate-thumbnails": "*",
+    "wpackagist-plugin/redirection": "2.4.3",
     "wpackagist-theme/twentyfifteen": "*",
     "roots/soil": "3.4.0"
   },
